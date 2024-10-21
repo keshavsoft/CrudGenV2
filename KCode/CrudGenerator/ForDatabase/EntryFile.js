@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 const CommonDataPk = process.env.DataPk;
 
-let StartFunc = ({ inFilesArray, inFrom }) => {
+let StartFunc = ({ inFilesArray, inFrom, inDataPk }) => {
     LocalFuncCreateFolder();
     LocalFuncCreateTableAsFolder({ inTablesCollection: inFilesArray });
 
@@ -21,7 +21,8 @@ let StartFunc = ({ inFilesArray, inFrom }) => {
 
     StartFuncForFlatJson({
         inTablesCollection: inFilesArray,
-        inFrom
+        inFrom,
+        inDataPk
     });
 };
 

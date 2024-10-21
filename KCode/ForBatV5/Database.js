@@ -9,5 +9,5 @@ let CommonDataPk = process.env.DataPk;
 let LocalFilesArray = StartFuncReadDataSchema({ inDataPk: CommonDataPk });
 // console.log("LocalFilesArray : ", LocalFilesArray);
 
-StartFuncCrudGenerator({ inFilesArray: LocalFilesArray });
+StartFuncCrudGenerator({ inFilesArray: LocalFilesArray, inDataPk: CommonDataPk });
 // console.log("aaaaaaaaaa : ", LocalFilesArray);

@@ -8,6 +8,7 @@ dotenv.config();
 let CommonDataPk = process.env.DataPk;
 
 let LocalFilesArray = StartFuncReadDataSchema({ inDataPk: CommonDataPk });
+// console.log("zzzzzzzzzzz: ", LocalFilesArray);
 
 let LocalEndPointsNeeded = endPointsNeeded({ inDataPk: CommonDataPk });
 

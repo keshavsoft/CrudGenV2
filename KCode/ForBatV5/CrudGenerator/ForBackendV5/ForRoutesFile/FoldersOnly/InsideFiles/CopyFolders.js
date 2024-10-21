@@ -15,6 +15,7 @@ let StartFunc = ({ inTablesCollection, inTo, inFrom, inEndPointsNeeded }) => {
 
     LocalFirstLevelFolders.forEach(LoopSecond => {
         const LoopInsidePath = `${LocalFrom}/${commonFromPath}`;
+        // console.log("aaaaaaaaaa : ", LoopSecond);
 
         let filenames = fs.readdirSync(LoopInsidePath, { withFileTypes: true });
 
@@ -59,15 +60,32 @@ const LocalFuncWriteToRouteFile = ({ inEndPointsNeeded, inFilePath }) => {
 
     LocalFileData.push("");
     LocalFileData.push("export { router };");
-    // LocalFileData.join("\r\n");
 
     fs.writeFileSync(inFilePath, LocalFileData.join("\r\n"));
+};
 
-    // let LocalNewArray = LocalEndPointsArray.map(element => {
-    //     return LocalToSearch.replaceAll(CommonTableName, path.parse(element.name).name);
-    // });
+const LocalFuncWriteToConfigFile = ({ inEndPointsNeeded, inFilePath }) => {
+    let LocalFileData = [];
 
-    // return LocalNewArray.join("\r\n");
+    LocalFileData.push("import express from 'express';");
+    LocalFileData.push("");
+    LocalFileData.push("var router = express.Router();");
+    LocalFileData.push("");
+
+    inEndPointsNeeded.forEach(element => {
+        LocalFileData.push(`import { router as ${element} } from './${element}/routes.js';`);
+    });
+
+    LocalFileData.push("");
+
+    inEndPointsNeeded.forEach(element => {
+        LocalFileData.push(`router.use('/${element}', ${element});`);
+    });
+
+    LocalFileData.push("");
+    LocalFileData.push("export { router };");
+
+    fs.writeFileSync(inFilePath, LocalFileData.join("\r\n"));
 };
 
 export { StartFunc };

@@ -1,1 +1,63 @@
-[]
+  {
+    "StudentName": {
+      "type": "STRING",
+      "isRequired": true
+    },
+    "Roll Number": {
+      "type": "STRING"
+    },
+    "Mobile": {
+      "type": "TELEPHONE",
+      "unique": true,
+      "isRequired": true
+    },
+    "AlternateMobile": {
+      "type": "NUMBER",
+      "allowNull": true
+    },
+    "Year of Birth": {
+      "type": "MONTH",
+      "isRequired": true
+    },
+    "DOB": {
+      "type": "Date",
+      "allowNull": true
+    },
+    "Email": {
+      "type": "STRING",
+      "allowNull": false,
+      "isRequired": true
+    },
+    "10th Grade GPA": {
+      "type": "NUMBER"
+    },
+    "Intermediate/Diploma CGPA": {
+      "type": "NUMBER"
+    },
+    "Graduation CGPA": {
+      "type": "NUMBER"
+    },
+    "Back-logs": {
+      "type": "NUMBER"
+    },
+    "Gender": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "Branch": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "ResumeLink": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "CollegeName": {
+      "type": "STRING",
+      "allowNull": true
+    },
+    "isMailValidated": {
+      "type": "STRING",
+      "defaultValue": false
+    }
+  }
