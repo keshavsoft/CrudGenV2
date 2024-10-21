@@ -26,8 +26,16 @@ let StartFunc = async ({ inTablesCollection, inFrom, inTo, inEndPointsNeeded }) 
 
     const ConfigJson = fs.readFileSync(`./${LocalTo}/Config.json`, { encoding: 'utf8' });
 
-    StartFuncForRestClients({ inTablesCollection, inFrom, inTo, inConfigJson: JSON.parse(ConfigJson) });
-    StartFuncForTableName({ inTablesCollection, inTo });
+    StartFuncForRestClients({
+        inTablesCollection, inFrom, inTo,
+        inConfigJson: JSON.parse(ConfigJson),
+        inEndPointsNeeded: LocalEndPointsNeeded
+    });
+
+    StartFuncForTableName({
+        inTablesCollection, inFrom, inTo
+    });
+
     StartFuncForkSequelize({ inFrom, inTo });
 };
 

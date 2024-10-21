@@ -20,7 +20,7 @@ let StartFunc = ({ inTablesCollection, inFrom, inTo, inEndPointsNeeded }) => {
 
     let LocalFromForImports = StartFuncForImports({ inEndPointsArray: LocalFirstLevelFolders, inFileData: LocalFileData.toString() });
     let LocalFromForRouterUse = StartFuncForRouterUse({ inEndPointsArray: LocalFirstLevelFolders, inFileData: LocalFromForImports });
-
+    //write to routes with table names
     fs.writeFileSync(`${LocalTo}/${LocalFileName}`, LocalFromForRouterUse);
 
     StartFuncFoldersOnly({

@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+const CommonTableName = "KSTableName";
 
 let StartFunc = ({ inTablesCollection, inFrom, inTo }) => {
     let LocalTypeName = "kLowDb";
     let LocalFrom = inFrom;
     let LocalTo = inTo;
-    let LocalSampleString = "ksSample";
 
     let LocalTablesCollection = inTablesCollection;
 
@@ -15,28 +15,33 @@ let StartFunc = ({ inTablesCollection, inFrom, inTo }) => {
 
     LocalFuncForreadFile({
         inFilesArray: LocalFirstLevelFolders,
-        inTo: LocalTo, inFrom: LocalFrom, inTypeName: LocalTypeName, inSampleString: LocalSampleString
+        inTo: LocalTo, inFrom: LocalFrom, inTypeName: LocalTypeName
     });
 };
 
-let LocalFuncForreadFile = ({ inFilesArray, inFrom, inTo, inTypeName, inSampleString }) => {
+let LocalFuncForreadFile = ({ inFilesArray, inFrom, inTo }) => {
     let LocalFileName = "tableName.json";
     let LocalFilesArray = inFilesArray;
     let LocalTo = inTo;
 
+    let LocalFilePath = `${inFrom}/${CommonTableName}/${LocalFileName}`;
+
+    let LocalFileData = fs.readFileSync(LocalFilePath);
+
     LocalFilesArray.forEach(LoopFile => {
         let LoopInsideFileName = path.parse(LoopFile.name).name;
-        let LocalFilePath = `${LocalTo}/${LoopInsideFileName}/${LocalFileName}`;
 
-        let LocalFileData = fs.readFileSync(LocalFilePath);
+        // let CommonFrom = "src/BackEndv5";
         let LocalfileNameJsonData = JSON.parse(LocalFileData);
+
         LocalfileNameJsonData.tableName = LoopFile.name;
+
         LocalfileNameJsonData.ColumnsSchema = LocalFuncGetSchemaFromConfig({
             inTableName: LoopFile.name,
             inTo: LocalTo
         });
 
-        fs.writeFileSync(LocalFilePath, JSON.stringify(LocalfileNameJsonData));
+        fs.writeFileSync(`${LocalTo}/${LoopInsideFileName}/${LocalFileName}`, JSON.stringify(LocalfileNameJsonData));
     });
 };
 

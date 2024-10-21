@@ -4,7 +4,8 @@ import { StartFunc as StartFuncFoldersOnly } from './FoldersOnly.js';
 import { StartFunc as StartFuncForImports } from './ForImports.js';
 import { StartFunc as StartFuncForRouterUse } from './ForRouterUse.js';
 
-let StartFunc = ({ inTablesCollection, inFrom, inTo }) => {
+let StartFunc = ({ inTablesCollection, inFrom, inTo, inEndPointsNeeded }) => {
+    let LocalEndPointsNeeded = inEndPointsNeeded;
     let LocalTablesCollection = inTablesCollection;
 
     let LocalFirstLevelFolders = LocalTablesCollection.children.filter(element => {
@@ -25,7 +26,8 @@ let StartFunc = ({ inTablesCollection, inFrom, inTo }) => {
     StartFuncFoldersOnly({
         inTablesCollection: LocalTablesCollection,
         inFrom,
-        inTo
+        inTo,
+        inEndPointsNeeded: LocalEndPointsNeeded
     });
 };
 

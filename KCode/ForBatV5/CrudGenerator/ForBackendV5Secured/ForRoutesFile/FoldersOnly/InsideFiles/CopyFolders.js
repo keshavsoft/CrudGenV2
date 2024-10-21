@@ -2,7 +2,8 @@ import fs from "fs-extra";
 import path from "path";
 const commonFromPath = "KSTableName";
 
-let StartFunc = ({ inTablesCollection, inTo, inFrom }) => {
+let StartFunc = ({ inTablesCollection, inTo, inFrom, inEndPointsNeeded }) => {
+    let LocalEndPointsNeeded = inEndPointsNeeded;
     let LocalTo = inTo;
     let LocalFrom = inFrom;
 

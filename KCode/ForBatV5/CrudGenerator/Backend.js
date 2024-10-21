@@ -13,7 +13,10 @@ let StartFunc = ({ inFilesArray, inEndPointsNeeded }) => {
         inEndPointsNeeded: LocalEndPointsNeeded
     });
 
-    LocalFuncForBackEndv5Secured({ inFilesArray: LocalFilesArray });
+    LocalFuncForBackEndv5Secured({
+        inFilesArray: LocalFilesArray,
+        inEndPointsNeeded: LocalEndPointsNeeded
+    });
 };
 
 let LocalFuncForBackEndv5 = ({ inFilesArray, inEndPointsNeeded }) => {
@@ -32,7 +35,8 @@ let LocalFuncForBackEndv5 = ({ inFilesArray, inEndPointsNeeded }) => {
     console.log(`Generated the endpoints in backend : ${CommonTo}`);
 };
 
-let LocalFuncForBackEndv5Secured = ({ inFilesArray }) => {
+let LocalFuncForBackEndv5Secured = ({ inFilesArray, inEndPointsNeeded }) => {
+    let LocalEndPointsNeeded = inEndPointsNeeded;
     let LocalFilesArray = inFilesArray;
     let CommonFrom = "src/BackEndv4";
     let CommonTo = "binV5Secured";
@@ -40,7 +44,8 @@ let LocalFuncForBackEndv5Secured = ({ inFilesArray }) => {
     ForBackendV5Secured({
         inTablesCollection: LocalFilesArray,
         inFrom: CommonFrom,
-        inTo: CommonTo
+        inTo: CommonTo,
+        inEndPointsNeeded: LocalEndPointsNeeded
     });
 
     console.log(`Generated the endpoints in backend : ${CommonTo}`);
