@@ -1,0 +1,30 @@
+{
+  "ItemName": {
+    "type": "STRING",
+    "allowNull": false,
+    "references": {
+      "model": "ItemNames",
+      "key": "ITEMNAME"
+    }
+  },
+  "RefPK": {
+    "type": "INTEGER",
+    "allowNull": false,
+    "references": {
+      "model": "Sales",
+      "key": "id"
+    }
+  },
+  "ItemQty": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "ItemRate": {
+    "type": "STRING",
+    "allowNull": false
+  },
+  "ItemAmount": {
+    "type": "INTEGER",
+    "allowNull": false
+  }
+}

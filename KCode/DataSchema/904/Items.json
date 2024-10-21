@@ -1,0 +1,10 @@
+{
+  "ItemName": {
+    "type": "STRING",
+    "unique": true
+  },
+  "Rate":{
+    "type": "NUMBER",
+    "unique": false
+  }
+}

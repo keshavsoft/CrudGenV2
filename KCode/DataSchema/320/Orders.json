@@ -1,0 +1,17 @@
+  {
+    "OrderDate": {
+      "type": "DATEONLY",
+      "presentDate": true
+    },
+    "CustomerName": {
+      "type": "STRING",
+      "references": {
+        "model": "Customers",
+        "key": "CustomerName"
+      }
+    },
+    "CustomerMobile": {
+      "type": "NUMBER"
+      
+    }
+  }

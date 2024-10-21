@@ -1,0 +1,166 @@
+{
+  "TableConfig": {
+    "HtmlConfig": {
+      "Header": {
+        "HeaderLi": {
+          "ShowMessages": false
+        }
+      },
+      "SideBar": {
+        "children": [
+          {
+            "name": "Create",
+            "url": "StichingPOSCreateDatalist.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Show",
+            "url": "StichingPOSShow.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "RowShow",
+            "url": "StichingPOSShowToSubTable.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Advance",
+            "url": "StichingPOSShowToSubTableByJs.html",
+            "icon": "bi bi-plus-circle"
+          }
+        ]
+      },
+      "main": {
+        "columns": {
+          "VOUCHERNUMBER": {
+            "HtmlTags": {
+              "Show": {
+                "title": "VoucherNumber",
+                "isShown": true
+              },
+              "Create": {
+                "title": "VoucherNumber",
+                "disabledTag": "disabled",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "VoucherNumber",
+                "disabledTag": "disabled",
+                "isShown": true
+              }
+            }
+          },
+          "CustomerNumber": {
+            "HtmlTags": {
+              "Show": {
+                "title": "CustomerNumber",
+                "isShown": true
+              },
+              "Create": {
+                "title": "CustomerNumber",
+                "AutoFocusTag": "autofocus",
+                "disabledTag": "",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "VoucherNumber",
+                "disabledTag": "disabled",
+                "isShown": true
+              }
+            }
+          },
+          "CustomerName": {
+            "HtmlTags": {
+              "Show": {
+                "title": "CustomerName",
+                "isShown": true
+              },
+              "Create": {
+                "title": "VoucherName",
+                "disabledTag": "",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "VoucherName",
+                "disabledTag": "disabled",
+                "isShown": true
+              }
+            }
+          },
+          "Description": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Description",
+                "isShown": true
+              },
+              "Create": {
+                "title": "VoucherDescription",
+                "disabledTag": "",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "VoucherDescription",
+                "disabledTag": "disabled",
+                "isShown": false
+              }
+            }
+          },
+          "DATE": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Date",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Date",
+                "disabledTag": "",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Date",
+                "disabledTag": "disabled",
+                "isShown": false
+              }
+            }
+          },
+          "ADVANCE": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Advance",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Advance",
+                "disabledTag": "disabled",
+                "isShown": false
+              },
+              "Alter": {
+                "title": "Advance",
+                "disabledTag": "",
+                "isShown": true
+              }
+            }
+          },
+          "MODEOFPAYMENT": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Mode Of Payment",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Mode Of Payment",
+                "disabledTag": "disabled",
+                "isShown": false
+              },
+              "Alter": {
+                "title": "Mode Of Payment",
+                "disabledTag": "",
+                "isShown": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

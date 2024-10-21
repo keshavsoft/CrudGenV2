@@ -1,0 +1,25 @@
+{
+  "VOUCHERNUMBER": {
+    "type": "NUMBER",
+    "max": true
+  },
+  "VOUCHERTYPE": {
+    "type": "STRING",
+    "isShown": false
+  },
+  "PARTYNAME": {
+    "type": "STRING",
+    "references": {
+      "model": "LedgerNames",
+      "key": "LEDGERNAME"
+    }
+  },
+  "DATE": {
+    "type": "DATEONLY",
+    "presentDate": true
+  },
+   "PHONE": {
+    "type": "NUMBER"
+    
+  }
+}

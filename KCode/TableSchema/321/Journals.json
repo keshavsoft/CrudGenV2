@@ -1,0 +1,137 @@
+{
+  "TableConfig": {
+    "HtmlConfig": {
+      "Header": {
+        "HeaderLi": {
+          "ShowMessages": false
+        }
+      },
+      "SideBar": {
+        "icon": "bi bi-journal-bookmark-fill",
+        "children": [
+          {
+            "name": "Create",
+            "url": "JournalsCreateDLToShow.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Show",
+            "url": "JournalsShow.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "ShowWithTotals",
+            "url": "JournalsShowWithTotals.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Alter",
+            "url": "JournalsShowAlterSSR.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Delete",
+            "url": "JournalsDeleteSSR.html",
+            "icon": "bi bi-plus-circle"
+          }
+        ]
+      },
+      "main": {
+        "columns": {
+          "Credit Account": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Credit Account",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Credit Account",
+                "AutoFocusTag": "autofocus",
+                "RequiredTag": "required",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Credit Account",
+                "AutoFocusTag": "autofocus",
+                "RequiredTag": "required"
+              }
+            }
+          },
+          "Debit Account": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Debit Account",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Debit Account",
+                "AutoFocusTag": "autofocus",
+                "RequiredTag": "required",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Debit Account",
+                "AutoFocusTag": "autofocus",
+                "RequiredTag": "required"
+              }
+            }
+          },
+          "Date": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Date",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Create": {
+                "title": "Date",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Alter": {
+                "title": "Date",
+                "isShown": true,
+                "RequiredTag": "required"
+              }
+            }
+          },
+          "Description": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Description",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Description",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Description",
+                "isShown": true
+              }
+            }
+          },
+          "Amount": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Amount",
+                "isShown": true,
+                "footerFormatter": "totalFormatter",
+                "align": "right"
+              },
+              "Create": {
+                "title": "Amount",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Alter": {
+                "title": "Amount",
+                "isShown": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

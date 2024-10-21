@@ -1,0 +1,195 @@
+{
+  "TableConfig": {
+    "HtmlConfig": {
+      "Header": {
+        "HeaderLi": {
+          "ShowMessages": false
+        }
+      },
+      "SideBar": {
+        "icon": "bi bi-person-circle",
+        "children": [
+          {
+            "name": "Create",
+            "url": "AccountsCreateDLToShow.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Show",
+            "url": "AccountsShow.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Alter",
+            "url": "AccountsShowAlterWithDL.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Delete",
+            "url": "AccountsDeleteSSR.html",
+            "icon": "bi bi-plus-circle"
+          }
+        ]
+      },
+      "main": {
+        "columns": {
+          "AccountName": {
+            "HtmlTags": {
+              "Show": {
+                "title": "AccountName",
+                "isShown": true
+              },
+              "Create": {
+                "title": "AccountName",
+                "AutoFocusTag": "autofocus",
+                "RequiredTag": "required",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "AccountName",
+                "AutoFocusTag": "autofocus",
+                "RequiredTag": "required",
+                "isShown": true
+              }
+            }
+          },
+          "BSGroup": {
+            "HtmlTags": {
+              "Show": {
+                "title": "BSGroup",
+                "isShown": true
+              },
+              "Create": {
+                "title": "BSGroup",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Alter": {
+                "title": "BSGroup",
+                "isShown": true
+              }
+            }
+          },
+          "SubGroup": {
+            "HtmlTags": {
+              "Show": {
+                "title": "SubGroup",
+                "isShown": true
+              },
+              "Create": {
+                "title": "SubGroup",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Alter": {
+                "title": "SubGroup",
+                "isShown": true
+              }
+            }
+          },
+          "AG3 Name": {
+            "HtmlTags": {
+              "Show": {
+                "title": "AG3 Name",
+                "isShown": true
+              },
+              "Create": {
+                "title": "AG3 Name",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Alter": {
+                "title": "AG3 Name",
+                "isShown": true
+              }
+            }
+          },
+          "AG4 Name": {
+            "HtmlTags": {
+              "Show": {
+                "title": "AG4 Name",
+                "isShown": true
+              },
+              "Create": {
+                "title": "AG4 Name",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Alter": {
+                "title": "AG4 Name",
+                "isShown": true
+              }
+            }
+          },
+          "IntrestTransfer": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Intrest Transfer",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Intrest Transfer",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Alter": {
+                "title": "Intrest Transfer",
+                "isShown": true
+              }
+            }
+          },
+          "Intrest %": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Intrest %",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Intrest %",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Alter": {
+                "title": "Intrest %",
+                "isShown": true
+              }
+            }
+          },
+          "TransferAccountName": {
+            "HtmlTags": {
+              "Show": {
+                "title": "TransferAccountName",
+                "isShown": true
+              },
+              "Create": {
+                "title": "TransferAccountName",
+                "isShown": true,
+                "RequiredTag": "required"
+              },
+              "Alter": {
+                "title": "TransferAccountName",
+                "isShown": true
+              }
+            }
+          },
+          "pk": {
+            "HtmlTags": {
+              "Show": {
+                "title": "pk",
+                "isShown": false
+              },
+              "Create": {
+                "title": "pk",
+                "isShown": false
+              },
+              "Alter": {
+                "title": "pk",
+                "isShown": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

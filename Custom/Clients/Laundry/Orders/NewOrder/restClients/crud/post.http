@@ -1,0 +1,17 @@
+### Qr Raise
+POST  http://localhost:7019/Custom/Clients/Laundry/Orders/NewOrder/ANR
+Content-Type: application/json
+
+{
+    "ItemsInOrder": {},
+    "CustomerData": {
+        "CustomerName": "Keshav",
+        "CustomerMobile": "9848163021"
+    },
+    "OrderData": {
+        "BranchName": "ANR",
+        "Currentdateandtime": "2024-09-24 14:27:35"
+    },
+    "AddOnData": {},
+    "CheckOutData": {}
+}

@@ -1,0 +1,31 @@
+{
+  "ItemName": {
+    "type": "STRING",
+    "allowNull": true,
+    "references": {
+    "model": "Items",
+    "key": "ItemName"
+  }
+  
+  },
+  "RefPK": {
+    "type": "INTEGER",
+    "allowNull": false,
+    "references": {
+      "model": "Orders",
+      "key": "id"
+    }
+  },
+  "ItemRate": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "Qty": {
+    "type": "INTEGER",
+    "allowNull": false
+  },
+  "GRate": {
+    "type": "INTEGER",
+    "allowNull": false
+  }
+}

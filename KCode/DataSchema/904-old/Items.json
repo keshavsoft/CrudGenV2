@@ -1,0 +1,6 @@
+{
+  "ItemName": {
+    "type": "STRING",
+    "unique": true
+  }
+}

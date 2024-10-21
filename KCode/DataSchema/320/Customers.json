@@ -1,0 +1,12 @@
+  {
+    "CustomerName": {
+      "type": "STRING",
+      "unique":true
+     
+    },
+    "CustomerMobile": {
+      "type": "NUMBER",
+      "allowNull": false
+      
+    }
+  }

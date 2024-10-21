@@ -1,0 +1,15 @@
+  {
+    "LEDGERNAME": {
+      "type": "STRING",
+      "unique": true
+    },
+    "PLACE": {
+      "type": "STRING"
+    },
+    "PHONENUMBER": {
+      "type": "NUMBER"
+    },
+    "GUID": {
+      "type": "STRING"
+    }
+  }

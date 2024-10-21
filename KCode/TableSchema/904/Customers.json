@@ -1,0 +1,70 @@
+{
+  "TableConfig": {
+    "HtmlConfig": {
+      "Header": {
+        "HeaderLi": {
+          "ShowMessages": false
+        }
+      },
+      "SideBar": {
+        "children": [
+          {
+            "name": "Create",
+            "url": "CustomersCreateSingle.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Show",
+            "url": "CustomersShow.html",
+            "icon": "bi bi-plus-circle"
+          }
+        ]
+      },
+      "main": {
+        "columns": {
+          "CustomerNumber": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Phone",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Phone",
+                "AutoFocusTag": "autofocus",
+                "RequiredTag": "required",
+                "disabledTag": "disabled",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Phone",
+                "RequiredTag": "required",
+                "disabledTag": "disabled",
+                "isShown": true
+              }
+            }
+          },
+          "CustomerName": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Customer Name",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Customer Name",
+                "RequiredTag": "required",
+                "disabledTag": "disabled",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Customer Name",
+                "RequiredTag": "required",
+                "disabledTag": "disabled",
+                "isShown": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

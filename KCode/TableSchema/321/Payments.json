@@ -1,0 +1,145 @@
+{
+    "TableConfig": {
+        "HtmlConfig": {
+            "Header": {
+                "HeaderLi": {
+                    "ShowMessages": false
+                }
+            },
+            "SideBar": {
+        "icon": "bi bi-currency-exchange",
+        "children": [
+          {
+            "name": "Create",
+            "url": "PaymentsCreateDLToShow.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Show",
+            "url": "PaymentsShow.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "ShowWithTotals",
+            "url": "PaymentsShowWithTotals.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Alter",
+            "url": "PaymentsShowAlterSSR.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Delete",
+            "url": "PaymentsDeleteSSR.html",
+            "icon": "bi bi-plus-circle"
+          }
+        ]
+      },
+            "main": {
+                "columns": {
+                    "AccountName": {
+                        "HtmlTags": {
+                            "Show": {
+                                "title": "AccountName",
+                                "isShown": true
+                            },
+                            "Create": {
+                                "title": "AccountName",
+                                "AutoFocusTag": "autofocus",
+                                "RequiredTag": "required",
+                                "isShown": true
+                            },
+                            "Alter": {
+                                "title": "AccountName",
+                                "AutoFocusTag": "autofocus",
+                                "RequiredTag": "required",
+                                "isShown": true
+                            },
+                            "SubTable": {
+                                "isShown": true,
+                                "title": "AccountName"
+                            },
+                            "CreateInFooter": {
+                                "AutoFocusTag": "autofocus"
+                            }
+                        }
+                    },
+                    "Date": {
+                        "HtmlTags": {
+                            "Show": {
+                                "title": "Date",
+                                "isShown": true
+                            },
+                            "Create": {
+                                "title": "Date",
+                                "isShown": true,
+                                "RequiredTag": "required"
+                            },
+                            "Alter": {
+                                "title": "Date",
+                                "isShown": true
+                            },
+                            "SubTable": {
+                                "isShown": true,
+                                "title": "Date"
+                            },
+                            "CreateInFooter": {
+                                "AutoFocusTag": "autofocus"
+                            }
+                        }
+                    },
+                    "Description": {
+                        "HtmlTags": {
+                            "Show": {
+                                "title": "Description",
+                                "isShown": true
+                            },
+                            "Create": {
+                                "title": "Description",
+                                "isShown": true
+                            },
+                            "Alter": {
+                                "title": "Description",
+                                "isShown": false
+                            },
+                            "SubTable": {
+                                "isShown": false,
+                                "title": "Description"
+                            },
+                            "CreateInFooter": {
+                                "AutoFocusTag": "autofocus"
+                            }
+                        }
+                    },
+                    "Debit": {
+                        "HtmlTags": {
+                            "Show": {
+                                "title": "Debit",
+                                "isShown": true,
+                                "footerFormatter": "totalFormatter",
+                                "align": "right"
+                            },
+                            "Create": {
+                                "title": "Debit",
+                                "isShown": true,
+                                "RequiredTag": "required"
+                            },
+                            "Alter": {
+                                "title": "Debit",
+                                "isShown": true
+                            },
+                            "SubTable": {
+                                "isShown": true,
+                                "title": "Debit"
+                            },
+                            "CreateInFooter": {
+                                "AutoFocusTag": "autofocus"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

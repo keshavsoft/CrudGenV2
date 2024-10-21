@@ -1,0 +1,23 @@
+{
+  "ITEMNAME": {
+    "type": "STRING",
+    "unique": true
+  },
+  "ITEMCATEGORY": {
+    "type": "STRING",
+    "references": {
+      "model": "ItemCategories",
+      "key": "ITEMCATEGORYNAME"
+    }
+  },
+  "ITEMGROUP": {
+    "type": "STRING",
+    "references": {
+      "model": "ItemGroups",
+      "key": "ITEMGROUPNAME"
+    }
+  },
+  "GUID": {
+    "type": "STRING"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "TableConfig": {
+    "HtmlConfig": {
+      "Header": {
+        "HeaderLi": {
+          "ShowMessages": false
+        }
+      },
+      "SideBar": {
+        "icon": "bi bi-graph-up-arrow",
+        "children": [
+          {
+            "name": "Create",
+            "url": "SalesCreateDatalist.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Show",
+            "url": "SalesShow.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "ShowToSTAlter",
+            "url": "SalesShowToSTAlter.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "ShowSTDelete",
+            "url": "SalesShowSTDelete.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "SubTableAdd",
+            "url": "SalesMTableShowSTAdd.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "ShowToSubTable",
+            "url": "SalesShowToSubTableByJs.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "RowShowSTPrint",
+            "url": "SalesRowShowPrint.html",
+            "icon": "bi bi-printer-fill"
+          },
+          {
+            "name": "ShowPageWise",
+            "url": "SalesShowWithPagiNation.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Alter",
+            "url": "SalesShowAlterSSR.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Delete",
+            "url": "SalesDeleteSSR.html",
+            "icon": "bi bi-plus-circle"
+          }
+        ]
+      },
+      "main": {
+        "columns": {
+          "VOUCHERNUMBER": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Voucher #",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Voucher #",
+                "AutoFocusTag": "autofocus",
+                "isShown": true,
+                "disabledTag": "disabled"
+              },
+              "Alter": {
+                "title": "Voucher #",
+                "AutoFocusTag": "autofocus",
+                "isShown": true
+              },
+              "ShowForPrint": {
+                "title": "Voucher #",
+                "AutoFocusTag": "autofocus",
+                "isShown": true
+              }
+            }
+          },
+          "VOUCHERTYPE": {
+            "HtmlTags": {
+              "Show": {
+                "title": "VoucherType",
+                "isShown": false
+              },
+              "Create": {
+                "title": "VoucherType",
+                "isShown": false
+              },
+              "Alter": {
+                "title": "VoucherType",
+                "isShown": false
+              },
+              "ShowForPrint": {
+                "title": "VoucherType",
+                "AutoFocusTag": "autofocus",
+                "isShown": false
+              }
+            }
+          },
+          "PARTYNAME": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Party Name",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Party Name",
+                "RequiredTag": "required",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Party Name",
+                "RequiredTag": "required",
+                "isShown": true
+              },
+              "ShowForPrint": {
+                "title": "Party Name",
+                "AutoFocusTag": "autofocus",
+                "isShown": true
+              }
+            }
+          },
+          "DATE": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Date",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Date",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Date",
+                "isShown": true
+              },
+              "ShowForPrint": {
+                "title": "Date",
+                "AutoFocusTag": "autofocus",
+                "isShown": true
+              }
+            }
+          },
+          "PHONE": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Phone",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Phone",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Phone",
+                "isShown": true
+              },
+              "ShowForPrint": {
+                "title": "Phone",
+                "AutoFocusTag": "autofocus",
+                "isShown": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

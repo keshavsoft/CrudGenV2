@@ -1,0 +1,81 @@
+{
+  "TableConfig": {
+    "HtmlConfig": {
+      "Header": {
+        "HeaderLi": {
+          "ShowMessages": false
+        }
+      },
+      "SideBar": {
+        "icon": "bi bi-stack",
+        "children": [
+          {
+            "name": "Create",
+            "url": "AG3CreateSingle.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Show",
+            "url": "AG3Show.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Alter",
+            "url": "AG3ShowAlterSSR.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Delete",
+            "url": "AG3DeleteSSR.html",
+            "icon": "bi bi-plus-circle"
+          }
+        ]
+      },
+      "main": {
+        "columns": {
+          "AG3 Name": {
+            "HtmlTags": {
+              "Show": {
+                "title": "AG3 Name",
+                "isShown": true,
+                "AutoFocusTag": "autofocus"
+              },
+              "Create": {
+                "title": "AG3 Name",
+                "isShown": true,
+                "RequiredTag": "required",
+                "AutoFocusTag": "autofocus"
+              },
+              "Alter": {
+                "title": "AG3 Name",
+                "isShown": true,
+                "AutoFocusTag": "autofocus"
+              }
+            },
+            "DisplaySerial": {
+              "HtmlTags": {
+                "Show": {
+                  "title": "DisplaySerial",
+                  "isShown": true,
+                  "AutoFocusTag": "autofocus",
+                  "align": "right"
+                },
+                "Create": {
+                  "title": "DisplaySerial",
+                  "isShown": true,
+                  "RequiredTag": "required",
+                  "AutoFocusTag": "autofocus"
+                },
+                "Alter": {
+                  "title": "DisplaySerial",
+                  "isShown": true,
+                  "AutoFocusTag": "autofocus"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

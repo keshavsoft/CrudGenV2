@@ -1,0 +1,118 @@
+{
+  "TableConfig": {
+    "HtmlConfig": {
+      "Header": {
+        "HeaderLi": {
+          "ShowMessages": false
+        }
+      },
+      "SideBar": {
+        "icon": "bi bi-tags-fill",
+        "children": [
+          {
+            "name": "Create",
+            "url": "ItemNamesCreateDatalist.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Show",
+            "url": "ItemNamesShow.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "BulkInsert",
+            "url": "ItemNamesShowBulkInsert.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "ShowPageWise",
+            "url": "ItemNamesShowWithPagiNation.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Alter",
+            "url": "ItemNamesShowAlterSSR.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Delete",
+            "url": "ItemNamesDeleteSSR.html",
+            "icon": "bi bi-plus-circle"
+          }
+        ]
+      },
+      "main": {
+        "columns": {
+          "ITEMNAME": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Item Name",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Item Name",
+                "AutoFocusTag": "autofocus",
+                "RequiredTag": "required",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Item Name",
+                "AutoFocusTag": "autofocus",
+                "RequiredTag": "required",
+                "isShown": true
+              }
+            }
+          },
+          "ITEMCATEGORY": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Item Category",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Item Category",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Item Category",
+                "isShown": true
+              }
+            }
+          },
+          "ITEMGROUP": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Item Group",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Item Group",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Item Group",
+                "isShown": true
+              }
+            }
+          },
+          "GUID": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Guid",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Guid",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Guid",
+                "isShown": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

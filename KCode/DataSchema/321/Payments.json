@@ -1,0 +1,30 @@
+{
+  "AccountName": {
+    "type": "STRING",
+    "allowNull": false,
+    "references": {
+      "model": "Accounts",
+      "key": "AccountName"
+    }
+  },
+  "RefPK": {
+    "type": "INTEGER",
+    "allowNull": false,
+    "references": {
+      "model": "Receipts",
+      "key": "id"
+    }
+  },
+  "Date": {
+    "type": "DATEONLY",
+    "allowNull": true
+  },
+  "Description": {
+    "type": "STRING",
+    "allowNull": true
+  },
+  "Debit": {
+    "type": "NUMBER",
+    "allowNull": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "TableConfig": {
+    "HtmlConfig": {
+      "Header": {
+        "HeaderLi": {
+          "ShowMessages": false
+        }
+      },
+      "SideBar": {
+        "children": [
+          {
+            "name": "Create",
+            "url": "ItemsCreateSingle.html",
+            "icon": "bi bi-plus-circle"
+          },
+          {
+            "name": "Show",
+            "url": "ItemsShow.html",
+            "icon": "bi bi-plus-circle"
+          }
+        ]
+      },
+      "main": {
+        "columns": {
+          "ItemName": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Item Name",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Item Name",
+                "RequiredTag": "required",
+                "disabledTag": "",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Item Name",
+                "RequiredTag": "required",
+                "disabledTag": "disabled",
+                "isShown": true
+              }
+            }
+          },
+          "Rate": {
+            "HtmlTags": {
+              "Show": {
+                "title": "Rate",
+                "isShown": true
+              },
+              "Create": {
+                "title": "Rate",
+                "RequiredTag": "",
+                "disabledTag": "",
+                "isShown": true
+              },
+              "Alter": {
+                "title": "Rate",
+                "RequiredTag": "",
+                "disabledTag": "",
+                "isShown": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

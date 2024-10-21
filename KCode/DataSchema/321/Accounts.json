@@ -1,0 +1,55 @@
+{
+  "AccountName": {
+    "type": "STRING",
+    "allowNull": false,
+    "unique": true
+  },
+  "BSGroup": {
+    "type": "STRING",
+    "allowNull": false,
+    "references": {
+      "model": "BSGroups",
+      "key": "BSGroup"
+    }
+  },
+  "SubGroup": {
+    "type": "STRING",
+    "allowNull": true,
+    "references": {
+      "model": "SubGroups",
+      "key": "SubGroup"
+    }
+  },
+  "AG3 Name": {
+    "type": "STRING",
+    "allowNull": false,
+    "references": {
+      "model": "AG3",
+      "key": "AG3 Name"
+    }
+  },
+  "AG4 Name": {
+    "type": "STRING",
+    "allowNull": false,
+    "references": {
+      "model": "AG4",
+      "key": "AG4 Name"
+    }
+  },
+  "IntrestTransfer": {
+    "type": "CHECKBOX",
+    "allowNull": false
+  },
+  "Intrest %": {
+    "type": "STRING",
+    "allowNull": false
+  },
+  "TransferAccountName": {
+    "type": "STRING",
+    "allowNull": false,
+    "references": {
+      "model": "Accounts",
+      "key": "AccountName"
+    }
+  }
+}
