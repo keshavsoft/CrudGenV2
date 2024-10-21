@@ -1,9 +1,15 @@
 import { StartFunc as StartFuncReadDataSchema } from "./ReadDataSchema.js";
 import { StartFunc as StartFuncBackend } from "./CrudGenerator/Backend.js";
+import { StartFunc as endPointsNeeded } from "./endPointsNeeded.js";
 
-let LocalFilesArray = StartFuncReadDataSchema();
+import dotenv from 'dotenv';
+dotenv.config();
 
-let LocalEndPointsNeeded = ["Create", "Show", "SubTable"];
+let CommonDataPk = process.env.DataPk;
+
+let LocalFilesArray = StartFuncReadDataSchema({ inDataPk: CommonDataPk });
+
+let LocalEndPointsNeeded = endPointsNeeded({ inDataPk: CommonDataPk });
 
 StartFuncBackend({
     inFilesArray: LocalFilesArray,

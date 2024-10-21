@@ -3,13 +3,10 @@ import fs from "fs";
 
 let CommonFromFolderName = "DataSchema";
 
-import dotenv from 'dotenv';
-dotenv.config();
+let StartFunc = ({ inDataPk }) => {
+    let LocalDataPk = inDataPk;
 
-let StartFunc = () => {
-    let LocalDataPk = process.env.DataPk;
-
-    let LocalDataPath = `KCode/${CommonFromFolderName}/${LocalDataPk}`;
+    let LocalDataPath = `KSCode/JsonSchema/${LocalDataPk}/${CommonFromFolderName}`;
     const tree = dirTree(LocalDataPath, { extensions: /\.json/ });
 
     tree.children.forEach(element => {
