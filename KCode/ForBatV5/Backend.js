@@ -3,7 +3,7 @@ import { StartFunc as StartFuncBackend } from "./CrudGenerator/Backend.js";
 
 let LocalFilesArray = StartFuncReadDataSchema();
 
-let LocalEndPointsNeeded = ["Create", "Show", "SubTable"];
+let LocalEndPointsNeeded = ["Create", "Show", "SubTable", "Filter", "Search"];
 
 StartFuncBackend({
     inFilesArray: LocalFilesArray,
