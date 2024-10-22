@@ -3,10 +3,10 @@ import express from 'express';
 var router = express.Router();
 
 import {
-    GetFuncs, GetAsIsFuncs
+    GetQrFuncs, GetAsIsFuncs
 } from '../../controllers/GetFuncs/EntryFile.js';
 
-router.get('/', GetFuncs);
+router.get('/:Qr', GetQrFuncs);
 router.get('/AsIs', GetAsIsFuncs);
 
 export { router };

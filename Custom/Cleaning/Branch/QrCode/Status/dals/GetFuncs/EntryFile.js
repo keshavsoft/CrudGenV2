@@ -1,7 +1,7 @@
-import { StartFunc as TodayAllQrCodes } from '../../kLowDb/ReadFromFile/TodayAllQrCodes.js';
+import { StartFunc as GetQr } from '../../kLowDb/ReadFromFile/GetQr.js';
 
-let GetAllFuncs = () => {
-    return TodayAllQrCodes();
+let GetQrFuncs = ({ inQr }) => {
+    return GetQr({ inQr });
 };
 
 let GetAsIsFuncs = () => {
@@ -9,5 +9,5 @@ let GetAsIsFuncs = () => {
 };
 
 export {
-    GetAllFuncs, GetAsIsFuncs
+    GetQrFuncs, GetAsIsFuncs
 };
