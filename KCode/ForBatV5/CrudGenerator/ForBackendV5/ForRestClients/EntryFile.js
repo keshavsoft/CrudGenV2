@@ -12,6 +12,7 @@ import { StartFunc as SubTable } from "./SubTable/EntryFile.js";
 let StartFunc = ({ inTablesCollection, inTo, inFrom, inConfigJson, inEndPointsNeeded }) => {
     if (inEndPointsNeeded.includes("Show")) Show({ inTablesCollection, inTo });
     if (inEndPointsNeeded.includes("Create")) Create({ inTablesCollection, inTo, inConfigJson });
+    if (inEndPointsNeeded.includes("Bulk")) Bulk({ inTablesCollection, inTo, inConfigJson });
 
     // Create({ inTablesCollection, inTo, inConfigJson });
     // Alter({ inTablesCollection, inTo, inConfigJson });
