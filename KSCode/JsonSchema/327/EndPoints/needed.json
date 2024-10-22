@@ -1,5 +1,7 @@
 [
     "Create",
     "Show",
-    "Bulk"
+    "Bulk",
+    "ShowWithColumns",
+    "Search"
 ]
