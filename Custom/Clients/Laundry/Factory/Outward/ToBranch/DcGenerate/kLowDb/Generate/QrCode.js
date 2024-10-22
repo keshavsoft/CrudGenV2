@@ -1,5 +1,6 @@
 import { StartFunc as StartFuncReadBranchFile } from '../CommonFuncs/readBranchFile.js';
 import { StartFunc as createDC } from "./createDC.js";
+import { StartFunc as FactoryOut_QrCodeScan } from "./FactoryOut_QrCodeScan.js";
 
 let StartFunc = ({ inId }) => {
     let LocalVouherPk = inId;
@@ -9,7 +10,9 @@ let StartFunc = ({ inId }) => {
     const result = groupBy(LocalQrCodeData, "BranchName");
 
     for (const [key, value] of Object.entries(result)) {
-        createDC({ inBranchName: key });
+        const LoopinsieinsertPk = createDC({ inBranchName: key });
+        value.VoucherRef = LoopinsieinsertPk;
+        FactoryOut_QrCodeScan({ inBulkData: value })
     };
 
     return result;

@@ -6,9 +6,13 @@ let StartFunc = ({ inBranchName }) => {
     let LocalInsertObject = {};
     LocalInsertObject.BranchName = LocalBranchName;
 
-    Insert({ inDataToInsert: LocalInsertObject });
+    let LocalInsert = Insert({ inDataToInsert: LocalInsertObject });
 
-    return true;
+    if (LocalInsert.KTF === true) {
+        return LocalInsert.pk
+    }
+
+    return false;
 };
 
 export { StartFunc };
