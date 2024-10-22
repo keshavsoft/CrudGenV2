@@ -1,1 +1,1 @@
-GET http://localhost:7019/Custom/Clients/Laundry/Today/QrCodes/InBranch/TransOrdersKakinada
+GET http://localhost:7318/Custom/Clients/Laundry/Today/QrCodes/InBranch/TransOrdersKakinada

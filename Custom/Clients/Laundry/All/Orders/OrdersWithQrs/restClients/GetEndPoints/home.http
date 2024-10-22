@@ -1,1 +1,1 @@
-GET http://localhost:7019/Custom/Clients/Laundry/All/Orders/OrdersWithQrs/ANR
+GET http://localhost:7318/Custom/Clients/Laundry/All/Orders/OrdersWithQrs/ANR

@@ -1,1 +1,1 @@
-GET http://localhost:7019/Custom/Clients/Laundry/Admin/Reports/Pos/Today/AllBranches/Orders
+GET http://localhost:7318/Custom/Clients/Laundry/Admin/Reports/Pos/Today/AllBranches/Orders

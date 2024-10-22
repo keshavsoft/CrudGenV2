@@ -1,5 +1,5 @@
 ###Get for as is data
-POST http://localhost:7019/Login/bin/Users
+POST http://localhost:7318/Login/bin/Users
 Content-Type: application/json
 
 {

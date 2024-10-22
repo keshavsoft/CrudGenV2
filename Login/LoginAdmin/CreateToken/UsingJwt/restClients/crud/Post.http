@@ -1,5 +1,5 @@
 ###Get for as is data
-POST http://localhost:7019/Login/LoginAdmin/CreateToken/UsingJwt
+POST http://localhost:7318/Login/LoginAdmin/CreateToken/UsingJwt
 Content-Type: application/json
 
 {

@@ -29,10 +29,10 @@ let StartFunc = async ({ inDataPk, inDomainName, CCEmail, inpk }) => {
     const data = fs.readFileSync(CommonHtmlPath, { encoding: 'utf8' });
 
     //let LocalRedirectUrl = `http://${inDomainName}/Login/bin/Users/ValidateEmail/${inDataPk}`;
-    let LocalRedirectUrl = `http://localhost:7019/binV2/${tableName}/Alter/${inpk}/isMailValidated/true`;
+    let LocalRedirectUrl = `http://localhost:7318/binV2/${tableName}/Alter/${inpk}/isMailValidated/true`;
 
     let LocalUrlInserted = data.toString().replace("{{inRedirectUrl}}", LocalRedirectUrl);
-    // POST http://localhost:7019/binV2/StudentsVerified/Create
+    // POST http://localhost:7318/binV2/StudentsVerified/Create
 
     return await jFTransporterForGoogle.sendMail({
         from: `"KeshavSoft" ${process.env.KS_MAIL_ID}`,

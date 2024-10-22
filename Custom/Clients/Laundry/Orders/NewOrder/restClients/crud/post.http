@@ -1,5 +1,5 @@
 ### Qr Raise
-POST  http://localhost:7019/Custom/Clients/Laundry/Orders/NewOrder/ANR
+POST  http://localhost:7318/Custom/Clients/Laundry/Orders/NewOrder/ANR
 Content-Type: application/json
 
 {

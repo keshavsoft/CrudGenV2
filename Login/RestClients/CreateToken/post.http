@@ -1,4 +1,4 @@
-POST http://localhost:7019/Login/bin/CreateToken/UsingJwt/
+POST http://localhost:7318/Login/bin/CreateToken/UsingJwt/
 content-type: application/json
 
 {
