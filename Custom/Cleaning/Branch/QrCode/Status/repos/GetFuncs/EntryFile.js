@@ -1,10 +1,10 @@
 import {
-    GetAllFuncs as GetAllFuncsDal,
+    GetQrFuncs as GetQrFuncsDal,
     GetAsIsFuncs as GetAsIsFuncsDal
 } from '../../dals/GetFuncs/EntryFile.js';
 
-let GetFuncs = () => {
-    return GetAllFuncsDal();
+let GetQrFuncs = ({ inQr }) => {
+    return GetQrFuncsDal({ inQr });
 };
 
 let GetAsIsFuncs = () => {
@@ -12,5 +12,5 @@ let GetAsIsFuncs = () => {
 };
 
 export {
-    GetFuncs, GetAsIsFuncs
+    GetQrFuncs, GetAsIsFuncs
 };

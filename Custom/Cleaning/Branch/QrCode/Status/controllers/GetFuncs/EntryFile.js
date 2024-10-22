@@ -1,16 +1,11 @@
 import {
-    GetFuncs as GetFuncsRepo,
+    GetQrFuncs as GetQrFuncsRepo,
     GetAsIsFuncs as GetAsIsFuncsRepo
 } from '../../repos/GetFuncs/EntryFile.js';
 
-let GetFuncs = (req, res) => {
-
-    let LocalFromRepo = GetFuncsRepo();
-
-    if (LocalFromRepo.KTF === false) {
-        res.status(500).send(LocalFromRepo.KReason);
-        return;
-    };
+let GetQrFuncs = (req, res) => {
+    let LocalQr = req.params.Qr;
+    let LocalFromRepo = GetQrFuncsRepo({ inQr: LocalQr });
 
     res.status(200).json(LocalFromRepo);
 };
@@ -28,5 +23,5 @@ let GetAsIsFuncs = (req, res) => {
 };
 
 export {
-    GetFuncs, GetAsIsFuncs
+    GetQrFuncs, GetAsIsFuncs
 };
