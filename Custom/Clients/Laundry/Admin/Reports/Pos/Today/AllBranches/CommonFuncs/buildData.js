@@ -4,6 +4,7 @@ import { StartFunc as EntryScan } from './EntryScan.js';
 import { StartFunc as WashingScan } from './WashingScan.js';
 import { StartFunc as PressingScan } from "./PressingScan.js";
 import { StartFunc as CompletionScan } from "./CompletionScan.js";
+import { StartFunc as PressingRejectScan } from "./PressingRejectScan.js";
 
 let StartFunc = () => {
     const QrCodeData = QrCodes();
@@ -12,6 +13,7 @@ let StartFunc = () => {
     const WashingScanData = WashingScan();
     const PressingScanData = PressingScan();
     const CompletionScanData = CompletionScan();
+    const PressingRejectScanData = PressingRejectScan();
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inQrData: QrCodeData,
@@ -19,19 +21,21 @@ let StartFunc = () => {
         inEntryScanData: EntryScanData,
         inWashingScanData: WashingScanData,
         inPressingScanData: PressingScanData,
-        inCompletionScanData: CompletionScanData
+        inCompletionScanData: CompletionScanData,
+        inPressingRejectScanData: PressingRejectScanData
     });
 
     return jVarLocalTransformedData;
 };
 
-let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScanData, inWashingScanData, inPressingScanData, inCompletionScanData }) => {
+let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScanData, inWashingScanData, inPressingScanData, inCompletionScanData, inPressingRejectScanData }) => {
     let jVarLocalReturnObject = inQrData.map(loopQr => {
         const match = inScandata.some(loopScan => loopScan.QrCodeId == loopQr.pk);
         const LoopInsideFindEntryScan = inEntryScanData.some(loopScan => loopScan.QrCodeId == loopQr.pk);
         const LoopInsideFindWashingScan = inWashingScanData.some(loopScan => loopScan.QrCodeId == loopQr.pk);
         const LoopInsideFindPressingScan = inPressingScanData.some(loopScan => loopScan.QrCodeId == loopQr.pk);
         const LoopInsideFindCompletionScan = inCompletionScanData.some(loopScan => loopScan.QrCodeId == loopQr.pk);
+        const LoopInsideFindPressingRejectScan = inPressingRejectScanData.some(loopScan => loopScan.QrCodeId == loopQr.pk);
         return {
             QrCodeId: loopQr.pk,
             ItemName: loopQr.ItemName,
@@ -45,6 +49,7 @@ let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScanData, inWashingScanDa
             FactoryScan: LoopInsideFindEntryScan,
             WashingScan: LoopInsideFindWashingScan,
             PressingScan: LoopInsideFindPressingScan,
+            PressingRejectScan: LoopInsideFindPressingRejectScan,
             CompletionScan: LoopInsideFindCompletionScan,
             BranchName: loopQr.BookingData.OrderData.BranchName,
             TimeSpan: TimeSpan({ DateTime: loopQr.BookingData.OrderData.Currentdateandtime })
