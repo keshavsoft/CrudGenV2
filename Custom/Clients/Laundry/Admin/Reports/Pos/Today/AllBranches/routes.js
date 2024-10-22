@@ -10,6 +10,9 @@ import { router as FactoryScan } from "./5-FactoryScan/routes.js";
 import { router as FactoryInwardReturn } from "./6-FactoryInwardReturn/routes.js";
 import { router as WashingStart } from "./7-WashingStart/routes.js";
 import { router as WashingReject } from "./8-WashingReject/routes.js";
+import { router as PressingStart } from "./9-PressingStart/routes.js";
+import { router as PressingReject } from "./10-PressingReject/routes.js";
+import { router as CompletionStart } from "./11-CompletionStart/routes.js";
 
 router.use("/QrCodes", QrCodes);
 router.use("/Orders", Orders);
@@ -19,5 +22,8 @@ router.use("/FactoryScan", FactoryScan);
 router.use("/FactoryInwardReturn", FactoryInwardReturn);
 router.use("/WashingStart", WashingStart);
 router.use("/WashingReject", WashingReject);
+router.use("/PressingStart", PressingStart);
+router.use("/PressingReject", PressingReject);
+router.use("/CompletionStart", CompletionStart);
 
 export { router };
