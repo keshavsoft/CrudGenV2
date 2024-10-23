@@ -1,4 +1,4 @@
-import { StartFunc as BranchDc } from '../CommonFuncs/CompletionDC.js';
+import { StartFunc as BranchDc } from '../CommonFuncs/FactoryOut_DC.js';
 import { StartFunc as EntryScan } from '../CommonFuncs/FromFactoryScan.js';
 
 let StartFunc = ({ inFactory }) => {
@@ -11,9 +11,9 @@ let StartFunc = ({ inFactory }) => {
     const EntryScandb = EntryScan();
     EntryScandb.read();
 
-    let LocalFilterBranchDc = BranchDcdb.data.filter(e => e.Factory === LocalFactory);
+    let LocalFilterBranchDc = BranchDcdb.data.filter(e => e.BranchName === LocalFactory);
 
-    let LocalFilterEntryScan = EntryScandb.data.filter(e => e.DCFactory === LocalFactory);
+    let LocalFilterEntryScan = EntryScandb.data.filter(e => e.BranchName === LocalFactory);
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inBranchDc: LocalFilterBranchDc,
