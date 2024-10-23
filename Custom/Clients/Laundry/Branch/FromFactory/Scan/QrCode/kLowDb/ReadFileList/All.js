@@ -1,8 +1,8 @@
 import { StartFunc as QrCodes } from '../CommonFuncs/QrCodes.js';
-import { StartFunc as BranchScan } from '../CommonFuncs/CompletionScan.js';
+import { StartFunc as BranchScan } from '../CommonFuncs/FactoryOut_QrCodeScan.js';
 import { StartFunc as EntryScan } from '../CommonFuncs/FromFactoryScan.js';
 import { StartFunc as EntryCancelScan } from '../CommonFuncs/FromFactoryCancelScan.js';
-import { StartFunc as BranchDc } from '../CommonFuncs/CompletionDC.js';
+import { StartFunc as BranchDc } from '../CommonFuncs/FactoryOut_DC.js';
 
 let StartFunc = ({ inFactory }) => {
     // let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');
@@ -23,13 +23,13 @@ let StartFunc = ({ inFactory }) => {
     const BranchDcdb = BranchDc();
     BranchDcdb.read();
 
-    let LocalFilterBranchScan = BranchScandb.data.filter(e => e.DCFactory === LocalFactory);
+    let LocalFilterBranchScan = BranchScandb.data.filter(e => e.BranchName === LocalFactory);
 
-    let LocalFilterQr = Qrdb.data.filter(e => e.location === LocalFactory);
+    let LocalFilterQr = Qrdb.data.filter(e => e.BookingData.OrderData.BranchName === LocalFactory);
 
-    let LocalFilterEntryScan = EntryScandb.data.filter(e => e.DCFactory === LocalFactory);
-    let LocalFilterCancelScan = EntryCancelScandb.data.filter(e => e.FactoryName === LocalFactory);
-    let LocalFilterBranchDc = BranchDcdb.data.filter(e => e.Factory === LocalFactory);
+    let LocalFilterEntryScan = EntryScandb.data.filter(e => e.BranchName === LocalFactory);
+    let LocalFilterCancelScan = EntryCancelScandb.data.filter(e => e.BranchName === LocalFactory);
+    let LocalFilterBranchDc = BranchDcdb.data.filter(e => e.BranchName === LocalFactory);
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inQrData: LocalFilterQr,
