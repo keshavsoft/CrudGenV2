@@ -4,6 +4,10 @@ let GetFuncs = ({ inBranch }) => {
     return ReadFromFiles({ inBranch });
 };
 
+let GetToScanFuncs = ({ inBranch }) => {
+    return ReadFromFiles({ inBranch });
+};
+
 export {
-    GetFuncs
+    GetFuncs, GetToScanFuncs
 };

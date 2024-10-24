@@ -3,10 +3,10 @@ import express from 'express';
 var router = express.Router();
 
 import {
-    GetFuncs
+    GetFuncs, GetToScanFuncs
 } from '../../controllers/GetFuncs/EntryFile.js';
 
 router.get('/:inBranch', GetFuncs);
-router.get('/ToScan/:inBranch', GetFuncs);
+router.get('/ToScan/:inBranch', GetToScanFuncs);
 
 export { router };
