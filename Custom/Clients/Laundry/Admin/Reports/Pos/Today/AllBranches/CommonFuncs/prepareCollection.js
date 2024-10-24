@@ -1,36 +1,4 @@
-import { StartFunc as QrCodes } from './QrCodes.js';
-import { StartFunc as BranchScan } from './BranchScan.js';
-import { StartFunc as EntryScan } from './EntryScan.js';
-import { StartFunc as WashingScan } from './WashingScan.js';
-import { StartFunc as PressingScan } from "./PressingScan.js";
-import { StartFunc as CompletionScan } from "./CompletionScan.js";
-import { StartFunc as PressingRejectScan } from "./PressingRejectScan.js";
-import { StartFunc as prepareCollection } from "./prepareCollection.js";
-
-
-let StartFunc = () => {
-    const QrCodeData = QrCodes();
-    const BranchScanData = BranchScan();
-    const EntryScanData = EntryScan();
-    const WashingScanData = WashingScan();
-    const PressingScanData = PressingScan();
-    const CompletionScanData = CompletionScan();
-    const PressingRejectScanData = PressingRejectScan();
-
-    let jVarLocalTransformedData = prepareCollection({
-        inQrData: QrCodeData,
-        inScandata: BranchScanData,
-        inEntryScanData: EntryScanData,
-        inWashingScanData: WashingScanData,
-        inPressingScanData: PressingScanData,
-        inCompletionScanData: CompletionScanData,
-        inPressingRejectScanData: PressingRejectScanData
-    });
-
-    return jVarLocalTransformedData;
-};
-
-let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScanData, inWashingScanData, inPressingScanData, inCompletionScanData, inPressingRejectScanData }) => {
+let StartFunc = ({ inQrData, inScandata, inEntryScanData, inWashingScanData, inPressingScanData, inCompletionScanData, inPressingRejectScanData }) => {
     let jVarLocalReturnObject = inQrData.map(loopQr => {
         const match = inScandata.some(loopScan => loopScan.QrCodeId == loopQr.pk);
         const LoopInsideFindEntryScan = inEntryScanData.some(loopScan => loopScan.QrCodeId == loopQr.pk);
@@ -54,6 +22,7 @@ let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScanData, inWashingScanDa
             PressingRejectScan: LoopInsideFindPressingRejectScan,
             CompletionScan: LoopInsideFindCompletionScan,
             BranchName: loopQr.BookingData.OrderData.BranchName,
+            EntryScan_FactoryName: loopQr.FactoryName,
             TimeSpan: TimeSpan({ DateTime: loopQr.BookingData.OrderData.Currentdateandtime })
         };
     });
