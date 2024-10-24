@@ -1,7 +1,7 @@
 import { StartFunc as StartFuncPullData } from "../PullData/EntryFile.js";
 
 let StartFunc = async ({ inId }) => {
-  let LocalId = inId;
+  let LocalId = parseInt(inId);
   
   let LocalStartFuncPullData = StartFuncPullData();
 
@@ -14,10 +14,10 @@ let StartFunc = async ({ inId }) => {
   const db = LocalStartFuncPullData.inDb;
   let LocalarrayOfObjects = db.data;
 
-  const LocalFindId = LocalarrayOfObjects.find((obj) => obj.UuId === LocalId);
+  const LocalFindId = LocalarrayOfObjects.find((obj) => obj.pk === LocalId);
 
   if (LocalFindId === undefined) {
-    return await { KTF: false, KReason: "Id not found in data" };
+    return await { KTF: false, KReason: `Id : ${LocalId} not found in data` };
   };
 
   let LocalArrayAfterDelete = deleteObjectById({
@@ -36,7 +36,7 @@ let deleteObjectById = ({ inCollection, inId }) => {
   let LocalId = inId;
 
   LocalCollection.splice(
-    LocalCollection.findIndex((a) => a.UuId === LocalId),
+    LocalCollection.findIndex((a) => a.pk === LocalId),
     1
   );
 

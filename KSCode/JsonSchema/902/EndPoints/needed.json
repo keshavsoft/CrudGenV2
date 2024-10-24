@@ -4,5 +4,6 @@
     "Search",
     "Filter",
     "RowShow",
-    "SearchForStatus"
+    "SearchForStatus",
+    "Delete"
 ]
