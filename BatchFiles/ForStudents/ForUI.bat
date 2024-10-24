@@ -1,6 +1,9 @@
 @echo off
 cd ..\crudFrontEnd
 
+echo StartUrl="binV4"> .env
+echo TableName="StudentNames">> .env
+
 call npm run Table-ShowFromJs
 call npm run CreateStatic
 call npm run UnProtected-CreateStatic
