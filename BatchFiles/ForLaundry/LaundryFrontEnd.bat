@@ -6,7 +6,7 @@ call npm run BranchToday
 call npm run TodayReports
 call npm run Masters
 call npm run ToFactory
-call npm run NewOrders
+call npm run Branch-NewOrders
 call npm run CustomersToOrders
 call npm run Main
 call npm run BranchAll
@@ -18,3 +18,4 @@ call npm run Admin-AdminToday-Orders
 call npm run Admin-Masters
 
 xcopy .\publicDir ..\CrudGenV2\public\Laundry /h /i /c /k /e /r /y
+cd ..\CrudGenV2
