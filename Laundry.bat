@@ -17,6 +17,8 @@ call npm run Admin-AdminToday-QrCodes
 call npm run Admin-AdminToday-Orders
 call npm run Admin-Masters
 call npm run Branch-FromFactory
+call npm run Branch-FromFactoryQrCodes
+
 
 xcopy .\publicDir ..\CrudGenV2\public\Laundry /h /i /c /k /e /r /y
 
