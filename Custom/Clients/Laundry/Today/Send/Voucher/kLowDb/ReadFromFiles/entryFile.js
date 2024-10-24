@@ -7,11 +7,10 @@ let StartFunc = ({ inBranch }) => {
     const BranchDcdb = BranchDc();
 
     const EntryScandb = BranchScan();
-    EntryScandb.read();
 
     let LocalFilterBranchDc = BranchDcdb.filter(e => e.BranchName === LocalBranch);
 
-    let LocalFilterEntryScan = EntryScandb.data.filter(e => e.BranchName === LocalBranch);
+    let LocalFilterEntryScan = EntryScandb.filter(e => e.BranchName === LocalBranch);
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inBranchDc: LocalFilterBranchDc,
