@@ -1,7 +1,7 @@
-import { StartFunc as GetVoucher } from '../../kLowDb/ReadFileList/GetVoucher.js';
+import { StartFunc as ReadFromFiles } from '../../kLowDb/ReadFromFiles/entryFile.js';
 
 let GetFuncs = ({ inBranch }) => {
-    return GetVoucher({ inBranch });
+    return ReadFromFiles({ inBranch });
 };
 
 export {

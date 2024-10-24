@@ -18,4 +18,5 @@ call npm run Admin-AdminToday-Orders
 call npm run Admin-Masters
 
 xcopy .\publicDir ..\CrudGenV2\public\Laundry /h /i /c /k /e /r /y
+
 cd ..\CrudGenV2
