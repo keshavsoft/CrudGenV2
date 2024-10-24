@@ -13,4 +13,4 @@ call npm run PressingVoucher
 call npm run CompletionVoucher
 call npm run CompletionQrCodes
 
-xcopy .\publicDir\WashingVoucher ..\CrudGenV2\public\Factory\WashingVoucher /h /i /c /k /e /r /y
+xcopy .\publicDir ..\CrudGenV2\public\Laundry\Factory /h /i /c /k /e /r /y
