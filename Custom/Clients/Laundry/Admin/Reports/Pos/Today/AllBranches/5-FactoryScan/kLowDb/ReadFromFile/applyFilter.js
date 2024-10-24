@@ -1,4 +1,4 @@
-const CommonFilterKey = "FactoryScan";
+const CommonFilterKey = "EntryScan";
 
 const StartFunc = ({ inQrcodeArray }) => {
     const LocalFilteredArray = inQrcodeArray.filter(element => {
