@@ -3,7 +3,7 @@ import express from 'express';
 var router = express.Router();
 
 import {
-    GetFunc, GetFilterFactoryFunc, GetQrStatusFunc
+    GetFunc, GetQrStatusFunc
 }
     from '../../controllers/getFuncs/EntryFile.js';
 

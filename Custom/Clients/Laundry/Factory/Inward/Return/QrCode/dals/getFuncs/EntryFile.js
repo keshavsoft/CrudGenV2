@@ -1,8 +1,6 @@
-// import HomeJson from './home.json' with {type: 'json'};
 import { StartFunc as GetRowDataById } from '../../kLowDb/ReadFileList/GetRowDataById.js';
 import { StartFunc as GetRowQrDataById } from '../../kLowDb/ReadFileList/GetRowQrDataById.js';
 import { StartFunc as GetRowCountById } from '../../kLowDb/ReadFileList/GetRowCountById.js';
-
 
 let GetRowDataFunc = ({ inFactory, inId }) => {
     let LocalFromLowDb = GetRowDataById({ inFactory, inId });
