@@ -14,3 +14,5 @@ call npm run CompletionVoucher
 call npm run CompletionQrCodes
 
 xcopy .\publicDir ..\CrudGenV2\public\Laundry\Factory /h /i /c /k /e /r /y
+
+cd ..\CrudGenV2
