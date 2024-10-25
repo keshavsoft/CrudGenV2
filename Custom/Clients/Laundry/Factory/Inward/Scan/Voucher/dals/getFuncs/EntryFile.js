@@ -12,7 +12,7 @@ let GetFilterFactoryFunc = ({ inFactory }) => {
 };
 
 let GetQrStatusFunc = ({ inFactory }) => {
-    return withQrDetails({ inFactory });
+    return GetVoucherQrStatus({ inFactory });
 };
 
 export {
