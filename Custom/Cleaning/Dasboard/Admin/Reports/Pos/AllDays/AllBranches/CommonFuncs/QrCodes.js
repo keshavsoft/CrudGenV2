@@ -5,11 +5,11 @@ let CommonFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/')
 let StartFunc = () => {
     let LocalQrCodeData = PullData();
 
-    let LocalFilterQr = LocalQrCodeData.filter(e => {
-        return new Date(e.BookingData.OrderData.Currentdateandtime).toLocaleDateString('en-GB') == CommonFindValue;
-    });
+    // let LocalFilterQr = LocalQrCodeData.filter(e => {
+    //     return new Date(e.BookingData.OrderData.Currentdateandtime).toLocaleDateString('en-GB') == CommonFindValue;
+    // });
 
-    return LocalFilterQr;
+    return LocalQrCodeData;
 };
 
 export { StartFunc };

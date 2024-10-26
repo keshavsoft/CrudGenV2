@@ -13,6 +13,7 @@ import { router as WashingReject } from "./8-WashingReject/routes.js";
 import { router as PressingStart } from "./9-PressingStart/routes.js";
 import { router as PressingReject } from "./10-PressingReject/routes.js";
 import { router as CompletionStart } from "./11-CompletionStart/routes.js";
+import { router as LeftInBranch } from "./12-LeftInBranch/routes.js";
 
 router.use("/QrCodes", QrCodes);
 router.use("/Orders", Orders);
@@ -25,5 +26,6 @@ router.use("/WashingReject", WashingReject);
 router.use("/PressingStart", PressingStart);
 router.use("/PressingReject", PressingReject);
 router.use("/CompletionStart", CompletionStart);
+router.use("/LeftInBranch", LeftInBranch);
 
 export { router };
