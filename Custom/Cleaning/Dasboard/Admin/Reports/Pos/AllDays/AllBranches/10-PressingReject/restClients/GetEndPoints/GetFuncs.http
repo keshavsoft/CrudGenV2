@@ -1,1 +1,1 @@
-GET http://localhost:7018/Custom/Clients/Laundry/Admin/Reports/Pos/Today/AllBranches/PressingReject
+GET http://localhost:7018/Custom/Cleaning/Dasboard/Admin/Reports/Pos/AllDays/AllBranches/PressingReject
