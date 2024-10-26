@@ -6,5 +6,6 @@
     "RowShow",
     "SearchForStatus",
     "Delete",
-    "Alter"
+    "Alter",
+    "Bulk"
 ]
