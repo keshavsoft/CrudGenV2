@@ -1,1 +1,1 @@
-GET http://localhost:7318/Custom/Clients/Laundry/Admin/Reports/Pos/Today/AllBranches/FactoryScan
+GET http://localhost:7018/Custom/Cleaning/Dasboard/Admin/Reports/Pos/Today/AllBranches/FactoryScan
