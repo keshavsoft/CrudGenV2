@@ -28,7 +28,7 @@ let LocalFuncTrue = ({ inKeysNeeded, inDataToInsert }) => {
         let LocalK1 = LocalValueNeeded.references;
 
         let LocalDataNeeded = StartFuncForeignKeyCheck({
-            inFileName: LocalK1.model,
+            inFileName: LocalK1.model.tableName,
             inKey: LocalK1.key, inCheckWith: inDataToInsert[key]
         });
 
@@ -37,7 +37,7 @@ let LocalFuncTrue = ({ inKeysNeeded, inDataToInsert }) => {
             return LocalReturnData;
         };
     };
-
+    LocalReturnData.KTF = true;
     return LocalReturnData;
 };
 
