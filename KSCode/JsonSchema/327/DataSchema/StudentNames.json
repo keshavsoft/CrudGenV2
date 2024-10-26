@@ -59,5 +59,10 @@
     "isMailValidated": {
       "type": "STRING",
       "defaultValue": false
+    },
+    "YearPassout": {
+      "type": "MONTH",
+      "isRequired": true,
+      "title": "Year of Passout"
     }
   }
