@@ -1,1 +1,1 @@
-GET http://localhost:7018/Custom/Cleaning/Dasboard/Admin/Reports/Pos/Today/AllBranches/WashingStart
+GET http://localhost:7318/Custom/Cleaning/Dashboard/Admin/Reports/Pos/Today/AllBranches/WashingStart
