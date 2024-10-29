@@ -32,7 +32,6 @@ let jFLocalMergeFunc = ({ inBranchDc, inEntryScan, inEntryScanData }) => {
         const LocalFilterData = inEntryScan.filter(loopQr => loopQr.VoucherRef == loopDc.pk);
         const LocalScanFilter = inEntryScanData.filter(loopQr => loopQr.VoucherRef == loopDc.pk);
 
-        loopDc.Date = new Date(loopDc.Date).toLocaleDateString('en-GB'); // dd/mm/yyyy format
         loopDc.ItemDetails = LocalFilterData.length;
         loopDc.FactoryScanCount = LocalScanFilter.length;
 
