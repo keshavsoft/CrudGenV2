@@ -6,6 +6,10 @@ import {
     PostFunc
 } from '../../controllers/postFuncs/EntryFile.js';
 
-router.post('/:inFactory', PostFunc);
+import {
+    PostFunc as MiddlewarePostFunc
+} from '../../Middleware/postFuncs/EntryFile.js';
+
+router.post('/:inFactory', MiddlewarePostFunc, PostFunc);
 
 export { router };
