@@ -6,9 +6,6 @@ let StartFunc = () => {
     const LocalQrCodeData = buildData();
     const LocalFilteredArray = applyFilter({ inQrcodeArray: LocalQrCodeData });
 
-    let LocalArrayReverseData = LocalFilteredArray.slice().reverse();
-
-    return LocalArrayReverseData;
     return groupByBranch({ inDataAsArray: LocalFilteredArray });
 };
 
