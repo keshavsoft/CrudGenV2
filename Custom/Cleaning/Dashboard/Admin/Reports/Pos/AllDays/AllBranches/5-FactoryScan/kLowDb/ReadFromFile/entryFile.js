@@ -1,4 +1,4 @@
-import { StartFunc as buildData } from '../../../CommonFuncs/buildData.js';
+import { StartFunc as buildData } from '../../../../CommonFuncs/buildData.js';
 import { StartFunc as applyFilter } from "./applyFilter.js";
 
 let StartFunc = () => {
