@@ -13,6 +13,7 @@ let StartFunc = ({ inTablesCollection, inTo, inFrom, inConfigJson, inEndPointsNe
     if (inEndPointsNeeded.includes("Show")) Show({ inTablesCollection, inTo });
     if (inEndPointsNeeded.includes("Create")) Create({ inTablesCollection, inTo, inConfigJson });
     if (inEndPointsNeeded.includes("Bulk")) Bulk({ inTablesCollection, inTo, inConfigJson });
+    if (inEndPointsNeeded.includes("Images")) Images({ inTablesCollection, inTo, inConfigJson });
 
     // Create({ inTablesCollection, inTo, inConfigJson });
     // Alter({ inTablesCollection, inTo, inConfigJson });
