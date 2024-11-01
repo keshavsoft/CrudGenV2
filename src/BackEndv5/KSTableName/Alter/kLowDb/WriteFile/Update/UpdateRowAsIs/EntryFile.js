@@ -16,33 +16,18 @@ let StartFunc = async ({ inDataToUpdate, inId }) => {
   const db = LocalStartFuncPullData.inDb;
   let LocalarrayOfObjects = db.data;
 
-  const LocalFindId = LocalarrayOfObjects.find((obj) => obj.pk == LocalId);
+  const index = LocalarrayOfObjects.findIndex((Obj) => Obj.pk == LocalId);
 
-  if (LocalFindId === undefined) {
-    return await { KTF: false, KReason: "Id not found in data" };
-  };
-
-  LocalUpdateRow({
-    inFindRow: LocalFindId,
-    inDataToUpdate: LocalDataToUpdate
-  });
+  if (index !== -1) {
+    // Update the row
+    LocalarrayOfObjects[index] = { ...LocalarrayOfObjects[index], ...LocalDataToUpdate };
+  }
 
   db.write();
 
   LocalReturnData.KTF = true;
 
   return await LocalReturnData;
-};
-
-const LocalUpdateRow = ({ inFindRow, inDataToUpdate }) => {
-  let LocalDataToUpdate = inDataToUpdate;
-  let LocalFindRow = inFindRow;
-
-  Object.entries(inDataToUpdate).forEach(
-    ([key, value]) => {
-      LocalFindRow[key] = LocalDataToUpdate[key];
-    }
-  );
 };
 
 export { StartFunc };
