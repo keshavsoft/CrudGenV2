@@ -14,13 +14,17 @@ let PostImageUsingMulterFunc = (inPostBody) => {
     return StartFuncWriteTofile({ inDataToInsert: inPostBody });
 };
 
+let PostImageAsBase64Func = (inPostBody) => {
+    return StartFuncWriteTofile({ inDataToInsert: inPostBody });
+};
+
 let PostImageAndMailFunc = async ({ inDomainName, inDataToInsert, inpk, inImageName }) => {
     let LocalFromSave = StartFuncWriteTofile({ inDataToInsert });
 
     if (LocalFromSave.KTF === false) {
         return LocalFromSave;
     };
-    
+
     let LocalTableFolder = path.parse(tableNameJson.tableName).name;
     let LocalExtension = path.parse(inImageName).ext;
 
@@ -33,5 +37,5 @@ let PostImageAndMailFunc = async ({ inDomainName, inDataToInsert, inpk, inImageN
 };
 
 export {
-    PostFunc, PostImageUsingMulterFunc, PostImageAndMailFunc
+    PostFunc, PostImageUsingMulterFunc, PostImageAndMailFunc, PostImageAsBase64Func
 };
