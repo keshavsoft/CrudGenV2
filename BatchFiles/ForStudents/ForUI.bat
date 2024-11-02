@@ -14,7 +14,7 @@ xcopy .\publicDir\UnProtected\Create\Static ..\CrudGenV2\public\Students\UnProte
 
 cd ..\FrontEndForClients
 
-call npm run students
+call npm run Students
 
 xcopy .\publicDir\Students ..\CrudGenV2\public\Students /h /i /c /k /e /r /y
 
