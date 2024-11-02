@@ -1,1 +1,1 @@
-GET http://localhost:7318/Custom/Clients/Laundry/Today/Send/Voucher/ToScan/KKD
+GET http://localhost:7318/Custom/Cleaning/Branch/Factory/ToFactory/Voucher/ToScanOnly/KKD
