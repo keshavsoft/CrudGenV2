@@ -8,7 +8,10 @@ let GetFuncs = ({ inBranch }) => {
 let GetToScanFuncs = ({ inBranch }) => {
     return toScan({ inBranch });
 };
+let GetToScanOnlyFuncs = ({ inBranch }) => {
+    return toScan({ inBranch });
+};
 
 export {
-    GetFuncs, GetToScanFuncs
+    GetFuncs, GetToScanFuncs, GetToScanOnlyFuncs
 };
