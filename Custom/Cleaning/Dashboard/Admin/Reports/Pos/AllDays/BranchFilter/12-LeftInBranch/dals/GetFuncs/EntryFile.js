@@ -1,7 +1,7 @@
 import { StartFunc as TodayAllQrCodes } from '../../kLowDb/ReadFromFile/TodayAllQrCodes.js';
 
-let GetAllFuncs = () => {
-    return TodayAllQrCodes();
+let GetAllFuncs = ({ inBranchName }) => {
+    return TodayAllQrCodes({ inBranchName });
 };
 
 let GetAsIsFuncs = () => {

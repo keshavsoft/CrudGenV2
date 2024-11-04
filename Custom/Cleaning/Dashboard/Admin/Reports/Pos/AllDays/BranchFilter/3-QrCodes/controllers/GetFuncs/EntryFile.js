@@ -5,7 +5,6 @@ import {
 
 let GetFuncs = (req, res) => {
     let LocalBranchName = req.params.inBranchName;
-
     let LocalFromRepo = GetFuncsRepo({ inBranchName: LocalBranchName });
 
     if (LocalFromRepo.KTF === false) {
