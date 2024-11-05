@@ -1,7 +1,9 @@
 import {
     GetFuncs as GetFuncsRepo,
     GetToScanFuncs as GetToScanFuncsRepo,
-    GetToScanOnlyFuncs as GetToScanOnlyFuncsRepo
+    GetToScanOnlyFuncs as GetToScanOnlyFuncsRepo,
+    GetSentFuncs as GetSentFuncsRepo,
+    GetSentAndFactoryScanFuncs as GetSentAndFactoryScanFuncsRepo
 } from '../../repos/GetFuncs/EntryFile.js';
 
 let GetFuncs = (req, res) => {
@@ -29,6 +31,23 @@ let GetToScanOnlyFuncs = (req, res) => {
 
     res.status(200).json(LocalFromRepo);
 };
+let GetSentFuncs = (req, res) => {
+    let LocalParams = req.params;
+    let LocalBranch = LocalParams.inBranch
+
+    let LocalFromRepo = GetSentFuncsRepo({ inBranch: LocalBranch });
+
+    res.status(200).json(LocalFromRepo);
+};
+let GetSentAndFactoryScanFuncs = (req, res) => {
+    let LocalParams = req.params;
+    let LocalBranch = LocalParams.inBranch
+
+    let LocalFromRepo = GetSentAndFactoryScanFuncsRepo({ inBranch: LocalBranch });
+
+    res.status(200).json(LocalFromRepo);
+};
 export {
-    GetFuncs, GetToScanFuncs,GetToScanOnlyFuncs
+    GetFuncs, GetToScanFuncs, GetToScanOnlyFuncs, GetSentFuncs,
+    GetSentAndFactoryScanFuncs
 };

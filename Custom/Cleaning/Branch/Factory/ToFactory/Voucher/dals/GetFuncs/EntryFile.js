@@ -12,6 +12,14 @@ let GetToScanOnlyFuncs = ({ inBranch }) => {
     return toScan({ inBranch });
 };
 
+let GetSentFuncs = ({ inBranch }) => {
+    return toScan({ inBranch });
+};
+
+let GetSentAndFactoryScanFuncs = ({ inBranch }) => {
+    return toScan({ inBranch });
+};
+
 export {
-    GetFuncs, GetToScanFuncs, GetToScanOnlyFuncs
+    GetFuncs, GetToScanFuncs, GetToScanOnlyFuncs,GetSentFuncs,GetSentAndFactoryScanFuncs
 };
