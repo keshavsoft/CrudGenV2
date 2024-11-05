@@ -16,6 +16,7 @@ call npm run Today-Orders
 call npm run Admin-AdminToday-QrCodes
 call npm run Admin-AdminToday-Orders
 call npm run Admin-Masters
+call npm run Admin-AdminAllDays-QrCodes
 call npm run Admin-AdminAllDays-QrCodeWise-AsArray
 call npm run Admin-AdminAllDays-QrCodeWise-BranchWise
 
