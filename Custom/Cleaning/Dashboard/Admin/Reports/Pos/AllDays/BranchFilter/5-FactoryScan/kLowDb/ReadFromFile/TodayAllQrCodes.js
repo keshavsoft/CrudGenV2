@@ -4,7 +4,7 @@ let StartFunc = ({ inBranchName }) => {
     const LocalQrCodeData = buildData();
 
     return LocalQrCodeData.filter(element => {
-        return element.BranchName === inBranchName;
+        return element.BranchName === inBranchName && element.EntryScan === true;
     });
 
     // return LocalQrCodeData;
