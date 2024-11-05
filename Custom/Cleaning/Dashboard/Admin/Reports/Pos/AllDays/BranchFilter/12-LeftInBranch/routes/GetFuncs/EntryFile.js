@@ -6,7 +6,7 @@ import {
     GetFuncs, GetAsIsFuncs
 } from '../../controllers/GetFuncs/EntryFile.js';
 
-router.get('/', GetFuncs);
+router.get('/:inBranchName', GetFuncs);
 router.get('/AsIs', GetAsIsFuncs);
 
 export { router };
