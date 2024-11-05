@@ -9,6 +9,7 @@ let GetFuncs = ({ inBranch }) => {
 let GetToScanFuncs = ({ inBranch }) => {
     return toScan({ inBranch });
 };
+
 let GetToScanOnlyFuncs = ({ inBranch }) => {
     return toScanOnly({ inBranch });
 };

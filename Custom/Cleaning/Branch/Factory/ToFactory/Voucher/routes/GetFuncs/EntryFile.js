@@ -13,6 +13,4 @@ router.get('/ToScanOnly/:inBranch', GetToScanOnlyFuncs);
 router.get('/Sent/:inBranch', GetSentFuncs);
 router.get('/SentAndFactoryScan/:inBranch', GetSentAndFactoryScanFuncs);
 
-
-
 export { router };

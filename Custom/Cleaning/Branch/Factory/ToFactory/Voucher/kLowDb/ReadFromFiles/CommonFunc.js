@@ -4,6 +4,7 @@ import { StartFunc as entryScan } from '../CommonFuncs/entryScan.js';
 
 let StartFunc = ({ inBranch }) => {
     let LocalBranch = inBranch;
+
     const BranchDcdb = BranchDc();
     const BranchScandb = BranchScan();
     const LocalEntryScanData = entryScan();
@@ -44,7 +45,6 @@ let jFLocalMergeFunc = ({ inBranchDc, inBranchScan, inEntryScanData }) => {
 };
 
 let LocalFuncMergeBranchScan = ({ inBranchDc, inBranchScan }) => {
-
     let jVarLocalReturnObject = inBranchDc.map(loopDc => {
         const LocalFilterData = inBranchScan.filter(loopQr => loopQr.VoucherRef == loopDc.pk);
 

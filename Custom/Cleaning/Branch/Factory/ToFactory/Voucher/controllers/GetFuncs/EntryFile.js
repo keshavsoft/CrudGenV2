@@ -23,6 +23,7 @@ let GetToScanFuncs = (req, res) => {
 
     res.status(200).json(LocalFromRepo);
 };
+
 let GetToScanOnlyFuncs = (req, res) => {
     let LocalParams = req.params;
     let LocalBranch = LocalParams.inBranch
@@ -31,6 +32,7 @@ let GetToScanOnlyFuncs = (req, res) => {
 
     res.status(200).json(LocalFromRepo);
 };
+
 let GetSentFuncs = (req, res) => {
     let LocalParams = req.params;
     let LocalBranch = LocalParams.inBranch

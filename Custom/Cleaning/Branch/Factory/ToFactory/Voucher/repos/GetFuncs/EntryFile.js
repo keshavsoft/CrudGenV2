@@ -18,6 +18,7 @@ let GetToScanFuncs = ({ inBranch }) => {
 let GetToScanOnlyFuncs = ({ inBranch }) => {
     return GetToScanOnlyFuncsDal({ inBranch });
 };
+
 let GetSentFuncs = ({ inBranch }) => {
     return GetSentFuncsDal({ inBranch });
 };
