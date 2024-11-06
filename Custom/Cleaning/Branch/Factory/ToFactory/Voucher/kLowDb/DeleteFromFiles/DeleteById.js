@@ -1,7 +1,23 @@
 import { StartFunc as ReturnDbObject } from '../CommonFuncs/FromApiWrite/ReturnDbObject.js';
+import { StartFunc as BranchScan } from '../CommonFuncs/FromApi/BranchScan.js';
+import { StartFunc as EntryScan } from '../CommonFuncs/FromApi/entryScan.js';
 
 let StartFunc = ({ inId }) => {
     let LocalId = parseInt(inId);
+    let LocalBranchScan = BranchScan();
+    let LocalEntryScan = EntryScan();
+
+    const LocalBranchScanFindId = LocalBranchScan.find((obj) => obj.VoucherRef == LocalId);
+
+    if (LocalBranchScanFindId !== undefined) {
+        return { KTF: false, KReason: `Id : ${LocalId} found in BranchScan data` };
+    };
+
+    const LocalEntryScanFind = LocalEntryScan.find((obj) => obj.VoucherRef == LocalId);
+
+    if (LocalEntryScanFind !== undefined) {
+        return { KTF: false, KReason: `Id : ${LocalId} found in FactoryScan data` };
+    };
 
     const db = ReturnDbObject({ inFileName: "BranchDC.json" });
     db.read();
