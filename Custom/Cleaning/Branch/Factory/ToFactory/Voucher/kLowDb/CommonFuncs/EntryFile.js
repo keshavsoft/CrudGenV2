@@ -1,6 +1,6 @@
-import { StartFunc as BranchDc } from './binV4/BranchDC.js';
-import { StartFunc as BranchScan } from './binV4/BranchScan.js';
-import { StartFunc as entryScan } from './binV4/entryScan.js';
+import { StartFunc as BranchDc } from './FromApi/BranchDC.js';
+import { StartFunc as BranchScan } from './FromApi/BranchScan.js';
+import { StartFunc as entryScan } from './FromApi/entryScan.js';
 
 let StartFunc = ({ inBranch }) => {
     let LocalBranch = inBranch;
