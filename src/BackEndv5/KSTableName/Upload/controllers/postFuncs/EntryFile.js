@@ -18,21 +18,10 @@ let PostFunc = async (req, res) => {
 };
 
 let PostImageAsBase64Func = async (req, res) => {
-    if ("Uuid" in req.KeshavSoft === false) {
-        res.status(500).send("Error from multer");
-        return;
-    };
-
     let LocalBody = req.body;
-    var host = req.get('host');
-    let protocol = req.protocol;
-    let LocalDomainName = `${protocol}://${host}`;
 
     PostImageAsBase64FuncRepo({
-        inDomainName: LocalDomainName,
-        inDataToInsert: LocalBody,
-        inpk: req.KeshavSoft.insertedPk,
-        inImageName: req.KeshavSoft.Uuid
+        inPostBody: LocalBody
     });
 
     res.status(200).send(`${req.KeshavSoft.insertedPk}`);
