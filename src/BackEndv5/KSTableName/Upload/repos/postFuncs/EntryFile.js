@@ -29,16 +29,8 @@ let PostFunc = async (inPostBody) => {
     return PostFuncDal(inPostBody);
 };
 
-let PostImageAsBase64Func = async (inPostBody) => {
-    if (ConfigJson.isSequelize) {
-        return await PostFuncDalsForSequelize(inPostBody);
-    }
-
-    if (ConfigJson.isMongoDb) {
-        return PostFuncDalsForMongoDB(inPostBody);
-    }
-
-    return PostImageAsBase64FuncDal(inPostBody);
+let PostImageAsBase64Func = async ({ inPostBody }) => {
+    return PostImageAsBase64FuncDal({ inPostBody });
 };
 
 let PostImageUsingMulterFunc = async (inPostBody) => {
