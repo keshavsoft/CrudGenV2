@@ -16,8 +16,8 @@ let StartFunc = ({ inBranch }) => {
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inBranchDc: LocalFilterBranchDc,
-        inBranchScan: LocalFilterBranchScan,
-        inEntryScanData: LocalFilterEntryScan
+        inBranchScan: BranchScandb,
+        inEntryScanData: LocalEntryScanData
     });
 
     let LocalArrayReverseData = jVarLocalTransformedData.slice().reverse();
