@@ -1,5 +1,7 @@
 import { StartFunc as StartFuncWriteTofile } from '../../kLowDb/WriteTofile/WithChecking/StartFunc.js';
 import { StartFunc as SendMail } from '../../kLowDb/SendMail/EntryFile.js';
+import { StartFunc as SaveImage } from '../../kLowDb/SaveImage/entryFile.js';
+
 import ConfigJson from '../../../../Config.json' assert {type: 'json'};
 import tableNameJson from '../../../tableName.json' assert {type: 'json'};
 
@@ -14,8 +16,15 @@ let PostImageUsingMulterFunc = (inPostBody) => {
     return StartFuncWriteTofile({ inDataToInsert: inPostBody });
 };
 
-let PostImageAsBase64Func = (inPostBody) => {
-    return StartFuncWriteTofile({ inDataToInsert: inPostBody });
+let PostImageAsBase64Func = ({ inPostBody }) => {
+    let LocalFromSave = StartFuncWriteTofile({ inDataToInsert: inPostBody });
+
+    if (LocalFromSave.KTF === false) {
+        return LocalFromSave;
+    };
+
+    return SaveImage({ inImageData: inPostBody.image, inRowPk: LocalFromSave.pk });
+
 };
 
 let PostImageAndMailFunc = async ({ inDomainName, inDataToInsert, inpk, inImageName }) => {
