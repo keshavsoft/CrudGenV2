@@ -1,6 +1,6 @@
-import { StartFunc as BranchDc } from '../CommonFuncs/binV4/BranchDC.js';
-import { StartFunc as BranchScan } from '../CommonFuncs/binV4/BranchScan.js';
-import { StartFunc as entryScan } from '../CommonFuncs/binV4/entryScan.js';
+import { StartFunc as BranchDc } from './binV4/BranchDC.js';
+import { StartFunc as BranchScan } from './binV4/BranchScan.js';
+import { StartFunc as entryScan } from './binV4/entryScan.js';
 
 let StartFunc = ({ inBranch }) => {
     let LocalBranch = inBranch;
@@ -34,7 +34,8 @@ let jFLocalMergeFunc = ({ inBranchDc, inBranchScan, inEntryScanData }) => {
         const LocalScanDc = inEntryScanData.some(loopQr => loopQr.VoucherRef == loopDc.pk);
 
         loopDc.ItemDetails = LocalFilterData.length;
-        loopDc.FactoryScanCount = LocalScanFilter.length;
+        loopDc.EntryScan = LocalScanFilter;
+        loopDc.EntryScanCount = LocalScanFilter.length;
         loopDc.EntryDc = LocalScanDc;
 
         loopDc.TimeSpan = TimeSpan({ DateTime: loopDc.DateTime });

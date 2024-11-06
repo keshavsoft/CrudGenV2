@@ -1,5 +1,5 @@
-import { StartFunc as BranchDc } from '../CommonFuncs/BranchDC.js';
-import { StartFunc as BranchScan } from '../CommonFuncs/BranchScan.js';
+import { StartFunc as BranchDc } from '../CommonFuncs/binV4/BranchDC.js';
+import { StartFunc as BranchScan } from '../CommonFuncs/binV4/BranchScan.js';
 
 let StartFunc = ({ inBranch }) => {
     // let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');

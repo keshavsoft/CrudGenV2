@@ -1,4 +1,4 @@
-import { StartFunc as CommonFunc } from "./CommonFunc.js";
+import { StartFunc as CommonFunc } from "../CommonFuncs/EntryFile.js";
 
 let StartFunc = ({ inBranch }) => {
     let LocalData = CommonFunc({ inBranch });
