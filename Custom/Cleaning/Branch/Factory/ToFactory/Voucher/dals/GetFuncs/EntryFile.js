@@ -1,6 +1,7 @@
 import { StartFunc as ReadFromFiles } from '../../kLowDb/ReadFromFiles/entryFile.js';
 import { StartFunc as toScan } from '../../kLowDb/ReadFromFiles/toScan.js';
 import { StartFunc as toScanOnly } from '../../kLowDb/ReadFromFiles/toScanOnly.js';
+import { StartFunc as sent } from '../../kLowDb/ReadFromFiles/sent.js';
 
 let GetFuncs = ({ inBranch }) => {
     return ReadFromFiles({ inBranch });
@@ -15,7 +16,7 @@ let GetToScanOnlyFuncs = ({ inBranch }) => {
 };
 
 let GetSentFuncs = ({ inBranch }) => {
-    return toScan({ inBranch });
+    return sent({ inBranch });
 };
 
 let GetSentAndFactoryScanFuncs = ({ inBranch }) => {
