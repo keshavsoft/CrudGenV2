@@ -11,7 +11,7 @@ import {
 } from '../../middlewares/postFuncs/UsingMulter.js';
 
 router.post('/', PostFunc);
-router.post('/ImageAsBase64', middlewareUsingMulter.single("image"), PostImageAsBase64Func);
+router.post('/ImageAsBase64', PostImageAsBase64Func);
 router.post('/ImageUsingMulter', middlewareUsingMulter.single("image"), PostImageUsingMulterFunc);
 router.post('/ImageAndMail', middlewareUsingMulter.single("image"), PostImageAndMailFunc);
 router.post('/', PostFunc);
