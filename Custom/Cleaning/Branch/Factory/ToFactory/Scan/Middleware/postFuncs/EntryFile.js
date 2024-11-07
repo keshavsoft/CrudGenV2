@@ -1,16 +1,17 @@
 let PostFunc = (req, res, next) => {
     let LocalRequestBody = req.body;
 
-    if (Object.keys(LocalRequestBody).length === 0) {
+    if (!LocalRequestBody.hasOwnProperty('QrCodeId') || !LocalRequestBody.hasOwnProperty('VoucherRef')) {
         res.status(404).json({
             KTF: false,
-            KReason: "post requst body should contain : ",
+            KReason: "post request body should contain both 'QrCodeId' and 'VoucherRef'",
             body: {
-                "QrCodeId": ""
+                "QrCodeId": "",
+                "VoucherRef": ""
             }
         });
         return;
-    };
+    }
 
     next();
 };
