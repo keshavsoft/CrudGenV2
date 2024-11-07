@@ -2,11 +2,11 @@ import { StartFunc as StartFuncwriteFileFromModal } from './WithChecking/StartFu
 import { StartFuncForBookings as StartFuncCheckQrCodes } from "./Check/CheckQrCodes.js";
 import { StartFunc as CheckBrcnchDc } from "./Check/CheckBrcnchDc.js";
 
-let StartFunc = ({ inBranch, inDataInsert }) => {
+let StartFunc = ({ inBranch, inDataInsert, inQrCodeId, inVoucherRef }) => {
 
     let LocalTable = inBranch;
-    let LocalQrId = inDataInsert.QrCodeId;
-    let LocalDc = inDataInsert.VoucherRef;
+    let LocalQrId = inQrCodeId;
+    let LocalDc = inVoucherRef;
     let LocalDataInsert = inDataInsert;
     let LocalReturnData = { KTF: false };
 
@@ -24,7 +24,7 @@ let StartFunc = ({ inBranch, inDataInsert }) => {
         return LocalReturnData;
     };
 
-    return StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert });
+    return StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert, inVoucherRef });
 
 };
 
