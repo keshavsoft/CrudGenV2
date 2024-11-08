@@ -3,10 +3,6 @@ import { StartFunc as BranchScan } from './BranchScan.js';
 import { StartFunc as BranchDc } from './BranchDc.js';
 
 let StartFunc = ({ inBranch }) => {
-    let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');
-
-    let LocalBranchName = inBranch;
-
     const Qrdb = QrCodes({ inBranch });
     const BranchScandb = BranchScan({ inBranch });
     const BranchDcdb = BranchDc();
