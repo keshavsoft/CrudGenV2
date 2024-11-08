@@ -3,11 +3,9 @@ import { StartFunc as buildData } from '../CommonFuncs/buildData.js';
 let StartFunc = ({ inBranch }) => {
     let LocalBranchName = inBranch;
 
-    let jVarLocalTransformedData = buildData({ inBranch: LocalBranchName });
+    let LocalData = buildData({ inBranch: LocalBranchName });
 
-    let jVarLocalUnScanned = jVarLocalTransformedData.filter(element => {
-        return element.Status === true;
-    });
+    let jVarLocalUnScanned = LocalData.filter(element => element.BranchScan === true);
 
     let LocalArrayReverseData = jVarLocalUnScanned.slice().reverse();
 

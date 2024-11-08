@@ -1,35 +1,26 @@
 import { StartFunc as QrCodes } from './QrCodes.js';
 import { StartFunc as BranchScan } from './BranchScan.js';
+import { StartFunc as BranchDc } from './BranchDc.js';
 
 let StartFunc = ({ inBranch }) => {
-    let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');
+    const Qrdb = QrCodes({ inBranch });
+    const BranchScandb = BranchScan({ inBranch });
+    const BranchDcdb = BranchDc();
 
-    let LocalBranchName = inBranch;
-
-    const Qrdb = QrCodes();
-    Qrdb.read();
-
-    const BranchScandb = BranchScan();
-    BranchScandb.read();
-
-    let LocalFilterQr = Qrdb.data.filter(e => {
-        return new Date(e.BookingData.OrderData.Currentdateandtime).toLocaleDateString('en-GB') == LocalFindValue && e.BookingData.OrderData.BranchName === LocalBranchName;
+    let jVarLocalTransformedData = jFLocalMergeFunc({
+        inQrData: Qrdb,
+        inScandata: BranchScandb, inBranchDC: BranchDcdb
     });
-
-    let LocalFilterBranchScan = BranchScandb.data.filter(e => {
-        return new Date(e.DateTime).toLocaleDateString('en-GB') == LocalFindValue && e.BranchName === LocalBranchName;
-    });
-
-    let jVarLocalTransformedData = jFLocalMergeFunc({ inQrData: LocalFilterQr, inScandata: LocalFilterBranchScan });
 
     return jVarLocalTransformedData;
 };
 
-let jFLocalMergeFunc = ({ inQrData, inScandata }) => {
-
+let jFLocalMergeFunc = ({ inQrData, inScandata, inBranchDC }) => {
     let jVarLocalReturnObject = inQrData.map(loopQr => {
-        const match = inScandata.some(loopScan => loopScan.QrCodeId == loopQr.pk);
-        
+        const matchBranchScan = inScandata.some(loopScan => loopScan.QrCodeId == loopQr.pk);
+        const matchFind = inScandata.find(loopScan => loopScan.QrCodeId == loopQr.pk);
+        let LoalBranchDCFindeData = inBranchDC.find(e => e.pk == matchFind?.VoucherRef);
+
         return {
             QrCodeId: loopQr.pk,
             ItemName: loopQr.ItemName,
@@ -39,12 +30,12 @@ let jFLocalMergeFunc = ({ inQrData, inScandata }) => {
             DeliveryDateTime: loopQr.DeliveryDateTime,
             location: loopQr.location,
             OrderDateTime: loopQr.BookingData.OrderData.Currentdateandtime,
-            Status: match,
+            BranchScan: matchBranchScan,
+            VocherNumber: LoalBranchDCFindeData?.pk,
+            VoucherDate: LoalBranchDCFindeData?.Date,
             TimeSpan: TimeSpan({ DateTime: loopQr.BookingData.OrderData.Currentdateandtime })
         };
     });
-
-
     return jVarLocalReturnObject;
 };
 
@@ -64,6 +55,6 @@ function TimeSpan({ DateTime }) {
     } else {
         return diffMins + " min";
     }
-}
+};
 
 export { StartFunc };

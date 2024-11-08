@@ -1,54 +1,20 @@
 import { StartFunc as QrCodes } from '../CommonFuncs/QrCodes.js';
 import { StartFunc as BranchScan } from '../CommonFuncs/BranchScan.js';
-import { StartFunc as EntryScan } from '../CommonFuncs/EntryScan.js';
-import { StartFunc as WashingScan } from '../CommonFuncs/WashingScan.js';
 
 let StartFunc = ({ inBranch }) => {
-    // let LocalFindValue = "02/09/2024";
-    let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');
-
     let LocalBranchName = inBranch;
-
-    const Qrdb = QrCodes();
-    const BranchScandb = BranchScan();
-    const EntryScandb = EntryScan();
-    const WashingScandb = WashingScan();
-
-    let LocalFilterQr = Qrdb.filter(e => {
-        return new Date(e.BookingData.OrderData.Currentdateandtime).toLocaleDateString('en-GB') == LocalFindValue && e.BookingData.OrderData.BranchName === LocalBranchName;
-    });
-
-    let LocalFilterBranchScan = BranchScandb.filter(e => {
-        return new Date(e.DateTime).toLocaleDateString('en-GB') == LocalFindValue && e.BranchName === LocalBranchName;
-    });
-
-    let LocalFilterEntryScan = EntryScandb.filter(e => {
-        return new Date(e.DateTime).toLocaleDateString('en-GB') == LocalFindValue && e.BranchName === LocalBranchName;
-    });
-
-    let LocalFilterWashingScan = WashingScandb.filter(e => {
-        return new Date(e.DateTime).toLocaleDateString('en-GB') == LocalFindValue && e.BranchName === LocalBranchName;
-    });
-
-    let jVarLocalTransformedData = jFLocalMergeFunc({
-        inQrData: LocalFilterQr,
-        inScandata: LocalFilterBranchScan,
-        inEntryScandata: LocalFilterEntryScan,
-        inWashingScandata: LocalFilterWashingScan
-    });
-
+    const Qrdata = QrCodes({ inBranch: LocalBranchName });
+    const BranchScandata = BranchScan({ inBranch: LocalBranchName });
+    let jVarLocalTransformedData = jFLocalMergeFunc({ inQrData: Qrdata, inScandata: BranchScandata });
     let LocalArrayReverseData = jVarLocalTransformedData.slice().reverse();
 
     return LocalArrayReverseData;
 };
 
-let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScandata, inWashingScandata }) => {
+let jFLocalMergeFunc = ({ inQrData, inScandata }) => {
 
     let jVarLocalReturnObject = inQrData.map(loopQr => {
         const match = inScandata.some(loopScan => loopScan.QrCodeId == loopQr.pk);
-        const matchEntryScandata = inEntryScandata.some(loopScan => loopScan.QrCodeId == loopQr.pk);
-        const matchWashingScandata = inWashingScandata.some(loopScan => loopScan.QrCodeId == loopQr.pk);
-
         return {
             QrCodeId: loopQr.pk,
             ItemName: loopQr.ItemName,
@@ -58,9 +24,7 @@ let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScandata, inWashingScanda
             DeliveryDateTime: new Date(loopQr.DeliveryDateTime).toLocaleDateString('en-GB'),
             location: loopQr.location,
             OrderDateTime: new Date(loopQr.BookingData.OrderData.Currentdateandtime).toLocaleDateString('en-GB'),
-            BranchSendStatus: match,
-            EntryScanStatus: matchEntryScandata,
-            WashingScanStatus: matchWashingScandata,
+            Status: match,
             TimeSpan: TimeSpan({ DateTime: loopQr.BookingData.OrderData.Currentdateandtime })
         };
     });
