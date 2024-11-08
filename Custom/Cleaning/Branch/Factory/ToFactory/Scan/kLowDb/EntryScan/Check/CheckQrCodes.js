@@ -22,6 +22,7 @@ const StartFuncForBookings = ({ inTable, inQrId }) => {
         return LocalReturnData;
     };
     LocalReturnData.KTF = true;
+    LocalReturnData.JsonData = LocalRowNeeded;
     return LocalReturnData;
 };
 export { StartFuncForBookings };

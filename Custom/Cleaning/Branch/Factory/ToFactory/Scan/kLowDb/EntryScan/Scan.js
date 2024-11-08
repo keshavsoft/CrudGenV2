@@ -24,7 +24,18 @@ let StartFunc = ({ inBranch, inDataInsert, inQrCodeId, inVoucherRef }) => {
         return LocalReturnData;
     };
 
-    return StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert, inVoucherRef });
+    let localInsert = StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert, inVoucherRef });
+
+    if (localInsert.KTF === false) {
+        LocalReturnData.KReason = localInsert.KReason
+        return LocalReturnData;
+    };
+
+    LocalReturnData.QrCount = localInsert.QrCount;
+    LocalReturnData.ScanNo = localInsert.ScanNo;
+    LocalReturnData.QrData = LocalCheckQrCodes.JsonData;
+    LocalReturnData.KTF = true;
+    return LocalReturnData;
 
 };
 
