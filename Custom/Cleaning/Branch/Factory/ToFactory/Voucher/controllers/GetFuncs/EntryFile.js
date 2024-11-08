@@ -3,7 +3,8 @@ import {
     GetToScanFuncs as GetToScanFuncsRepo,
     GetToScanOnlyFuncs as GetToScanOnlyFuncsRepo,
     GetSentFuncs as GetSentFuncsRepo,
-    GetSentAndFactoryScanFuncs as GetSentAndFactoryScanFuncsRepo
+    GetSentAndFactoryScanFuncs as GetSentAndFactoryScanFuncsRepo,
+    GetRowDataFuncs as GetRowDataFuncsRepo
 } from '../../repos/GetFuncs/EntryFile.js';
 
 let GetFuncs = (req, res) => {
@@ -49,7 +50,16 @@ let GetSentAndFactoryScanFuncs = (req, res) => {
 
     res.status(200).json(LocalFromRepo);
 };
+
+let GetRowDataFuncs = (req, res) => {
+    let LocalParams = req.params;
+    let LocalId = LocalParams.id
+
+    let LocalFromRepo = GetRowDataFuncsRepo({ inId: LocalId });
+
+    res.status(200).json(LocalFromRepo);
+};
 export {
     GetFuncs, GetToScanFuncs, GetToScanOnlyFuncs, GetSentFuncs,
-    GetSentAndFactoryScanFuncs
+    GetSentAndFactoryScanFuncs, GetRowDataFuncs
 };

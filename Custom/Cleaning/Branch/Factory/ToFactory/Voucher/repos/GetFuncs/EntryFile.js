@@ -3,7 +3,8 @@ import {
     GetToScanFuncs as GetToScanFuncsDal,
     GetToScanOnlyFuncs as GetToScanOnlyFuncsDal,
     GetSentFuncs as GetSentFuncsDal,
-    GetSentAndFactoryScanFuncs as GetSentAndFactoryScanFuncsDal
+    GetSentAndFactoryScanFuncs as GetSentAndFactoryScanFuncsDal,
+    GetRowDataFuncs as GetRowDataFuncsDal
 
 } from '../../dals/GetFuncs/EntryFile.js';
 
@@ -26,7 +27,11 @@ let GetSentFuncs = ({ inBranch }) => {
 let GetSentAndFactoryScanFuncs = ({ inBranch }) => {
     return GetSentAndFactoryScanFuncsDal({ inBranch });
 };
+
+let GetRowDataFuncs = ({ inId }) => {
+    return GetRowDataFuncsDal({ inId });
+};
 export {
-    GetFuncs, GetToScanFuncs, GetToScanOnlyFuncs,GetSentFuncs,
-    GetSentAndFactoryScanFuncs
+    GetFuncs, GetToScanFuncs, GetToScanOnlyFuncs, GetSentFuncs,
+    GetSentAndFactoryScanFuncs, GetRowDataFuncs
 };
