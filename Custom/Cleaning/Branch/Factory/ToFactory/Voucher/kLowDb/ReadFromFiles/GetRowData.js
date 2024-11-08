@@ -15,9 +15,10 @@ let StartFunc = ({ inId }) => {
     };
     let LocalFilterBranchScanDataCount = LocalBranchScanData.filter(element => element.VoucherRef == localId).length;
 
-    LocalFilterBranchDcData.QrCount = LocalFilterBranchScanDataCount;
+    LocalReturnData.QrCount = LocalFilterBranchScanDataCount;
+    LocalReturnData.AsIs = LocalFilterBranchDcData;
     LocalReturnData.KTF = true;
-    return LocalFilterBranchDcData;
+    return LocalReturnData;
 };
 
 export { StartFunc };
