@@ -20,6 +20,7 @@ call npm run Admin-AdminAllDays-QrCodeWise-AsArray
 call npm run Admin-AdminAllDays-QrCodeWise-BranchWise
 call npm run Admin-AdminAllDays-QrCodeWise-BranchFilter
 call npm run Branch-Dashboard-QrCodeWise-AsArray
+call npm run Branch-Pos-Today-QrCodes
 
 xcopy .\publicDir ..\CrudGenV2\public\Laundry /h /i /c /k /e /r /y
 
