@@ -6,6 +6,7 @@ let StartFunc = ({ inTablesCollection, inTo, inFrom, inEndPointsNeeded }) => {
     let LocalTo = inTo;
     let LocalFrom = inFrom;
     const LocalEndPointsNeededArray = inEndPointsNeeded;
+     console.log("LocalEndPointsNeededArray : ", LocalEndPointsNeededArray);
 
     let LocalTablesCollection = inTablesCollection;
 
@@ -41,30 +42,6 @@ let StartFunc = ({ inTablesCollection, inTo, inFrom, inEndPointsNeeded }) => {
 };
 
 const LocalFuncWriteToRouteFile = ({ inEndPointsNeeded, inFilePath }) => {
-    let LocalFileData = [];
-
-    LocalFileData.push("import express from 'express';");
-    LocalFileData.push("");
-    LocalFileData.push("var router = express.Router();");
-    LocalFileData.push("");
-
-    inEndPointsNeeded.forEach(element => {
-        LocalFileData.push(`import { router as ${element} } from './${element}/routes.js';`);
-    });
-
-    LocalFileData.push("");
-
-    inEndPointsNeeded.forEach(element => {
-        LocalFileData.push(`router.use('/${element}', ${element});`);
-    });
-
-    LocalFileData.push("");
-    LocalFileData.push("export { router };");
-
-    fs.writeFileSync(inFilePath, LocalFileData.join("\r\n"));
-};
-
-const LocalFuncWriteToConfigFile = ({ inEndPointsNeeded, inFilePath }) => {
     let LocalFileData = [];
 
     LocalFileData.push("import express from 'express';");

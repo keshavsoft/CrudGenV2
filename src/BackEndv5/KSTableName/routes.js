@@ -16,6 +16,7 @@ import { router as Sort } from './Sort/routes.js';
 import { router as RowShow } from './RowShow/routes.js';
 import { router as Filter } from './Filter/routes.js';
 import { router as SearchForStatus } from './SearchForStatus/routes.js';
+import { router as AggrFuncs } from './AggrFuncs/routes.js';
 
 import { router as SubTable } from './SubTable/routes.js';
 
@@ -33,6 +34,7 @@ router.use('/Sort', Sort);
 router.use('/RowShow', RowShow);
 router.use('/Filter', Filter);
 router.use('/SearchForStatus', SearchForStatus);
+router.use('/AggrFuncs', AggrFuncs);
 
 router.use('/SubTable', SubTable);
 
