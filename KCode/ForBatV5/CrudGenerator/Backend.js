@@ -2,6 +2,8 @@ import { StartFunc as StartFuncPrepareReadColumnsData } from "./PrepareTablesSch
 import { StartFunc as ForBackendV5 } from './ForBackendV5/EntryFile.js';
 import { StartFunc as ForBackendV5Secured } from './ForBackendV5Secured/EntryFile.js';
 
+let CommonFrom = "src/BackEndv4";
+  
 let StartFunc = ({ inFilesArray, inEndPointsNeeded }) => {
     let LocalFilesArray = inFilesArray;
     let LocalEndPointsNeeded = inEndPointsNeeded;
@@ -22,7 +24,6 @@ let StartFunc = ({ inFilesArray, inEndPointsNeeded }) => {
 let LocalFuncForBackEndv5 = ({ inFilesArray, inEndPointsNeeded }) => {
     let LocalEndPointsNeeded = inEndPointsNeeded;
     let LocalFilesArray = inFilesArray;
-    let CommonFrom = "src/BackEndv5";
     let CommonTo = "binV4";
 
     ForBackendV5({
@@ -38,7 +39,6 @@ let LocalFuncForBackEndv5 = ({ inFilesArray, inEndPointsNeeded }) => {
 let LocalFuncForBackEndv5Secured = ({ inFilesArray, inEndPointsNeeded }) => {
     let LocalEndPointsNeeded = inEndPointsNeeded;
     let LocalFilesArray = inFilesArray;
-    let CommonFrom = "src/BackEndv4";
     let CommonTo = "binV5Secured";
 
     ForBackendV5Secured({
