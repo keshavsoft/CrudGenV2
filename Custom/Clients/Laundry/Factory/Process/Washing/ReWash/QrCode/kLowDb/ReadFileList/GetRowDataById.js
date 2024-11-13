@@ -49,6 +49,7 @@ let jFLocalMergeFunc = ({ inQrData, inEntryScan }) => {
 
             VoucherNumber: loopScan?.VoucherRef,
             Description: loopScan?.Description,
+            ReWash: loopScan?.ReWash,
             DCDate: new Date(loopScan?.Date).toLocaleDateString('en-GB'),
 
             QrCodeId: loopScan.QrCodeId,
