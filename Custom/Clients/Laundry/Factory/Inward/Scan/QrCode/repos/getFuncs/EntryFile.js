@@ -6,7 +6,8 @@ import {
     GetReturnsFunc as GetReturnsFuncDal,
     GetRowQrDataFunc as GetRowQrDataFuncDal,
     GetRowCountFunc as GetRowCountFuncDal,
-    GetFromBranchDcWiseItemsFunc as GetFromBranchDcWiseItemsFuncDal
+    GetFromBranchDcWiseItemsFunc as GetFromBranchDcWiseItemsFuncDal,
+    GetToScanPendingFunc as GetToScanPendingFuncDal
 
 } from '../../dals/getFuncs/EntryFile.js';
 
@@ -41,7 +42,11 @@ let GetFromBranchDcWiseItemsFunc = ({ inFactory, inId }) => {
     return GetFromBranchDcWiseItemsFuncDal({ inFactory, inId });
 };
 
+let GetToScanPendingFunc = ({ inFactory, inId }) => {
+    return GetToScanPendingFuncDal({ inFactory, inId });
+};
+
 export {
     GetFunc, GetPendingFunc, GetScannedFunc, GetRowDataFunc, GetReturnsFunc, GetRowQrDataFunc, GetRowCountFunc,
-    GetFromBranchDcWiseItemsFunc
+    GetFromBranchDcWiseItemsFunc,GetToScanPendingFunc
 };
