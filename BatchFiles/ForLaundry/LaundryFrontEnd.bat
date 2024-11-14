@@ -12,7 +12,7 @@ call npm run Main
 call npm run BranchAll
 call npm run AllReports
 call npm run Today-QrCodes
-call npm run Today-Orders
+
 call npm run Admin-AdminToday-QrCodes
 call npm run Admin-AdminToday-Orders
 call npm run Admin-Masters
@@ -23,6 +23,8 @@ call npm run Branch-Dashboard-QrCodeWise-AsArray
 call npm run Branch-Pos-Today-QrCodes
 
 call npm run Admin-AdminAllDays-CommonConfig-QrCode-AsArray
+
+call npm run Branch-Today-Orders
 
 xcopy .\publicDir ..\CrudGenV2\public\Laundry /h /i /c /k /e /r /y
 
