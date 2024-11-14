@@ -36,10 +36,8 @@ let StartFunc = ({ inFactory, inId }) => {
         inEntryScan: LocalEntryScanAndDcMergeData
     });
 
-    const getNeedRecords = jVarLocalTransformedData.filter(item => !EntryScandb.data.some(other => other.QrCodeId === item.QrCodeId))
+    const getNeedRecords = jVarLocalTransformedData.filter(item => !EntryScandb.data.some(other => other.QrCodeId == item.QrCodeId))
     let LocalArrayReverseData = getNeedRecords.slice().reverse();
-    console.log("sharath:",EntryScandb.data.length,jVarLocalTransformedData.length,getNeedRecords.length);
-
     return LocalArrayReverseData;
 };
 
