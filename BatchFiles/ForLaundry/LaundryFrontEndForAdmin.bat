@@ -1,6 +1,8 @@
 @echo off
 cd ..\LaundryFrontEndForAdmin
 
+call npm run Menu
+
 call npm run AdminAllDays-CommonConfig-Menu
 
 call npm run AdminAllDays-CommonConfig-QrCode-AsArray
