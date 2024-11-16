@@ -4,7 +4,7 @@ POST  http://localhost:7318/Custom/Cleaning/Factory/V1/Inward/Scan/QrCode/Vizag
 Content-Type: application/json
 
 {
-    "QrCodeId": "2",
+    "QrCodeId": "3",
     "ItemName": "M Shirt DW",
     "Rate": "60",
     "FactorySelected": "Vizag",
