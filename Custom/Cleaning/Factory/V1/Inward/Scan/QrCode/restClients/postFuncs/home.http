@@ -1,0 +1,21 @@
+
+###Get all the rows from the database in this table
+POST  http://localhost:7318/Custom/Cleaning/Factory/V1/Inward/Scan/QrCode/Vizag
+Content-Type: application/json
+
+{
+    "QrCodeId": "2",
+    "ItemName": "M Shirt DW",
+    "Rate": "60",
+    "FactorySelected": "Vizag",
+    "VoucherRef": "1",
+    "BranchName": "KKD",
+    "VoucherNumber": "1",
+    "DCFactory": "Vizag",
+    "DCDate": "2024-11-16",
+    "DCDescription": "by van keshav",
+    "OrderNumber": "1",
+    "OrderDate": "2024-11-16 12:06:02",
+    "DeliveryDate": "2024-11-23",
+    "FactoryName": "Vizag"
+}

@@ -6,6 +6,7 @@ let PostFunc = (req, res) => {
     let LocalBody = req.body;
 
     let LocalFromRepo = PostFuncRepo({ inFactory: LocalFactory, inDataInsert: LocalBody });
+
     res.json(LocalFromRepo);
 };
 
