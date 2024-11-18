@@ -1,1 +1,1 @@
-GET http://localhost:7318/Custom/Cleaning/Dashboard/Admin/Reports/Pos/AllDays/BranchFilter/ToFactory/KKD
+GET http://localhost:7318/Custom/Cleaning/Dashboard/Admin/Reports/Pos/AllDays/Orders/BranchFilter/ToFactory
