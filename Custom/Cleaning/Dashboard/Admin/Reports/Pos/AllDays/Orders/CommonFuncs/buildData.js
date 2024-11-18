@@ -1,4 +1,4 @@
-import { StartFunc as QrCodes } from './QrCodes.js';
+import { StartFunc as orders } from './orders.js';
 import { StartFunc as BranchScan } from './BranchScan.js';
 import { StartFunc as EntryScan } from './EntryScan.js';
 import { StartFunc as WashingScan } from './WashingScan.js';
@@ -8,25 +8,9 @@ import { StartFunc as PressingRejectScan } from "./PressingRejectScan.js";
 import { StartFunc as prepareCollection } from "./prepareCollection.js";
 
 let StartFunc = () => {
-    const QrCodeData = QrCodes();
-    const BranchScanData = BranchScan();
-    const EntryScanData = EntryScan();
-    const WashingScanData = WashingScan();
-    const PressingScanData = PressingScan();
-    const CompletionScanData = CompletionScan();
-    const PressingRejectScanData = PressingRejectScan();
+    const LocalOrdersArray = orders();
 
-    let jVarLocalTransformedData = prepareCollection({
-        inQrData: QrCodeData,
-        inBranchScandata: BranchScanData,
-        inEntryScanData: EntryScanData,
-        inWashingScanData: WashingScanData,
-        inPressingScanData: PressingScanData,
-        inCompletionScanData: CompletionScanData,
-        inPressingRejectScanData: PressingRejectScanData
-    });
-
-    return jVarLocalTransformedData;
+    return LocalOrdersArray;
 };
 
 export { StartFunc };

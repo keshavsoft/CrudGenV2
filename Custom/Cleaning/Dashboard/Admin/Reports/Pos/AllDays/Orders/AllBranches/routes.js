@@ -2,7 +2,6 @@ import express from "express";
 
 var router = express.Router();
 
-import { router as QrCodes } from "./3-QrCodes/routes.js";
 import { router as Orders } from "./1-Orders/routes.js";
 import { router as ItemWise } from "./2-ItemWise/routes.js";
 import { router as ToFactory } from "./4-ToFactory/routes.js";
@@ -15,7 +14,6 @@ import { router as PressingReject } from "./10-PressingReject/routes.js";
 import { router as CompletionStart } from "./11-CompletionStart/routes.js";
 import { router as LeftInBranch } from "./12-LeftInBranch/routes.js";
 
-router.use("/QrCodes", QrCodes);
 router.use("/Orders", Orders);
 router.use("/ItemWise", ItemWise);
 router.use("/ToFactory", ToFactory);
