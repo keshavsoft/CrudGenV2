@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncPullData } from "../PullData/EntryFile.js";
+import { StartFunc as StartFuncPullData } from "../../../CommonPull/kLowDb/CommonFuncs/ReturnDbObjectWithSchema.js";
 
 let StartFunc = () => {
   let LocalReturnData = { KTF: false };
@@ -10,7 +10,7 @@ let StartFunc = () => {
     return LocalReturnData;
   };
 
-  const db = LocalStartFuncPullData.inDb;
+  const db = LocalStartFuncPullData.dbObject;
   db.read();
 
   LocalReturnData.KTF = true;

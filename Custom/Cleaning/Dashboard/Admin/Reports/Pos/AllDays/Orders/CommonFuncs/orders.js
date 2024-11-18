@@ -1,4 +1,4 @@
-import { StartFunc as KKD } from "../../../../../../../../../binV4/KKD/Show/kLowDb/PullData/returnAsArray.js";
+import { StartFunc as KKD } from "../../../../../../../../../binV4/KKD/CommonPull/kLowDb/PullData/returnAsArray.js";
 import { StartFunc as ANR } from "../../../../../../../../../binV4/ANR/Show/kLowDb/PullData/returnAsArray.js";
 import { StartFunc as CSO } from "../../../../../../../../../binV4/CSO/Show/kLowDb/PullData/returnAsArray.js";
 import { StartFunc as GD } from "../../../../../../../../../binV4/GD/Show/kLowDb/PullData/returnAsArray.js";
