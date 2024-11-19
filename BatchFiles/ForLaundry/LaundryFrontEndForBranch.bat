@@ -10,6 +10,10 @@ call npm run BranchToday
 call npm run TodayReports
 call npm run ToFactory
 call npm run Dashboard-QrCodeWise-AsArray
+call npm run Menu
+call npm run Branch-CommonConfig-Menu
+call npm run Dashboard-CommonConfig-AsArray
+
 
 xcopy .\publicDir ..\CrudGenV2\public\Laundry\Branch /h /i /c /k /e /r /y
 
