@@ -6,7 +6,6 @@ const StartFuncForBookings = ({ inTable, inQrId }) => {
 
     let LocalReturnData = { KTF: false };
     const dbForQrCodes = StartFuncCommonFuncs();
-    // dbForQrCodes.JsonData;
 
     let LocalRowNeeded = dbForQrCodes.JsonData.find(e => e.pk == LocalQrId);
 
@@ -15,9 +14,7 @@ const StartFuncForBookings = ({ inTable, inQrId }) => {
         return LocalReturnData;
     };
 
-    let LocalcheckBranchName = dbForQrCodes.JsonData.find(e => e.BookingData.OrderData.BranchName == LocalBranchName);
-
-    if (LocalcheckBranchName === undefined) {
+    if (LocalRowNeeded.BookingData.OrderData.BranchName !== LocalBranchName) {
         LocalReturnData.KReason = `Not this Branch :${LocalQrId}`
         return LocalReturnData;
     };
