@@ -65,11 +65,11 @@ function TimeSpan({ DateTime }) {
     var diffMins = Math.round((diffMs % 3600000) / 60000);
 
     if (diffMonths > 0) {
-        return diffMonths + " months, " + diffDays + " days, " + diffHrs + " hours, " + diffMins + " min";
+        return diffMonths + " months, " + diffDays + " days, " + diffHrs + " hrs, " + diffMins + " min";
     } else if (diffDays > 0) {
-        return diffDays + " days, " + diffHrs + " hours, " + diffMins + " min";
+        return diffDays + " days, " + diffHrs + " hrs, " + diffMins + " min";
     } else if (diffHrs > 0) {
-        return diffHrs + " hours, " + diffMins + " min";
+        return diffHrs + " hrs, " + diffMins + " min";
     } else {
         return diffMins + " min";
     }
