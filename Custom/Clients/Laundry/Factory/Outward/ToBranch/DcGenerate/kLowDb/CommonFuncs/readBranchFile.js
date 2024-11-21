@@ -1,7 +1,7 @@
-import { StartFunc as FactoryToBranchScan } from "../../../../../../../../../binV4/FactoryToBranchScan/Show/kLowDb/PullData/returnAsArray.js";
+import { StartFunc as CompletionScan } from "../../../../../../../../../binV4/CompletionScan/Show/kLowDb/PullData/returnAsArray.js";
 
 let StartFunc = ({ inVouherPk }) => {
-    let LocalReturnData = FactoryToBranchScan();
+    let LocalReturnData = CompletionScan();
 
     let LocalFilteredArray = LocalReturnData.filter(element => {
         return element.VoucherRef === inVouherPk;
