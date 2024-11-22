@@ -1,2 +1,2 @@
 ### Qr Raise
-GET http://localhost:7018/Custom/Clients/Laundry/Factory/Outward/ToBranch/DcGenerate/1
+GET http://localhost:7318/Custom/Cleaning/Factory/V1/Outward/ToBranch/QrCode/1/KKD
