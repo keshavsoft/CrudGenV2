@@ -1,7 +1,7 @@
-import { StartFunc as Generate } from '../../kLowDb/Generate/QrCode.js';
+import { StartFunc as ToBranchQr } from '../../kLowDb/ReadFromFile/ToBranchQr.js';
 
 let GetIdFunc = ({ inId: LocalId, inBranchName: LocalBranchName }) => {
-    let LocalFromLowDb = Generate({ inId: LocalId, inBranchName: LocalBranchName });
+    let LocalFromLowDb = ToBranchQr({ inId: LocalId, inBranchName: LocalBranchName });
 
     return LocalFromLowDb;
 };
