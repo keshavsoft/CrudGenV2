@@ -1,7 +1,7 @@
 import { GetIdFunc as GetIdFuncDal } from '../../dals/getFuncs/EntryFile.js';
 
-let GetIdFunc = ({ inId: LocalId }) => {
-    return GetIdFuncDal({ inId: LocalId });
+let GetIdFunc = ({ inId, inFactory }) => {
+    return GetIdFuncDal({ inId, inFactory });
 };
 
 export { GetIdFunc };

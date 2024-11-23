@@ -1,7 +1,7 @@
 import { StartFunc as GeneretedDC } from '../../kLowDb/ReadFromFile/GeneretedDC.js';
 
-let GetIdFunc = ({ inId: LocalId }) => {
-    let LocalFromLowDb = GeneretedDC({ inId: LocalId });
+let GetIdFunc = ({ inId, inFactory }) => {
+    let LocalFromLowDb = GeneretedDC({ inId, inFactory });
 
     return LocalFromLowDb;
 };
