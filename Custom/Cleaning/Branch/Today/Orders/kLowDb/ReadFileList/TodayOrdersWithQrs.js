@@ -11,7 +11,7 @@ let StartFunc = ({ inBranch }) => {
 
     LocalReturnData.KTF = false;
 
-    const db = StartFuncCommonFuncs({ inBranchName: LocalBranchName });
+    const db = StartFuncCommonFuncs({ inBranchName: LocalBranchName, inId: LocalId });
     db.read();
 
     const Qrdb = StartFuncQrCodes();
