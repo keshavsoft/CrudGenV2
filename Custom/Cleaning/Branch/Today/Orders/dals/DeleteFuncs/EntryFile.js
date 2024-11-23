@@ -1,11 +1,9 @@
-// import { StartFunc as TodayOrdersWithQrs } from '../../kLowDb/ReadFileList/TodayOrdersWithQrs.js';
+import { StartFunc as DeleteRow } from '../../kLowDb/DeleteFromFile/DeleteRow.js';
 
 let deleteFunc = ({ inBranch, inId }) => {
-    console.log("Id");
+    let LocalFromLowDb = DeleteRow({ inBranch, inId });
 
-    // let LocalFromLowDb = TodayOrdersWithQrs({ inBranch, inId });
-
-    // return LocalFromLowDb;
+    return LocalFromLowDb;
 };
 
 export { deleteFunc };
