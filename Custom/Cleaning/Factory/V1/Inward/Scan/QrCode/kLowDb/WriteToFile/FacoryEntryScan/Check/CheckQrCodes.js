@@ -21,6 +21,8 @@ const StartFuncForBookings = ({ inTable, inQrId }) => {
         LocalReturnData.KReason = `Not this Factory :${LocalQrId}`
         return LocalReturnData;
     };
+    
+    LocalReturnData.JsonData = LocalRowNeeded;
 
     LocalReturnData.KTF = true;
 

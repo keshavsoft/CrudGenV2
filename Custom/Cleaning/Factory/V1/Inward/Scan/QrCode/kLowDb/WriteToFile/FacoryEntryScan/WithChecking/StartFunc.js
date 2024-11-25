@@ -2,7 +2,7 @@ import { StartFunc as StartFuncPullData } from "./PullData/EntryFile.js";
 import { StartFunc as StartFuncUniqueKeyCheck } from "./Checks/UniqueKeyCheck.js";
 import { StartFunc as LocalFuncGeneratePk } from "./Generate.js";
 
-let StartFunc = ({ inDataToInsert }) => {
+let StartFunc = ({ inDataToInsert,inVoucherRef }) => {
     let LocalinDataToInsert = inDataToInsert;
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
     let LocalStartFuncPullData = StartFuncPullData();
@@ -32,8 +32,11 @@ let StartFunc = ({ inDataToInsert }) => {
     db.data.push(LocalDataWithUuid.InsertData);
     db.write();
 
+    let localFiterData = db.data.filter(el => el.VoucherRef == inVoucherRef).length;
     LocalReturnData.KTF = true;
+    LocalReturnData.QrCount = localFiterData;
     LocalReturnData.ScanNo = LocalDataWithUuid.InsertData.QrCodeId;
+
 
     return LocalReturnData;
 };
