@@ -4,10 +4,6 @@ let GetAllFuncs = ({ inBranchName }) => {
     return TodayAllQrCodes({ inBranchName });
 };
 
-let GetAsIsFuncs = () => {
-    return TodayAllQrCodes();
-};
-
 export {
-    GetAllFuncs, GetAsIsFuncs
+    GetAllFuncs
 };
