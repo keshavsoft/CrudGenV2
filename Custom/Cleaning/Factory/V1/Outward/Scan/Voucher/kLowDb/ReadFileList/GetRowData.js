@@ -1,19 +1,19 @@
-import { StartFunc as BranchDc } from '../CommonFuncs/FromApi/BranchDC.js';
-import { StartFunc as EntryScan } from '../CommonFuncs/FromApi/EntryScan.js';
+import { StartFunc as FactoryToBranchDC } from '../CommonFuncs/FromApi/FactoryToBranchDC.js';
+import { StartFunc as FactoryToBranchScan } from '../CommonFuncs/FromApi/FactoryToBranchScan.js';
 
 let StartFunc = ({ inId }) => {
     let localId = inId;
-    let LocalBranchDcData = BranchDc();
-    let LocalEntryScanData = EntryScan();
+    let LocalFactoryToBranchDCData = FactoryToBranchDC();
+    let LocalScanData = FactoryToBranchScan();
     let LocalReturnData = { KTF: false }
 
-    let LocalFilterBranchDcData = LocalBranchDcData.find(element => element.pk == localId);
+    let LocalFilterBranchDcData = LocalFactoryToBranchDCData.find(element => element.pk == localId);
 
     if (LocalFilterBranchDcData === undefined) {
         LocalReturnData.KReason = `No data ${localId}`
         return LocalReturnData;
     };
-    let LocalFilterBranchScanDataCount = LocalEntryScanData.filter(element => element.VoucherRef == localId).length;
+    let LocalFilterBranchScanDataCount = LocalScanData.filter(element => element.VoucherRef == localId).length;
 
     LocalReturnData.QrCount = LocalFilterBranchScanDataCount;
     LocalReturnData.AsIs = LocalFilterBranchDcData;
