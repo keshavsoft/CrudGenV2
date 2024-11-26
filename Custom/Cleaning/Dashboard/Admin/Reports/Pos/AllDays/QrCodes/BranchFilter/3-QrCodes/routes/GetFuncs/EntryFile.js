@@ -3,10 +3,13 @@ import express from 'express';
 var router = express.Router();
 
 import {
-    GetFuncs, GetAsIsFuncs
+    GetFuncs
 } from '../../controllers/GetFuncs/EntryFile.js';
 
-router.get('/:inBranchName', GetFuncs);
-router.get('/AsIs', GetAsIsFuncs);
+import {
+    GetFuncs as MiddlewareGetFunc
+} from '../../Middleware/getFuncs/EntryFile.js';
+
+router.get('/:inBranchName',MiddlewareGetFunc,GetFuncs);
 
 export { router };
