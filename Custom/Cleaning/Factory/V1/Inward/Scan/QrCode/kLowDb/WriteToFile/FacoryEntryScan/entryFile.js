@@ -17,7 +17,7 @@ let StartFunc = ({ inFactory, inDataInsert, inQrCodeId, inVoucherRef }) => {
         return LocalReturnData;
     };
 
-    let LocalCheckBrcnchDc = BranchScan({ inDc: LocalDc });
+    let LocalCheckBrcnchDc = BranchScan({ inDc: LocalDc, inTable: LocalTable, inQrCodeId: LocalQrId });
 
     if (LocalCheckBrcnchDc.KTF === false) {
         LocalReturnData.KReason = LocalCheckBrcnchDc.KReason
