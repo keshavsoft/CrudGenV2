@@ -14,6 +14,8 @@ import { router as PressingStart } from "./9-PressingStart/routes.js";
 import { router as PressingReject } from "./10-PressingReject/routes.js";
 import { router as CompletionStart } from "./11-CompletionStart/routes.js";
 import { router as InBranch } from "./12-InBranch/routes.js";
+import { router as InWashing } from "./13-InWashing/routes.js";
+import { router as InPressing } from "./14-InPressing/routes.js";
 
 router.use("/QrCodes", QrCodes);
 router.use("/Orders", Orders);
@@ -27,5 +29,7 @@ router.use("/PressingStart", PressingStart);
 router.use("/PressingReject", PressingReject);
 router.use("/CompletionStart", CompletionStart);
 router.use("/InBranch", InBranch);
+router.use("/InWashing", InWashing);
+router.use("/InPressing", InPressing);
 
 export { router };
