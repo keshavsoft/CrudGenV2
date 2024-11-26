@@ -7,17 +7,14 @@ let PostFunc = (req, res) => {
     let LocalQrCodeId = LocalBody.QrCodeId;
     let LocalVoucherRef = LocalBody.VoucherRef;
 
-    let LocalFromRepo = PostFuncRepo({ inFactory: LocalFactory, inDataInsert: LocalBody,  inQrCodeId: LocalQrCodeId,
-        inVoucherRef: LocalVoucherRef });
+    let LocalFromRepo = PostFuncRepo({
+        inFactory: LocalFactory,
+        inDataInsert: LocalBody,
+        inQrCodeId: LocalQrCodeId,
+        inVoucherRef: LocalVoucherRef
+    });
 
-    if (LocalFromRepo.KTF === false) {
-        res.status(500).send(LocalFromRepo.KReason);
-        return;
-    };
-
-    res.status(200).json(LocalFromRepo.JsonData);
-
-    // res.json(LocalFromRepo);
+    res.status(200).json(LocalFromRepo);
 };
 
 export { PostFunc };
