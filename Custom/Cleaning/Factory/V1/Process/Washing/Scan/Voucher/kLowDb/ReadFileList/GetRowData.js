@@ -1,22 +1,22 @@
-import { StartFunc as BranchDc } from '../CommonFuncs/FromApi/BranchDC.js';
-import { StartFunc as EntryScan } from '../CommonFuncs/FromApi/EntryScan.js';
+import { StartFunc as WashingScan } from '../CommonFuncs/FromApi/WashingScan.js';
+import { StartFunc as WashingDC } from '../CommonFuncs/FromApi/WashingDC.js';
 
 let StartFunc = ({ inId }) => {
     let localId = inId;
-    let LocalBranchDcData = BranchDc();
-    let LocalEntryScanData = EntryScan();
+    let LocalWashingDcData = WashingDC();
+    let LocalWashingScanData = WashingScan();
     let LocalReturnData = { KTF: false }
 
-    let LocalFilterBranchDcData = LocalBranchDcData.find(element => element.pk == localId);
+    let LocalFilterDcData = LocalWashingDcData.find(element => element.pk == localId);
 
-    if (LocalFilterBranchDcData === undefined) {
+    if (LocalFilterDcData === undefined) {
         LocalReturnData.KReason = `No data ${localId}`
         return LocalReturnData;
     };
-    let LocalFilterBranchScanDataCount = LocalEntryScanData.filter(element => element.VoucherRef == localId).length;
+    let LocalFilterScanDataCount = LocalWashingScanData.filter(element => element.VoucherRef == localId).length;
 
-    LocalReturnData.QrCount = LocalFilterBranchScanDataCount;
-    LocalReturnData.AsIs = LocalFilterBranchDcData;
+    LocalReturnData.QrCount = LocalFilterScanDataCount;
+    LocalReturnData.AsIs = LocalFilterDcData;
     LocalReturnData.KTF = true;
     return LocalReturnData;
 };
