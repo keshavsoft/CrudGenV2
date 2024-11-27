@@ -8,18 +8,10 @@ let PostFunc = (req, res, next) => {
             body: {
                 "QrCodeId": "",
                 "BranchName": "",
-                "DCFactory": "",
                 "FactoryName": "",
-                "FactorySelected": "",
                 "VoucherRef": "",
                 "DCDate": "",
                 "DCDescription": "",
-                "DeliveryDate": "",
-                "FactorySelected": "",
-                "ItemName": "",
-                "OrderDate": "",
-                "OrderNumber": "",
-                "Rate": "",
                 "VoucherNumber": ""
             }
         });

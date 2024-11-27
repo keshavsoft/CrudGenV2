@@ -17,10 +17,7 @@ const StartFunc = ({ inTable, inQrCodeId }) => {
         return LocalReturnData;
     };
 
-
-    let LocalFactoryCheck = dbForQrCodes.JsonData.find(e => e.DCFactory == LocalFactoryName);
-
-    if (LocalFactoryCheck === undefined) {
+    if (LocalQrCheck.FactoryName !== LocalFactoryName) {
         LocalReturnData.KReason = `Not this Factory :${LocalFactoryName}`
         return LocalReturnData;
     };
