@@ -1,13 +1,11 @@
-// import { StartFunc as StartFuncReturnDbObjectWithSchema } from '../../../../../../../QrCodes/kLowDb/CommonFuncs/EntryScanDbObjectWithSchema.js';
-import { StartFunc as StartFuncReturnDbObjectWithSchema } from '../../../../CommonFuncs/ReturnDbObjectWithSchema.js';
-let LocalTableName = "WashingScan.json";
+import { StartFunc as ReturnDbObjectWithSchema } from "../../../../../../../../../../../../../binV4/WashingScan/Create/kLowDb/CommonFuncs/ReturnDbObjectWithSchema.js";
 
 let StartFunc = () => {
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
 
     LocalReturnData.KTF = false;
 
-    const dbFromDbObjectWithSchema = StartFuncReturnDbObjectWithSchema({ inTableName: LocalTableName });
+    const dbFromDbObjectWithSchema = ReturnDbObjectWithSchema();
 
     const db = dbFromDbObjectWithSchema.dbObject;
 
