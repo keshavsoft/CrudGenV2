@@ -10,11 +10,11 @@ let StartFunc = ({ inBranch, inId }) => {
     const EntryCancelDcdb = EntryCancelDc();
     const EntryCancelScandb = EntryCancelScan();
 
-    let LocalFilterBranchDC = EntryCancelDcdb.data.filter(e => e.pk == LocalId);
+    let LocalFilterBranchDC = EntryCancelDcdb.filter(e => e.pk == LocalId);
 
-    let LocalFilterQr = Qrdb.data.filter(e => e.BookingData.OrderData.BranchName === LocalBranch);
+    let LocalFilterQr = Qrdb.filter(e => e.BookingData.OrderData.BranchName === LocalBranch);
 
-    let LocalFilterEntryScan = EntryCancelScandb.data.filter(e => e.BranchName === LocalBranch);
+    let LocalFilterEntryScan = EntryCancelScandb.filter(e => e.BranchName === LocalBranch);
 
     let LocalEntryScanAndDcMergeData = LoclaEntryScanAndDcMergeFunc({ inEntryScan: LocalFilterEntryScan, inBranchDc: LocalFilterBranchDC });
 

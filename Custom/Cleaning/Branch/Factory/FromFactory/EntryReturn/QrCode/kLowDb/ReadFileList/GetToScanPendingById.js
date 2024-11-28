@@ -16,11 +16,11 @@ let StartFunc = ({ inBranch, inId }) => {
 
     const EntryScandb = EntryScan();
 
-    let LocalFilterBranchDC = BranchDcdb.data.filter(e => e.pk == LocalId);
+    let LocalFilterBranchDC = BranchDcdb.filter(e => e.pk == LocalId);
 
-    let LocalFilterQr = Qrdb.data.filter(e => e.BookingData.OrderData.BranchName === LocalBranch);
+    let LocalFilterQr = Qrdb.filter(e => e.BookingData.OrderData.BranchName === LocalBranch);
 
-    let LocalFilterBranchScan = BranchScandb.data.filter(e => e.BranchName === LocalBranch);
+    let LocalFilterBranchScan = BranchScandb.filter(e => e.BranchName === LocalBranch);
 
     let LocalEntryScanAndDcMergeData = LoclaEntryScanAndDcMergeFunc({
         inBranchScan: LocalFilterBranchScan,
@@ -32,7 +32,7 @@ let StartFunc = ({ inBranch, inId }) => {
         inEntryScan: LocalEntryScanAndDcMergeData
     });
 
-    const getNeedRecords = jVarLocalTransformedData.filter(item => !EntryScandb.data.some(other => other.QrCodeId == item.QrCodeId))
+    const getNeedRecords = jVarLocalTransformedData.filter(item => !EntryScandb.some(other => other.QrCodeId == item.QrCodeId))
     let LocalArrayReverseData = getNeedRecords.slice().reverse();
     return LocalArrayReverseData;
 };
