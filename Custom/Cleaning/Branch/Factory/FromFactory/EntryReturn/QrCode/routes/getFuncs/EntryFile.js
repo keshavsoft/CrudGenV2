@@ -3,15 +3,16 @@ import express from 'express';
 var router = express.Router();
 
 import {
-    GetRowDataFunc, GetRowQrDataFunc, GetRowCountFunc
+    GetRowQrDataFunc, GetFromFactoryDcWiseItems, GetRowDataFunc, GetToScanPendingFunc
 }
     from '../../controllers/getFuncs/EntryFile.js';
 
 // router.get('/:inFactory', GetFunc);
 // router.get('/Pending/:inFactory', GetPendingFunc);
 // router.get('/Scanned/:inFactory', GetScannedFunc);
-router.get('/RowData/:id/:inFactory', GetRowDataFunc);
 router.get('/RowQrData/:id', GetRowQrDataFunc);
-// router.get('/RowCount/:id/:inFactory', GetRowCountFunc);
+router.get('/RowData/:id/:inBranch', GetRowDataFunc);
+router.get('/FromFactoryDcWiseItems/:id/:inBranch', GetFromFactoryDcWiseItems);
+router.get('/ToScanPending/:id/:inBranch', GetToScanPendingFunc);
 
 export { router };

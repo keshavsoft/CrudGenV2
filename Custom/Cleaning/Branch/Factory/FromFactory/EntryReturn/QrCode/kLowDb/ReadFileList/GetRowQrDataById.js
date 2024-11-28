@@ -8,7 +8,7 @@ let StartFunc = ({ inId }) => {
     const Qrdb = QrCodes();
     const EntryScandb = EntryScan();
 
-    let LocalBranchScanFilter = EntryScandb.data.find(e => e.QrCodeId == LocalId);
+    let LocalBranchScanFilter = EntryScandb.find(e => e.QrCodeId == LocalId);
 
     if (LocalBranchScanFilter === undefined) {
         LocalReturnData.KReason = "No data"
@@ -16,7 +16,7 @@ let StartFunc = ({ inId }) => {
     };
 
     LocalReturnData.KTF = true;
-    LocalReturnData.JsonData = Qrdb.data.find(e => e.pk == LocalId);
+    LocalReturnData.JsonData = Qrdb.find(e => e.pk == LocalId);
 
     return LocalReturnData;
 };
