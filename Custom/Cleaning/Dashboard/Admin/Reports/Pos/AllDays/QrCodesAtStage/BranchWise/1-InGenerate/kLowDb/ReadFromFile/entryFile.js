@@ -9,4 +9,7 @@ let StartFunc = () => {
     return groupByBranch({ inDataAsArray: LocalFilteredArray });
 };
 
+const LocalData = StartFunc();
+console.log("LocalData : ", LocalData);
+
 export { StartFunc };

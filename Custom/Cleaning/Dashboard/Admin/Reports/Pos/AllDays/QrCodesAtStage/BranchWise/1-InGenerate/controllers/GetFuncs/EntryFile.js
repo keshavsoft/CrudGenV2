@@ -4,7 +4,6 @@ import {
 } from '../../repos/GetFuncs/EntryFile.js';
 
 let GetFuncs = (req, res) => {
-
     let LocalFromRepo = GetFuncsRepo();
 
     if (LocalFromRepo.KTF === false) {
