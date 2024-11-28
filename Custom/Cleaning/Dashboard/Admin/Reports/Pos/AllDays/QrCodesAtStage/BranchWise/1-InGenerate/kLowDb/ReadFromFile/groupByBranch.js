@@ -12,12 +12,13 @@ let StartFunc = ({ inDataAsArray }) => {
 
     for (const [key, value] of Object.entries(grouped)) {
         const LoopInsideQrCodes = value.map(LocalFunc);
-        console.log("aaaaaaa : ", value, LoopInsideQrCodes);
+        const max = Math.max(...LoopInsideQrCodes);
+        // console.log("aaaaaaa : ", max);
 
         LocalReturnArray.push({
             BranchName: key,
             QrCount: value.length,
-
+            QrMax: max
         })
     };
 
