@@ -2,11 +2,12 @@ import { StartFunc as StartFuncwriteFileFromModal } from './WithChecking/StartFu
 import { StartFuncForBookings as StartFuncCheckQrCodes } from "./Check/CheckQrCodes.js";
 import { StartFunc as CheckBrcnchScan } from "./Check/CheckBrcnchScan.js";
 
-let StartFunc = ({ inFactory, inDataInsert }) => {
+let StartFunc = ({ inFactory, inDataInsert, inQrCodeId, inVoucher }) => {
 
     let LocalTable = inFactory;
-    let LocalQrId = inDataInsert.QrCodeId;
+    let LocalQrId = inQrCodeId;
     let LocalDataInsert = inDataInsert;
+    let LocalVoucher = inVoucher;
     let LocalReturnData = { KTF: false };
 
     let LocalCheckQrCodes = StartFuncCheckQrCodes({ inTable: LocalTable, inQrId: LocalQrId });
@@ -16,14 +17,23 @@ let StartFunc = ({ inFactory, inDataInsert }) => {
         return LocalReturnData;
     };
 
-    let LocalCheckBrcnchScan = CheckBrcnchScan({ inTable: LocalTable, inQrCodeId: LocalQrId });
+    let LocalCheckBrcnchScan = CheckBrcnchScan({ inTable: LocalTable, inQrCodeId: LocalQrId, inVoucher: LocalVoucher });
 
     if (LocalCheckBrcnchScan.KTF === false) {
         LocalReturnData.KReason = LocalCheckBrcnchScan.KReason
         return LocalReturnData;
     };
 
-    return StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert });
+    let LocalInsert = StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert, inVoucher: LocalVoucher });
+
+    if (LocalInsert.KTF === false) {
+        LocalReturnData.KReason = LocalInsert.KReason
+        return LocalReturnData;
+    };
+    LocalReturnData.QrCount = LocalInsert.QrCount;
+    LocalReturnData.ScanNo = LocalInsert.ScanNo;
+    LocalReturnData.QrData = LocalCheckQrCodes.JsonData;
+    LocalReturnData.KTF = true;
 
 };
 

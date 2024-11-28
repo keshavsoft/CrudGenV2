@@ -1,27 +1,28 @@
-import { StartFunc as StartFuncCommonFuncs } from '../../../CommonFuncs/EntryScan.js';
+import { StartFunc as StartFuncCommonFuncs } from '../../../CommonFuncs/FromApi/EntryCancelScan.js';
 
-const StartFunc = ({ inTable, inQrCodeId }) => {
-    let LocalFactoryName = inTable;
+const StartFunc = ({ inTable, inQrCodeId, inVoucher }) => {
+    let LocalBranchName = inTable;
     let LocalQrCodeId = inQrCodeId;
+    let LocalinVoucher = inVoucher;
 
     let LocalReturnData = { KTF: false };
-    const dbForQrCodes = StartFuncCommonFuncs();
-    dbForQrCodes.read();
-    dbForQrCodes.JsonData = dbForQrCodes.data;
-    // dbForQrCodes.JsonData;
+    const QrCodesData = StartFuncCommonFuncs();
 
-    let LocalQrCheck = dbForQrCodes.JsonData.find(e => e.QrCodeId == LocalQrCodeId);
+    let LocalQrCheck = QrCodesData.find(e => e.QrCodeId == LocalQrCodeId);
 
     if (LocalQrCheck === undefined) {
         LocalReturnData.KReason = `No QrCode :${LocalQrCodeId}`
         return LocalReturnData;
     };
 
+    if (LocalQrCheck.BranchName !== LocalBranchName) {
+        LocalReturnData.KReason = `Not this Branch :${LocalBranchName}`
+        return LocalReturnData;
+    };
 
-    let LocalFactoryCheck = dbForQrCodes.JsonData.find(e => e.DCFactory == LocalFactoryName);
 
-    if (LocalFactoryCheck === undefined) {
-        LocalReturnData.KReason = `Not this Factory :${LocalFactoryName}`
+    if (LocalQrCheck.VoucherRef !== LocalinVoucher) {
+        LocalReturnData.KReason = `Not this Voucher :${LocalBranchName}`
         return LocalReturnData;
     };
 
