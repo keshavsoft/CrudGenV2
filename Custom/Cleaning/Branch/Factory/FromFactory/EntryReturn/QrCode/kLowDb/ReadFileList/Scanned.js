@@ -1,6 +1,6 @@
 import { StartFunc as QrCodes } from '../CommonFuncs/FromApi/QrCodes.js';
 import { StartFunc as FromFactoryCancelScan } from '../CommonFuncs/FromApi/FromFactoryCancelScan.js';
-import { StartFunc as EntryCancelScan } from '../CommonFuncs/EntryCancelScan.js';
+import { StartFunc as EntryCancelScan } from '../CommonFuncs/FromApi/EntryCancelScan.js';
 import { StartFunc as EntryCancelDc } from '../CommonFuncs/FromApi/EntryCancelDc.js';
 
 let StartFunc = ({ inFactory }) => {
@@ -11,7 +11,6 @@ let StartFunc = ({ inFactory }) => {
     const EntryCancelScanData = EntryCancelScan();
 
     const FromFactoryCancelScanData = FromFactoryCancelScan();
-    EntryScandb.read();
 
     const EntryCancelDcdat = EntryCancelDc();
 
