@@ -13,8 +13,9 @@ let StartFunc = ({ inDataToInsert, inVoucher }) => {
         return LocalReturnData;
     };
 
-    const LocalTableSchema = LocalStartFuncPullData.inTableSchema;
-    const db = LocalStartFuncPullData.inDb;
+    const LocalTableSchema = LocalStartFuncPullData.TableSchema;
+    const db = LocalStartFuncPullData.dbObject;
+    db.read()
 
     let LocalFromCheckReferences = checkReferences({
         inTableSchema: LocalTableSchema,
