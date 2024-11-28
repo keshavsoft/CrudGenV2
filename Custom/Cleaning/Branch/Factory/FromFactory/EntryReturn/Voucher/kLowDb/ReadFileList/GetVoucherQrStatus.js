@@ -1,28 +1,28 @@
-import { StartFunc as BranchDc } from '../CommonFuncs/FromApi/BranchDc.js';
-import { StartFunc as BranchScan } from '../CommonFuncs/FromApi/BranchScan.js';
-import { StartFunc as EntryScan } from '../CommonFuncs/FromApi/EntryScan.js';
-// import { StartFunc as EntryCancelScan } from '../CommonFuncs/FromApi/EntryCancelScan.js';
+import { StartFunc as EntryCancelDc } from '../CommonFuncs/FromApi/EntryCancelDc.js';
+import { StartFunc as EntryCancelScan } from '../CommonFuncs/FromApi/EntryCancelScan.js';
+import { StartFunc as FromFactoryCancelScan } from '../CommonFuncs/FromApi/FromFactoryCancelScan.js';
 
-const StartFunc = ({ inFactory }) => {
-    const BranchDcdb = BranchDc();
-    const BranchScanData = BranchScan();
-    const EntryScanData = EntryScan();
+const StartFunc = ({ inBranch }) => {
+    let LocalBranch = inBranch;
+    const EntryCancelDcData = EntryCancelDc();
+    const EntryCancelScanData = EntryCancelScan();
+    const FromFactoryCancelScanData = FromFactoryCancelScan();
 
-    const LocalFilterBranchDc = BranchDcdb.filter(e => e.Factory === inFactory);
+    const LocalFilterBranchDc = EntryCancelDcData.filter(e => e.Branch === LocalBranch);
 
     const TransformedData = MergeFunc({
         BranchDc: LocalFilterBranchDc,
-        BranchScan: BranchScanData,
-        EntryScan: EntryScanData
+        EntryCancelScan: EntryCancelScanData,
+        FromFactoryCancelScan: FromFactoryCancelScanData
     });
 
     return TransformedData.slice().reverse();
 };
 
-const MergeFunc = ({ BranchDc, BranchScan, EntryScan }) => {
+const MergeFunc = ({ BranchDc, EntryCancelScan, FromFactoryCancelScan }) => {
     return BranchDc.map(dc => {
-        const Sent = BranchScan.filter(qr => qr.VoucherRef == dc.pk).length;
-        const Scanned = EntryScan.filter(qr => qr.VoucherRef == dc.pk).length;
+        const Sent = EntryCancelScan.filter(qr => qr.VoucherRef == dc.pk).length;
+        const Scanned = FromFactoryCancelScan.filter(qr => qr.VoucherRef == dc.pk).length;
 
         return {
             ...dc,
