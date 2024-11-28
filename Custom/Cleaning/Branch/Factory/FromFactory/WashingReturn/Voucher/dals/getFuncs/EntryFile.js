@@ -1,9 +1,13 @@
-import { StartFunc as GetVoucher } from '../../kLowDb/ReadFileList/GetVoucher.js';
+// import { StartFunc as GetVoucher } from '../../kLowDb/ReadFileList/GetVoucher.js';
 
 let GetFunc = ({ inFactory }) => {
-    return GetVoucher({ inFactory });
+    console.log("inFactory");    
+    // return GetVoucher({ inFactory });
+};
+let GetQrStatusFunc = ({ inBranch }) => {
+    // return GetVoucher({ inBranch });
 };
 
 export {
-    GetFunc
+    GetFunc,GetQrStatusFunc
 };
