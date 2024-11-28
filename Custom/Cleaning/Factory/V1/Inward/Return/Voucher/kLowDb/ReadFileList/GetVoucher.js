@@ -4,36 +4,27 @@ import { StartFunc as EntryCancelScan } from '../CommonFuncs/EntryCancelScan.js'
 let StartFunc = ({ inFactory }) => {
     // let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');
     let LocalFactory = inFactory;
+    const BranchDcData = EntryCancelDc();
+    const EntryScanData = EntryCancelScan();
 
-    const BranchDcdb = EntryCancelDc();
-    BranchDcdb.read();
-
-    const EntryScandb = EntryCancelScan();
-    EntryScandb.read();
-
-    let LocalFilterBranchDc = BranchDcdb.data.filter(e => e.FactoryName === LocalFactory);
-
-    let LocalFilterEntryScan = EntryScandb.data.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterBranchDc = BranchDcData.filter(e => e.FactoryName === LocalFactory);
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inBranchDc: LocalFilterBranchDc,
-        inEntryScan: LocalFilterEntryScan
+        inEntryScan: EntryScanData
     });
-    let LocalArrayReverseData = jVarLocalTransformedData.slice().reverse();
+    return jVarLocalTransformedData.slice().reverse();
 
-    return LocalArrayReverseData;
 };
 
 let jFLocalMergeFunc = ({ inBranchDc, inEntryScan }) => {
-
-    let jVarLocalReturnObject = inBranchDc.map(loopDc => {
+    return inBranchDc.map(loopDc => {
         const LocalFilterData = inEntryScan.filter(loopQr => loopQr.VoucherRef == loopDc.pk);
         loopDc.ItemDetails = LocalFilterData.length;
         loopDc.TimeSpan = TimeSpan({ DateTime: loopDc.DateTime });
         return loopDc
     });
 
-    return jVarLocalReturnObject;
 };
 
 function TimeSpan({ DateTime }) {

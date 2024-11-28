@@ -42,7 +42,7 @@ let StartFunc = ({ inFactory, inDataInsert, inQrCodeId, inVoucherRef }) => {
     LocalReturnData.ScanNo = localInsert.ScanNo;
     LocalReturnData.QrData = LocalCheckQrCodes.JsonData;
     LocalReturnData.KTF = true;
-
+    return LocalReturnData;
 };
 
 export { StartFunc };

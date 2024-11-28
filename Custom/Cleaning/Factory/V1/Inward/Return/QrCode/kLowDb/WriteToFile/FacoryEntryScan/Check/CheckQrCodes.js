@@ -16,9 +16,7 @@ const StartFuncForBookings = ({ inTable, inQrId }) => {
         return LocalReturnData;
     };
 
-    let LocalcheckBranchName = dbForQrCodes.JsonData.find(e => e.location == LocalBranchName);
-
-    if (LocalcheckBranchName === undefined) {
+    if (LocalRowNeeded.location !== LocalBranchName) {
         LocalReturnData.KReason = `Not this Factory :${LocalQrId}`
         return LocalReturnData;
     };
