@@ -1,27 +1,23 @@
-import { StartFunc as StartFuncCommonFuncs } from '../../../CommonFuncs/QrCodes.js';
+import { StartFunc as StartFuncCommonFuncs } from '../../../CommonFuncs/FromApi/QrCodes.js';
 
 const StartFuncForBookings = ({ inTable, inQrId }) => {
     let LocalBranchName = inTable;
     let LocalQrId = inQrId;
-
     let LocalReturnData = { KTF: false };
-    const dbForQrCodes = StartFuncCommonFuncs();
-    dbForQrCodes.read();
-    dbForQrCodes.JsonData = dbForQrCodes.data;
+    const QrCodesData = StartFuncCommonFuncs();
 
-    let LocalRowNeeded = dbForQrCodes.JsonData.find(e => e.pk == LocalQrId);
+    let LocalRowNeeded = QrCodesData.find(e => e.pk == LocalQrId);
 
     if (LocalRowNeeded === undefined) {
         LocalReturnData.KReason = `No Qr Code :${LocalQrId}`
         return LocalReturnData;
     };
 
-    let LocalcheckBranchName = dbForQrCodes.JsonData.find(e => e.location == LocalBranchName);
-
-    if (LocalcheckBranchName === undefined) {
-        LocalReturnData.KReason = `Not this Factory :${LocalQrId}`
+    if (LocalRowNeeded.BookingData.OrderData.BranchName !== LocalBranchName) {
+        LocalReturnData.KReason = `Not this Branch :${LocalQrId}`
         return LocalReturnData;
     };
+    LocalReturnData.JsonData = LocalRowNeeded;
     LocalReturnData.KTF = true;
     return LocalReturnData;
 };
