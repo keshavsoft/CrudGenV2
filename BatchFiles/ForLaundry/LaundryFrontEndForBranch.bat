@@ -15,7 +15,9 @@ call npm run Dashboard-CommonConfig-AsArray
 call npm run FromFactoryQrCodes
 call npm run FactoryMenu
 call npm run Factory-ToFactory
-call npm run Factory-FromFactory
+call npm run FromFactory-Completion
+call npm run FromFactory-EntryReturn
+call npm run FromFactory-WashingReturn
 
 xcopy .\publicDir ..\CrudGenV2\public\Laundry\Branch /h /i /c /k /e /r /y
 
