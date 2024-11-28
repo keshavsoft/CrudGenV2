@@ -1,10 +1,37 @@
 import {
+    GetFunc as GetFuncRepo,
+    GetPendingFunc as GetPendingFuncRepo,
+    GetScannedFunc as GetScannedFuncRepo,
     GetRowDataFunc as GetRowDataFuncRepo,
     GetRowQrDataFunc as GetRowQrDataFuncRepo,
     GetFromFactoryDcWiseItems as GetFromFactoryDcWiseItemsRepo,
     GetToScanPendingFunc as GetToScanPendingFuncRepo
 
 } from '../../repos/getFuncs/EntryFile.js';
+
+let GetFunc = async (req, res) => {
+    let LocalParams = req.params;
+    let LocalBranch = LocalParams.inBranch;
+    let LocalFromRepo = GetFuncRepo({ inBranch: LocalBranch });
+
+    res.status(200).json(LocalFromRepo);
+};
+
+let GetPendingFunc = async (req, res) => {
+    let LocalParams = req.params;
+    let LocalBranch = LocalParams.inBranch;
+    let LocalFromRepo = GetPendingFuncRepo({ inBranch: LocalBranch });
+
+    res.status(200).json(LocalFromRepo);
+};
+
+let GetScannedFunc = async (req, res) => {
+    let LocalParams = req.params;
+    let LocalBranch = LocalParams.inBranch;
+    let LocalFromRepo = GetScannedFuncRepo({ inBranch: LocalBranch });
+
+    res.status(200).json(LocalFromRepo);
+};
 
 let GetRowDataFunc = async (req, res) => {
     let LocalParams = req.params;
@@ -57,5 +84,5 @@ let GetToScanPendingFunc = async (req, res) => {
 };
 
 export {
-    GetRowDataFunc, GetRowQrDataFunc, GetFromFactoryDcWiseItems, GetToScanPendingFunc
+    GetFunc, GetPendingFunc, GetScannedFunc, GetRowDataFunc, GetRowQrDataFunc, GetFromFactoryDcWiseItems, GetToScanPendingFunc
 };
