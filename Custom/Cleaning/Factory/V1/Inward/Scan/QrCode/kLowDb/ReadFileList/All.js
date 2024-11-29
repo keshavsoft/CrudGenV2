@@ -23,13 +23,13 @@ let StartFunc = ({ inFactory }) => {
     const BranchDcdb = BranchDc();
     BranchDcdb.read();
 
-    let LocalFilterBranchScan = BranchScandb.data.filter(e => e.DCFactory === LocalFactory);
+    let LocalFilterBranchScan = BranchScandb.filter(e => e.DCFactory === LocalFactory);
 
-    let LocalFilterQr = Qrdb.data.filter(e => e.location === LocalFactory);
+    let LocalFilterQr = Qrdb.filter(e => e.location === LocalFactory);
 
-    let LocalFilterEntryScan = EntryScandb.data.filter(e => e.DCFactory === LocalFactory);
-    let LocalFilterCancelScan = EntryCancelScandb.data.filter(e => e.FactoryName === LocalFactory);
-    let LocalFilterBranchDc = BranchDcdb.data.filter(e => e.Factory === LocalFactory);
+    let LocalFilterEntryScan = EntryScandb.filter(e => e.DCFactory === LocalFactory);
+    let LocalFilterCancelScan = EntryCancelScandb.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterBranchDc = BranchDcdb.filter(e => e.Factory === LocalFactory);
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inQrData: LocalFilterQr,
