@@ -18,6 +18,10 @@ call npm run Factory-ToFactory
 call npm run FromFactory-Completion
 call npm run FromFactory-EntryReturn
 call npm run FromFactory-WashingReturn
+call npm run FromFactory-EntryReturnQrCodes
+call npm run FromFactory-WashingReturnQrCodes
+call npm run FromFactory-CompletionReturnQrCodes
+
 
 xcopy .\publicDir ..\CrudGenV2\public\Laundry\Branch /h /i /c /k /e /r /y
 
