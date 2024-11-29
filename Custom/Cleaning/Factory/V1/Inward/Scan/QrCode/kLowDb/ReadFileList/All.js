@@ -9,19 +9,10 @@ let StartFunc = ({ inFactory }) => {
     let LocalFactory = inFactory;
 
     const Qrdb = QrCodes();
-    Qrdb.read();
-
     const BranchScandb = BranchScan();
-    BranchScandb.read();
-
     const EntryScandb = EntryScan();
-    EntryScandb.read();
-
     const EntryCancelScandb = EntryCancelScan();
-    EntryCancelScandb.read();
-
     const BranchDcdb = BranchDc();
-    BranchDcdb.read();
 
     let LocalFilterBranchScan = BranchScandb.filter(e => e.DCFactory === LocalFactory);
 
