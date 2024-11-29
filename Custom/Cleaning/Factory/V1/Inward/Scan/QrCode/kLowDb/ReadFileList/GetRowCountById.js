@@ -6,9 +6,8 @@ let StartFunc = ({ inFactory, inId }) => {
     let LocalRowpk = inId;
 
     const BranchScandb = BranchScan();
-    BranchScandb.read();
 
-    let LocalFilterEntryScan = BranchScandb.data.filter(e => e.FactoryName === LocalFactory && e.VoucherRef === LocalRowpk);
+    let LocalFilterEntryScan = BranchScandb.filter(e => e.FactoryName === LocalFactory && e.VoucherRef === LocalRowpk);
     let LocalReturnData = LocalFilterEntryScan.length;
 
     return LocalReturnData;

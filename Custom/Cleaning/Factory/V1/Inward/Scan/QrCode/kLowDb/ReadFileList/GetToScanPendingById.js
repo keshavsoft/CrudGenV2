@@ -9,22 +9,15 @@ let StartFunc = ({ inFactory, inId }) => {
     let LocalFactory = inFactory;
     let LocalId = inId;
     const Qrdb = QrCodes();
-    Qrdb.read();
-
     const BranchDcdb = BranchDc();
-    BranchDcdb.read();
-
     const BranchScandb = BranchScan();
-    BranchScandb.read();
-
     const EntryScandb = EntryScan();
-    EntryScandb.read();
 
-    let LocalFilterBranchDC = BranchDcdb.data.filter(e => e.pk == LocalId);
+    let LocalFilterBranchDC = BranchDcdb.filter(e => e.pk == LocalId);
 
-    let LocalFilterQr = Qrdb.data.filter(e => e.location === LocalFactory);
+    let LocalFilterQr = Qrdb.filter(e => e.location === LocalFactory);
 
-    let LocalFilterBranchScan = BranchScandb.data.filter(e => e.DCFactory === LocalFactory);
+    let LocalFilterBranchScan = BranchScandb.filter(e => e.DCFactory === LocalFactory);
 
     let LocalEntryScanAndDcMergeData = LoclaEntryScanAndDcMergeFunc({
         inBranchScan: LocalFilterBranchScan,
@@ -36,7 +29,7 @@ let StartFunc = ({ inFactory, inId }) => {
         inEntryScan: LocalEntryScanAndDcMergeData
     });
 
-    const getNeedRecords = jVarLocalTransformedData.filter(item => !EntryScandb.data.some(other => other.QrCodeId == item.QrCodeId))
+    const getNeedRecords = jVarLocalTransformedData.filter(item => !EntryScandb.some(other => other.QrCodeId == item.QrCodeId))
     let LocalArrayReverseData = getNeedRecords.slice().reverse();
     return LocalArrayReverseData;
 };
