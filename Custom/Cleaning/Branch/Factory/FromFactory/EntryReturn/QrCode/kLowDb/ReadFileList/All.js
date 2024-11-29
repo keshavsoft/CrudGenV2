@@ -44,6 +44,7 @@ let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScan, inBranchDC }) => {
 
             QrCodeId: loopScan.QrCodeId,
             BranchName: loopScan?.BranchName,
+            FactoryName: loopScan?.FactoryName,
             Status: match,
             TimeSpan: TimeSpan({ DateTime: loopScan.DateTime })
         };

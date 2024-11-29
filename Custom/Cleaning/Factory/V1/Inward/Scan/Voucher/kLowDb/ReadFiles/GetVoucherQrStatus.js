@@ -25,7 +25,7 @@ const MergeFunc = ({ BranchDc, BranchScan, EntryScan, EntryCancelScan }) => {
     return BranchDc.map(dc => {
         const Sent = BranchScan.filter(qr => qr.VoucherRef == dc.pk).length;
         const Scanned = EntryScan.filter(qr => qr.VoucherRef == dc.pk).length;
-        const EntryCancel = EntryCancelScan.filter(qr => EntryScan.some(scan => qr.QrCodeId == scan.QrCodeId)).length;
+        const EntryCancel = EntryCancelScan.filter(qr => EntryScan.some(scan => qr.QrCodeId == scan.QrCodeId && qr.VoucherRef == dc.pk)).length;
 
         return {
             ...dc,
