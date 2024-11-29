@@ -1,9 +1,9 @@
 import { StartFunc as EntryCancelDc } from '../CommonFuncs/FromApi/EntryCancelDc.js';
 import { StartFunc as EntryCancelScan } from '../CommonFuncs/FromApi/EntryCancelScan.js';
 
-let StartFunc = ({ inFactory }) => {
+let StartFunc = ({ inBranch }) => {
     // let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');
-    let LocalFactory = inFactory;
+    let LocalFactory = inBranch;
 
     const BranchDcdb = EntryCancelDc();
     BranchDcdb.read();
