@@ -14,12 +14,12 @@ let StartFunc = ({ inFactory }) => {
 
     const EntryCancelDcdat = EntryCancelDc();
 
-    let LocalFilterEntryCancelScanData = EntryCancelScanData.filter(e => e.BranchName === LocalFactory);
+    let LocalFilterEntryCancelScanData = FromFactoryCancelScanData.filter(e => e.BranchName === LocalFactory);
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inQrData: QrCodesData,
-        inScandata: LocalFilterEntryCancelScanData,
-        inEntryScan: FromFactoryCancelScanData,
+        inScandata: FromFactoryCancelScanData,
+        inEntryScan: LocalFilterEntryCancelScanData,
         inBranchDC: EntryCancelDcdat
     });
     let localReturnData = getmatchedRecords({ inFromQrData: jVarLocalTransformedData, inEntryScan: FromFactoryCancelScanData })
@@ -47,6 +47,7 @@ let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScan, inBranchDC }) => {
 
             QrCodeId: loopScan.QrCodeId,
             BranchName: loopScan?.BranchName,
+            FactoryName: loopScan?.FactoryName,
             Status: match,
             TimeSpan: TimeSpan({ DateTime: loopScan.DateTime })
         };
