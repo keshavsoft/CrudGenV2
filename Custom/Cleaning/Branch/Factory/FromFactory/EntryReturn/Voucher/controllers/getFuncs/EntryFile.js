@@ -6,8 +6,8 @@ import {
 
 let GetFunc = async (req, res) => {
     let LocalParams = req.params;
-    let LocalFactory = LocalParams.inFactory;
-    let LocalFromRepo = GetFuncRepo({ inFactory: LocalFactory });
+    let LocalBranch = LocalParams.inBranch;
+    let LocalFromRepo = GetFuncRepo({ inBranch: LocalBranch });
 
     res.status(200).json(LocalFromRepo);
 };

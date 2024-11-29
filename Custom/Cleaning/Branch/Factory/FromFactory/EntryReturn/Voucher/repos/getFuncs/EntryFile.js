@@ -4,8 +4,8 @@ import {
     GetRowDataFunc as GetRowDataFuncDal
 } from '../../dals/getFuncs/EntryFile.js';
 
-let GetFunc = ({ inFactory }) => {
-    return GetFuncDal({ inFactory });
+let GetFunc = ({ inBranch }) => {
+    return GetFuncDal({ inBranch });
 };
 
 let GetQrStatusFunc = ({ inBranch }) => {
