@@ -8,8 +8,6 @@ import { StartFunc as GetRowCountById } from '../../kLowDb/ReadFileList/GetRowCo
 import { StartFunc as GetFromBranchDcWiseItemsById } from '../../kLowDb/ReadFileList/GetFromBranchDcWiseItemsById.js';
 import { StartFunc as GetToScanPendingById } from '../../kLowDb/ReadFileList/GetToScanPendingById.js';
 
-
-
 // import HomeJson from './home.json' with {type: 'json'};
 
 let GetFunc = ({ inFactory }) => {
@@ -65,7 +63,14 @@ let GetToScanPendingFunc = ({ inFactory, inId }) => {
 
     return LocalFromLowDb;
 };
+
+let GetDCQrReturnFunc = ({ inFactory, inId }) => {
+    let LocalFromLowDb = GetToScanPendingById({ inFactory, inId });
+
+    return LocalFromLowDb;
+};
+
 export {
     GetFunc, GetPendingFunc, GetScannedFunc, GetRowDataFunc, GetReturnsFunc, GetRowQrDataFunc, GetRowCountFunc,
-    GetFromBranchDcWiseItemsFunc,GetToScanPendingFunc
+    GetFromBranchDcWiseItemsFunc, GetToScanPendingFunc, GetDCQrReturnFunc
 };
