@@ -1,4 +1,4 @@
-import { StartFunc as BranchDc } from '../CommonFuncs/FromApi/BranchDc.js';
+import { StartFunc as BranchDc } from '../CommonFuncs/FromApi/BranchDC.js';
 import { StartFunc as EntryScan } from '../CommonFuncs/FromApi/EntryScan.js';
 
 const StartFunc = ({ inFactory }) => {
