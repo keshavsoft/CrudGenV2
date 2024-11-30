@@ -2,7 +2,6 @@ import { StartFunc as QrCodes } from '../CommonFuncs/QrCodes.js';
 import { StartFunc as EntryCancelScan } from '../CommonFuncs/EntryCancelScan.js';
 import { StartFunc as EntryScan } from '../CommonFuncs/EntryScan.js';
 
-
 let StartFunc = ({ inFactory, inId }) => {
     // let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');
     let LocalFactory = inFactory;
@@ -19,7 +18,7 @@ let StartFunc = ({ inFactory, inId }) => {
         inEntryScan: filterData
     });
 
-    const getNeedRecords = jVarLocalTransformedData.filter(item => EntryScanData.some(other => other.QrCodeId == item.QrCodeId && order.VoucherRef == item.DCVoucherRef))
+    const getNeedRecords = jVarLocalTransformedData.filter(item => EntryScanData.some(other => other.QrCodeId == item.QrCodeId && item.DCVoucherRef == LocalId))
     let LocalArrayReverseData = getNeedRecords.slice().reverse();
     return LocalArrayReverseData;
 };
@@ -34,7 +33,7 @@ let jFLocalMergeFunc = ({ inQrData, inEntryScan }) => {
             DeliveryDate: new Date(matchedRecord?.DeliveryDateTime).toLocaleDateString('en-GB'),
             ItemName: matchedRecord?.ItemName,
             Rate: matchedRecord?.Rate,
-
+            DCVoucherRef:loopScan?.DCVoucherRef,
             VoucherNumber: loopScan?.VoucherNumber,
             QrCodeId: loopScan.QrCodeId,
             DCDate: new Date(loopScan?.Date).toLocaleDateString('en-GB'),
@@ -68,7 +67,7 @@ let JFDCMergeFunc = ({ inEntryScan, inEntryCancel }) => {
         let LocalFilter = inEntryScan.find(qr => qr.QrCodeId == element.QrCodeId);
         return {
             ...element,
-            DCVoucherRef: LocalFilter.VoucherRef
+            DCVoucherRef: LocalFilter?.VoucherRef
         }
     });
 }

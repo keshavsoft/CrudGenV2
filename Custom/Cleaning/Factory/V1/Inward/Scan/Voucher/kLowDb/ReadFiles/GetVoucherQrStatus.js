@@ -63,7 +63,7 @@ let JFDCMergeFunc = ({ inEntryScan, inEntryCancel }) => {
         let LocalFilter = inEntryScan.find(qr => qr.QrCodeId == element.QrCodeId);
         return {
             ...element,
-            DCVoucherRef: LocalFilter.VoucherRef
+            DCVoucherRef: LocalFilter?.VoucherRef
         }
     });
 }
