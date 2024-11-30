@@ -25,7 +25,11 @@ const MergeFunc = ({ BranchDc, BranchScan, EntryScan, EntryCancelScan }) => {
     return BranchDc.map(dc => {
         const Sent = BranchScan.filter(qr => qr.VoucherRef == dc.pk).length;
         const Scanned = EntryScan.filter(qr => qr.VoucherRef == dc.pk).length;
-        const EntryCancel = EntryCancelScan.filter(qr => EntryScan.some(scan => qr.QrCodeId == scan.QrCodeId && qr.VoucherRef == dc.pk)).length;
+        const ScannedData = EntryScan.filter(qr => qr.VoucherRef == dc.pk);
+        // const EntryCancel = EntryCancelScan.filter(qr => EntryScan.some(scan => qr.QrCodeId == scan.QrCodeId && qr.VoucherRef == dc.pk)).length;
+        const EntryCancelData = EntryCancelScan.filter(qr => EntryScan.some(scan => qr.QrCodeId == scan.QrCodeId));
+        let JVarLocalData = JFDCMergeFunc({ inEntryScan: ScannedData, inEntryCancel: EntryCancelData });
+        const EntryCancel = JVarLocalData.filter(qr => EntryScan.some(scan => qr.QrCodeId == scan.QrCodeId && scan.VoucherRef == qr.DCVoucherRef)).length;
 
         return {
             ...dc,
@@ -53,5 +57,15 @@ const TimeSpan = DateTime => {
                 ? `${diffHrs} hrs, ${diffMins} min`
                 : `${diffMins} min`;
 };
+
+let JFDCMergeFunc = ({ inEntryScan, inEntryCancel }) => {
+    return inEntryCancel.map(element => {
+        let LocalFilter = inEntryScan.find(qr => qr.QrCodeId == element.QrCodeId);
+        return {
+            ...element,
+            DCVoucherRef: LocalFilter.VoucherRef
+        }
+    });
+}
 
 export { StartFunc };
