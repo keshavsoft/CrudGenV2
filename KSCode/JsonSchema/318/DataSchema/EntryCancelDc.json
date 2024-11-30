@@ -6,5 +6,9 @@
     "Description": {
         "type": "STRING",
         "allowNull": true
+    },
+    "BranchName": {
+        "type": "STRING",
+        "allowNull": true
     }
 }
