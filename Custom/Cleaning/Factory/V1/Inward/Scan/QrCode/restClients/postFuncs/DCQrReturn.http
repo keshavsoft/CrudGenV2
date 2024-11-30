@@ -1,5 +1,5 @@
 
 ###Get all the rows from the database in this table
-GET  http://localhost:7318/Custom/Cleaning/Factory/V1/Inward/Scan/QrCode/DCQrReturn/KKD
+GET  http://localhost:7318/Custom/Cleaning/Factory/V1/Inward/Scan/QrCode/DCQrReturn/1/vizag
 
 
