@@ -6,8 +6,7 @@ const StartFuncForBookings = ({ inTable, inQrId }) => {
 
     let LocalReturnData = { KTF: false };
     const dbForQrCodes = StartFuncCommonFuncs();
-    dbForQrCodes.read();
-    dbForQrCodes.JsonData = dbForQrCodes.data;
+    dbForQrCodes.JsonData = dbForQrCodes;
 
     let LocalRowNeeded = dbForQrCodes.JsonData.find(e => e.pk == LocalQrId);
 
