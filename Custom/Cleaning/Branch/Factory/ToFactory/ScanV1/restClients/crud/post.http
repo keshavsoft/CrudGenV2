@@ -1,0 +1,8 @@
+### Qr Raise
+POST http://localhost:7318/Custom/Cleaning/Branch/Factory/ToFactory/Scan/KKD
+Content-Type: application/json
+
+{
+   "QrCodeId": "184",
+   "VoucherRef":"9"
+}
