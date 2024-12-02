@@ -6,14 +6,12 @@ let StartFunc = ({ inFactory }) => {
     let LocalFactory = inFactory;
 
     const WashingCancelDCdb = WashingCancelDC();
-    WashingCancelDCdb.read();
 
     const WashingCancelScandb = WashingCancelScan();
-    WashingCancelScandb.read();
 
-    let LocalFilterBranchDc = WashingCancelDCdb.data.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterBranchDc = WashingCancelDCdb.filter(e => e.FactoryName === LocalFactory);
 
-    let LocalFilterEntryScan = WashingCancelScandb.data.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterEntryScan = WashingCancelScandb.filter(e => e.FactoryName === LocalFactory);
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inBranchDc: LocalFilterBranchDc,

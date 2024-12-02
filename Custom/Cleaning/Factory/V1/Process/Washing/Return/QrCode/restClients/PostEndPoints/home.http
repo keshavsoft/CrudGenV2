@@ -1,0 +1,21 @@
+
+###Get all the rows from the database in this table
+POST http://localhost:7318/Custom/Cleaning/Factory/V1/Process/Washing/Return/QrCode/Vizag
+
+{
+    "QrCodeId": "18",
+    "ItemName": "MPantdw",
+    "Rate": "20",
+    "FactorySelected": "Vizag",
+    "VoucherRef": "1",
+    "BranchName": "ANR",
+    "VoucherNumber": "1",
+    "DCFactory": "undefined",
+    "DCDate": "2024-12-02",
+    "DCDescription": "washreturn1",
+    "OrderNumber": "1",
+    "OrderDate": "2024-12-02 10:29:51",
+    "DeliveryDate": "2024-12-09",
+    "Description": "bad",
+    "FactoryName": "Vizag"
+}
