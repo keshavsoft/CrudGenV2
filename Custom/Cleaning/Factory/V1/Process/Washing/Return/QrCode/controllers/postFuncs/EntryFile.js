@@ -5,8 +5,16 @@ let PostFunc = (req, res) => {
     let LocalFactory = LocalParams.inFactory;
     let LocalBody = req.body;
 
-    let LocalFromRepo = PostFuncRepo({ inFactory: LocalFactory, inDataInsert: LocalBody });
-    res.json(LocalFromRepo);
+    let LocalFromRepo = PostFuncRepo({
+        inFactory: LocalFactory,
+        inDataInsert: LocalBody
+    });
+
+    if (LocalFromRepo.KTF === false) {
+        return res.status(400).json(LocalFromRepo);
+    }
+
+    return res.status(200).json(LocalFromRepo);
 
 };
 

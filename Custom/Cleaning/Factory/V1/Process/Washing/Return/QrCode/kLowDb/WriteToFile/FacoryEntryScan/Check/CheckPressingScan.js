@@ -1,13 +1,12 @@
 import { StartFunc as StartFuncCommonFuncs } from '../../../CommonFuncs/pressingScan.js';
 
-const StartFunc = ({ inTable, inQrCodeId }) => {
+const StartFunc = ({ inQrCodeId }) => {
     let LocalQrCodeId = inQrCodeId;
 
     let LocalReturnData = { KTF: false };
     const dbForQrCodes = StartFuncCommonFuncs();
-    dbForQrCodes.read();
 
-    let LocalQrCheck = dbForQrCodes.data.find(e => e.QrCodeId == LocalQrCodeId);
+    let LocalQrCheck = dbForQrCodes.find(e => e.QrCodeId == LocalQrCodeId);
 
     if (LocalQrCheck !== undefined) {
         LocalReturnData.KReason = `Sent to pressing QrCode :${LocalQrCodeId}`

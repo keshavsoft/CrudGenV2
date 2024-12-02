@@ -25,7 +25,7 @@ let StartFunc = ({ inFactory, inDataInsert }) => {
         return LocalReturnData;
     };
 
-    let LocalCheckBrcnchReturnScan = CheckBrcnchReturnScan({ inTable: LocalTable, inQrCodeId: LocalQrId });
+    let LocalCheckBrcnchReturnScan = CheckBrcnchReturnScan({ inQrCodeId: LocalQrId });
 
     if (LocalCheckBrcnchReturnScan.KTF === false) {
         LocalReturnData.KReason = LocalCheckBrcnchReturnScan.KReason
