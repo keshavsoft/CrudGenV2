@@ -6,14 +6,12 @@ let StartFunc = ({ inFactory }) => {
     let LocalFactory = inFactory;
 
     const ReWashDCdb = ReWashDC();
-    ReWashDCdb.read();
 
     const ReWashScandb = ReWashScan();
-    ReWashScandb.read();
 
-    let LocalFilterBranchDc = ReWashDCdb.data.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterBranchDc = ReWashDCdb.filter(e => e.FactoryName === LocalFactory);
 
-    let LocalFilterEntryScan = ReWashScandb.data.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterEntryScan = ReWashScandb.filter(e => e.FactoryName === LocalFactory);
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inBranchDc: LocalFilterBranchDc,
