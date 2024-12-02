@@ -15,10 +15,10 @@ let PostFunc = (req, res) => {
     });
 
     if (LocalFromRepo.KTF === false) {
-        res.status(400).json(responseObj);
-    };
+        return res.status(400).json(LocalFromRepo);
+    }
 
-    res.json(LocalFromRepo);
+    return res.status(200).json(LocalFromRepo);
 };
 
 export { PostFunc };
