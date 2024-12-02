@@ -75,7 +75,7 @@ This project focuses on automating crudBD operations for JSON files, making it e
    ```
    
     PORT=7019
-    DataPk=required from root:KCode/DataSchema
+    DataPk=required from root:/KSCode/JsonSchema/{DataPk}/DataSchema
    
    ```
 6. Run the batch file (For Windows)
