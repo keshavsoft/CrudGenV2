@@ -1,15 +1,12 @@
 import { StartFunc as StartFuncCommonFuncs } from '../../../CommonFuncs/EntryCancelScan.js';
 
-const StartFunc = ({ inTable, inQrCodeId }) => {
+const StartFunc = ({ inQrCodeId }) => {
     let LocalQrCodeId = inQrCodeId;
 
     let LocalReturnData = { KTF: false };
     const dbForQrCodes = StartFuncCommonFuncs();
-    dbForQrCodes.read();
-    dbForQrCodes.JsonData = dbForQrCodes.data;
-    // dbForQrCodes.JsonData;
 
-    let LocalQrCheck = dbForQrCodes.JsonData.find(e => e.QrCodeId == LocalQrCodeId);
+    let LocalQrCheck = dbForQrCodes.find(e => e.QrCodeId == LocalQrCodeId);
 
     if (LocalQrCheck !== undefined) {
         LocalReturnData.KReason = `Cancel QrCode :${LocalQrCodeId}`

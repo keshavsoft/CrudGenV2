@@ -14,7 +14,12 @@ let PostFunc = (req, res) => {
         inVoucherRef: LocalVoucherRef
     });
 
-    res.status(200).json(LocalFromRepo);
+    if (LocalFromRepo.KTF === false) {
+        return res.status(400).json(LocalFromRepo);
+    }
+
+    return res.status(200).json(LocalFromRepo);
+
 };
 
 export { PostFunc };
