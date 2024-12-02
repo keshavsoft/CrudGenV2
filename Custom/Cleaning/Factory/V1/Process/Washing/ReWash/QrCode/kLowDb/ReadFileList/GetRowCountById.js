@@ -6,9 +6,8 @@ let StartFunc = ({ inFactory, inId }) => {
     let LocalRowpk = inId;
 
     const WashingScandb = WashingScan();
-    WashingScandb.read();
 
-    let LocalFilterEntryScan = WashingScandb.data.filter(e => e.FactoryName === LocalFactory && e.VoucherRef === LocalRowpk);
+    let LocalFilterEntryScan = WashingScandb.filter(e => e.FactoryName === LocalFactory && e.VoucherRef === LocalRowpk);
     let LocalReturnData = LocalFilterEntryScan.length;
 
     return LocalReturnData;
