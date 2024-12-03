@@ -66,9 +66,9 @@ let GetRowQrDataFunc = async (req, res) => {
 
 let GetRowCountFunc = async (req, res) => {
     let LocalParams = req.params;
-    let LocalinBranch = LocalParams.inBranch;
+    let LocalFactory = LocalParams.inFactory;
     let Localid = LocalParams.id;
-    let LocalFromRepo = GetRowCountFuncRepo({ inBranch: LocalinBranch, inId: Localid });
+    let LocalFromRepo = GetRowCountFuncRepo({ inFactory: LocalFactory, inId: Localid });
 
     if (LocalFromRepo.KTF === false) {
         res.status(500).send(LocalFromRepo.KReason);

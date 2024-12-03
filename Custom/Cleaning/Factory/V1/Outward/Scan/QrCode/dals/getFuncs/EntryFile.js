@@ -44,8 +44,8 @@ let GetRowQrDataFunc = ({ inId }) => {
     return LocalFromLowDb;
 };
 
-let GetRowCountFunc = ({ inBranch, inId }) => {
-    let LocalFromLowDb = GetRowCountById({ inFactory: inBranch, inId });
+let GetRowCountFunc = ({ inFactory, inId }) => {
+    let LocalFromLowDb = GetRowCountById({ inFactory, inId });
 
     return LocalFromLowDb;
 };
