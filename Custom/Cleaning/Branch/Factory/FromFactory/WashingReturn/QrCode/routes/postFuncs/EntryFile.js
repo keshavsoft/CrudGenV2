@@ -6,6 +6,6 @@ import {
     PostFunc
 } from '../../controllers/postFuncs/EntryFile.js';
 
-router.post('/:inFactory', PostFunc);
+router.post('/:inBranch', PostFunc);
 
 export { router };
