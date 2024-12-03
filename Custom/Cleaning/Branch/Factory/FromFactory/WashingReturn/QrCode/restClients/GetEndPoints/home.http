@@ -1,3 +1,3 @@
 
 ###Get all the rows from the database in this table
-GET  http://localhost:7318/Custom/Cleaning/Branch/Factory/FromFactory/EntryReturn/QrCode/KKD
+GET  http://localhost:7318/Custom/Cleaning/Branch/Factory/FromFactory/WashingReturn/QrCode/KKD
