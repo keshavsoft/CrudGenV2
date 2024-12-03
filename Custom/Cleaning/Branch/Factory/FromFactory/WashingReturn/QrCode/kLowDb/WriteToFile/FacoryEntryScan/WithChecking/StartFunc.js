@@ -3,7 +3,7 @@ import { StartFunc as StartFuncUniqueKeyCheck } from "./Checks/UniqueKeyCheck.js
 import { StartFunc as checkReferences } from "./Checks/checkReferences.js";
 import { StartFunc as LocalFuncGeneratePk } from "./Generate.js";
 
-let StartFunc = ({ inDataToInsert }) => {
+let StartFunc = ({ inDataToInsert, inVoucher }) => {
     let LocalinDataToInsert = inDataToInsert;
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
     let LocalStartFuncPullData = StartFuncPullData();
@@ -13,8 +13,9 @@ let StartFunc = ({ inDataToInsert }) => {
         return LocalReturnData;
     };
 
-    const LocalTableSchema = LocalStartFuncPullData.inTableSchema;
-    const db = LocalStartFuncPullData.inDb;
+    const LocalTableSchema = LocalStartFuncPullData.TableSchema;
+    const db = LocalStartFuncPullData.dbObject;
+    db.read()
 
     let LocalFromCheckReferences = checkReferences({
         inTableSchema: LocalTableSchema,
@@ -47,6 +48,7 @@ let StartFunc = ({ inDataToInsert }) => {
     db.data.push(LocalDataWithUuid.InsertData);
     db.write();
     LocalReturnData.KTF = true;
+    LocalReturnData.QrCount = db.data.filter(el => el.VoucherRef == inVoucher).length;
     LocalReturnData.ScanNo = LocalDataWithUuid.InsertData.QrCodeId;
 
     return LocalReturnData;

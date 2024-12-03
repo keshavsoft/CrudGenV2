@@ -1,22 +1,41 @@
 import {
+    GetFunc as GetFuncDal,
+    GetPendingFunc as GetPendingFuncDal,
+    GetScannedFunc as GetScannedFuncDal,
     GetRowDataFunc as GetRowDataFuncDal,
     GetRowQrDataFunc as GetRowQrDataFuncDal,
-    GetRowCountFunc as GetRowCountFuncDal
+    GetFromFactoryDcWiseItems as GetFromFactoryDcWiseItemsDal,
+    GetToScanPendingFunc as GetToScanPendingFuncDal
+
 } from '../../dals/getFuncs/EntryFile.js';
 
+let GetFunc = ({ inBranch }) => {
+    return GetFuncDal({ inBranch });
+};
 
-let GetRowDataFunc = ({ inFactory, inId }) => {
-    return GetRowDataFuncDal({ inFactory, inId });
+let GetScannedFunc = ({ inBranch }) => {
+    return GetScannedFuncDal({ inBranch });
+};
+
+let GetPendingFunc = ({ inBranch }) => {
+    return GetPendingFuncDal({ inBranch });
+};
+
+let GetRowDataFunc = ({ inBranch, inId }) => {
+    return GetRowDataFuncDal({ inBranch, inId });
 };
 
 let GetRowQrDataFunc = ({ inId }) => {
     return GetRowQrDataFuncDal({ inId });
 };
 
-let GetRowCountFunc = ({ inFactory, inId }) => {
-    return GetRowCountFuncDal({ inFactory, inId });
+let GetFromFactoryDcWiseItems = ({ inBranch, inId }) => {
+    return GetFromFactoryDcWiseItemsDal({ inBranch, inId });
 };
 
+let GetToScanPendingFunc = ({ inBranch, inId }) => {
+    return GetToScanPendingFuncDal({ inBranch, inId });
+};
 export {
-    GetRowDataFunc, GetRowQrDataFunc, GetRowCountFunc
+    GetFunc, GetPendingFunc, GetScannedFunc, GetRowDataFunc, GetRowQrDataFunc, GetFromFactoryDcWiseItems, GetToScanPendingFunc
 };

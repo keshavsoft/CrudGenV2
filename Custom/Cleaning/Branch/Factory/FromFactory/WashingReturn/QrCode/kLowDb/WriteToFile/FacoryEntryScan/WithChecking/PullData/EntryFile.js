@@ -1,31 +1,9 @@
-import { StartFunc as StartFuncReturnDbObjectWithSchema } from '../../../../../../../QrCodes/kLowDb/CommonFuncs/EntryCancelScanWithSchema.js';
+import { StartFunc as ReturnDbObjectWithSchema } from "../../../../../../../../../../../../binV4/F_F_Entry_Return_Scan/Create/kLowDb/CommonFuncs/ReturnDbObjectWithSchema.js";
 
 let StartFunc = () => {
-    let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
+    const LocalFromKLowDb = ReturnDbObjectWithSchema();
 
-    LocalReturnData.KTF = false;
-
-    const dbFromDbObjectWithSchema = StartFuncReturnDbObjectWithSchema();
-
-    const db = dbFromDbObjectWithSchema.dbObject;
-
-    db.read();
-
-    if ("error" in db.data) {
-        return db.data;
-    };
-
-    if (Array.isArray(db.data) === false) {
-        LocalReturnData.KReason = "Not array inside Json file...";
-
-        return LocalReturnData;
-    };
-
-    LocalReturnData.KTF = true;
-    LocalReturnData.inDb = db
-    LocalReturnData.inTableSchema = dbFromDbObjectWithSchema.TableSchema
-
-    return LocalReturnData;
+    return LocalFromKLowDb;
 };
 
 export { StartFunc };
