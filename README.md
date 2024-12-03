@@ -99,8 +99,8 @@ This project focuses on automating crudBD operations for JSON files, making it e
  
   
 #### **run the below commands to generate them** 
-- **Backend:** run KCode/Backend.js
-- **Database:** run KCode/Database.js
+- **Backend:** run KCode/ForBatV6/Backend.js
+- **Database:** run KCode/ForBatV6/Database.js
 - **Frontend:** run npm run home
 
 #### **run the batch files for windows** 
