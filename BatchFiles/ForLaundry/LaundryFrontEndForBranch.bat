@@ -9,10 +9,8 @@ call npm run Masters
 call npm run BranchToday
 call npm run TodayReports
 call npm run Dashboard-QrCodeWise-AsArray
-call npm run Menu
 call npm run Branch-CommonConfig-Menu
 call npm run Dashboard-CommonConfig-AsArray
-call npm run FromFactoryQrCodes
 call npm run FactoryMenu
 call npm run Factory-ToFactory
 call npm run FromFactory-Completion
