@@ -6,11 +6,11 @@ const StartFunc = ({ inTable, inQrCodeId }) => {
 
     let LocalReturnData = { KTF: false };
     const dbForQrCodes = StartFuncCommonFuncs();
-    dbForQrCodes.read();
+
     dbForQrCodes.JsonData = dbForQrCodes.data;
     // dbForQrCodes.JsonData;
 
-    let LocalQrCheck = dbForQrCodes.JsonData.find(e => e.QrCodeId == LocalQrCodeId);
+    let LocalQrCheck = dbForQrCodes.find(e => e.QrCodeId == LocalQrCodeId);
 
     if (LocalQrCheck === undefined) {
         LocalReturnData.KReason = `No QrCode :${LocalQrCodeId}`
@@ -18,7 +18,7 @@ const StartFunc = ({ inTable, inQrCodeId }) => {
     };
 
 
-    let LocalFactoryCheck = dbForQrCodes.JsonData.find(e => e.FactoryName == LocalFactoryName);
+    let LocalFactoryCheck = dbForQrCodes.find(e => e.FactoryName == LocalFactoryName);
 
     if (LocalFactoryCheck === undefined) {
         LocalReturnData.KReason = `Not this Factory :${LocalFactoryName}`
