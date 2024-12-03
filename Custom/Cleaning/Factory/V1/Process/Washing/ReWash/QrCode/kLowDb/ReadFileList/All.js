@@ -7,18 +7,15 @@ let StartFunc = ({ inFactory }) => {
     let LocalFactory = inFactory;
 
     const Qrdb = QrCodes();
-    Qrdb.read();
 
     const ReWashDCdb = ReWashDC();
-    ReWashDCdb.read();
 
     const ReWashScandb = ReWashScan();
-    ReWashScandb.read();
 
 
-    let LocalFilterReWashDC = ReWashDCdb.data.filter(e => e.FactoryName === LocalFactory);
-    let LocalFilterReWashScan = ReWashScandb.data.filter(e => e.FactoryName === LocalFactory);
-    let LocalFilterQr = Qrdb.data.filter(e => e.location === LocalFactory);
+    let LocalFilterReWashDC = ReWashDCdb.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterReWashScan = ReWashScandb.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterQr = Qrdb.filter(e => e.location === LocalFactory);
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inQrData: LocalFilterQr,
