@@ -1,6 +1,6 @@
 import { StartFunc as QrCodes } from '../CommonFuncs/FromApi/QrCodes.js';
-import { StartFunc as BranchScan } from '../CommonFuncs/FromApi/EntryCancelScan.js';
-import { StartFunc as BranchDc } from '../CommonFuncs/FromApi/EntryCancelDc.js';
+import { StartFunc as BranchScan } from '../CommonFuncs/FromApi/FactoryOut_QrCodeScan.js';
+import { StartFunc as BranchDc } from '../CommonFuncs/FromApi/FactoryOut_DC.js';
 import { StartFunc as EntryScan } from '../CommonFuncs/FromApi/FromFactoryCancelScan.js';
 
 

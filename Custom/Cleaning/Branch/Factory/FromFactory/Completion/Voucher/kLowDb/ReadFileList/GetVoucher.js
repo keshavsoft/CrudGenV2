@@ -1,5 +1,5 @@
-import { StartFunc as EntryCancelDc } from '../CommonFuncs/FromApi/EntryCancelDc.js';
-import { StartFunc as EntryCancelScan } from '../CommonFuncs/FromApi/EntryCancelScan.js';
+import { StartFunc as EntryCancelDc } from '../CommonFuncs/FromApi/FactoryOut_DC.js';
+import { StartFunc as EntryCancelScan } from '../CommonFuncs/FromApi/FactoryOut_QrCodeScan.js';
 
 let StartFunc = ({ inBranch }) => {
     // let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');
