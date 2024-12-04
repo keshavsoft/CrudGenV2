@@ -1,6 +1,5 @@
 import { LowSync } from 'lowdb'
 import { JSONFileSync } from 'lowdb/node'
-import Configjson from '../../../../../Config.json' assert { type: 'json' };
 import Configjson from '../../../../../../../binV4/Config.json' assert {type: 'json'};
 
 let StartFunc = ({ inTable }) => {
