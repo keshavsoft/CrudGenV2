@@ -1,0 +1,2 @@
+### Qr Raise
+GET http://localhost:7318/Custom/Clients/Laundry/Orders/NewOrder/MaxRow/KKD
