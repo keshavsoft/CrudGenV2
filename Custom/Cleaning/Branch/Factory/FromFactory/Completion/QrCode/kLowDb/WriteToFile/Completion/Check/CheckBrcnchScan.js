@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncCommonFuncs } from '../../../CommonFuncs/FromApi/EntryCancelScan.js';
+import { StartFunc as StartFuncCommonFuncs } from '../../../CommonFuncs/FromApi/FactoryOut_QrCodeScan.js';
 
 const StartFunc = ({ inTable, inQrCodeId, inVoucher }) => {
     let LocalBranchName = inTable;
