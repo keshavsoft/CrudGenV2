@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncPullData } from "./PullData/EntryFile.js";
+import { StartFunc as StartFuncPullData } from "../../../../../../../../../../../binV4/QrCodes/Create/kLowDb/CommonFuncs/ReturnDbObjectWithSchema.js";
 import { StartFunc as StartFuncUniqueKeyCheck } from "./Checks/UniqueKeyCheck.js";
 import { StartFunc as checkReferences } from "./Checks/checkReferences.js";
 import { StartFunc as LocalFuncGeneratePk } from "./Generate.js";
@@ -8,13 +8,9 @@ let StartFunc = ({ inDataToInsert }) => {
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };
     let LocalStartFuncPullData = StartFuncPullData();
 
-    if (LocalStartFuncPullData === false) {
-        LocalReturnData.KReason = LocalStartFuncPullData.KReason;
-        return LocalReturnData;
-    };
-
-    const LocalTableSchema = LocalStartFuncPullData.inTableSchema;
-    const db = LocalStartFuncPullData.inDb;
+    const LocalTableSchema = LocalStartFuncPullData.TableSchema;
+    const db = LocalStartFuncPullData.dbObject;
+    db.read();
 
     let LocalFromCheckReferences = checkReferences({
         inTableSchema: LocalTableSchema,
