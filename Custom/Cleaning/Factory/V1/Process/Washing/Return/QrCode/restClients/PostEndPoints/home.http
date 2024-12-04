@@ -1,9 +1,10 @@
 
 ###Get all the rows from the database in this table
 POST http://localhost:7318/Custom/Cleaning/Factory/V1/Process/Washing/Return/QrCode/Vizag
+Content-Type: application/json
 
 {
-    "QrCodeId": "18",
+    "QrCodeId": "1",
     "ItemName": "MPantdw",
     "Rate": "20",
     "FactorySelected": "Vizag",
