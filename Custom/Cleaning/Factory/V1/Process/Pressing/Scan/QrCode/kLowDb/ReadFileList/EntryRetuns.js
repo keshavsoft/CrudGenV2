@@ -7,19 +7,16 @@ let StartFunc = ({ inFactory }) => {
     let LocalFactory = inFactory;
 
     const Qrdb = QrCodes();
-    Qrdb.read();
 
     const EntryCancelDcdb = EntryCancelDc();
-    EntryCancelDcdb.read();
-
+  
     const EntryCancelScandb = EntryCancelScan();
-    EntryCancelScandb.read();
+  
+    let LocalFilterEntryCancelDc = EntryCancelDcdb.filter(e => e.FactoryName === LocalFactory);
 
-    let LocalFilterEntryCancelDc = EntryCancelDcdb.data.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterQr = Qrdb.filter(e => e.location === LocalFactory);
 
-    let LocalFilterQr = Qrdb.data.filter(e => e.location === LocalFactory);
-
-    let LocalFilterCancelScan = EntryCancelScandb.data.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterCancelScan = EntryCancelScandb.filter(e => e.FactoryName === LocalFactory);
 
     let LoclaReturnScanAndDcMergeData = LoclaReturnScanAndDcMergeFunc({ inCancelScan: LocalFilterCancelScan, inCancelDc: LocalFilterEntryCancelDc });
 
