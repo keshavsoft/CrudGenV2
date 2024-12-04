@@ -10,33 +10,27 @@ let StartFunc = ({ inFactory }) => {
     let LocalFactory = inFactory;
 
     const Qrdb = QrCodes();
-    Qrdb.read();
-
+  
     const PressingScandb = PressingScan();
-    PressingScandb.read();
-
+   
     const WashingScandb = WashingScan();
-    WashingScandb.read();
-
+   
     const ReWashScandb = ReWashScan();
-    ReWashScandb.read();
-
+  
     const PressingCancelScandb = PressingCancelScan();
-    PressingCancelScandb.read();
-
+   
     const WashingCancelScandb = WashingCancelScan();
-    WashingCancelScandb.read();
+   
+    let LocalFilterWashing = WashingScandb.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterPressingScan = PressingScandb.filter(e => e.FactoryName === LocalFactory);
 
-    let LocalFilterWashing = WashingScandb.data.filter(e => e.FactoryName === LocalFactory);
-    let LocalFilterPressingScan = PressingScandb.data.filter(e => e.FactoryName === LocalFactory);
-
-    let LocalFilterPressingCancelScan = PressingCancelScandb.data.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterPressingCancelScan = PressingCancelScandb.filter(e => e.FactoryName === LocalFactory);
 
     let LocalFilterEntryScanData = LocalFilterWashing.filter(loopQr =>
-        !WashingCancelScandb.data.some(loopScan => loopScan.QrCodeId == loopQr.QrCodeId)
+        !WashingCancelScandb.some(loopScan => loopScan.QrCodeId == loopQr.QrCodeId)
     );
 
-    let LocalFilterQr = Qrdb.data.filter(e => e.location === LocalFactory);
+    let LocalFilterQr = Qrdb.filter(e => e.location === LocalFactory);
 
 
     let jVarLocalTransformedData = jFLocalMergeFunc({

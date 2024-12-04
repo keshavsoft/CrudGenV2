@@ -8,21 +8,17 @@ let StartFunc = ({ inFactory }) => {
     let LocalFactory = inFactory;
 
     const Qrdb = QrCodes();
-    Qrdb.read();
 
     const BranchScandb = BranchScan();
-    BranchScandb.read();
 
     const EntryScandb = EntryScan();
-    EntryScandb.read();
 
     const BranchDcdb = BranchDc();
-    BranchDcdb.read();
 
-    let LocalFilterBranchScan = BranchScandb.data.filter(e => e.FactoryName === LocalFactory);
-    let LocalFilterQr = Qrdb.data;
-    let LocalFilterEntryScan = EntryScandb.data;
-    let LocalFilterBranchDc = BranchDcdb.data;
+    let LocalFilterBranchScan = BranchScandb.filter(e => e.FactoryName === LocalFactory);
+    let LocalFilterQr = Qrdb;
+    let LocalFilterEntryScan = EntryScandb;
+    let LocalFilterBranchDc = BranchDcdb;
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
         inQrData: LocalFilterQr,
