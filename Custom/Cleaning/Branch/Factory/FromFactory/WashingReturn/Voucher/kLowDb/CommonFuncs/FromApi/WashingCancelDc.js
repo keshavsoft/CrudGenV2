@@ -1,4 +1,4 @@
-import { StartFunc as PullData } from "../../../../../../../../../../binV4/WashingCancelDc/Show/kLowDb/PullData/returnAsArray.js";
+import { StartFunc as PullData } from "../../../../../../../../../../binV4/WashingCancelDC/Show/kLowDb/PullData/returnAsArray.js";
 
 let StartFunc = () => {
     return PullData();
