@@ -6,10 +6,10 @@ const StartFuncForBookings = ({ inTable, inQrId }) => {
 
     let LocalReturnData = { KTF: false };
     const dbForQrCodes = StartFuncCommonFuncs();
-    dbForQrCodes.read();
+    
     dbForQrCodes.JsonData = dbForQrCodes.data;
 
-    let LocalRowNeeded = dbForQrCodes.JsonData.find(e => e.pk == LocalQrId);
+    let LocalRowNeeded = dbForQrCodes.find(e => e.pk == LocalQrId);
 
     if (LocalRowNeeded === undefined) {
         LocalReturnData.KReason = `No Qr Code :${LocalQrId}`

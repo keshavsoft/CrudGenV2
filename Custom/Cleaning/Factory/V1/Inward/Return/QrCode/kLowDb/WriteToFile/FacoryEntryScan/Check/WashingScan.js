@@ -6,9 +6,8 @@ const StartFunc = ({ inTable, inQrCodeId }) => {
 
     let LocalReturnData = { KTF: false };
     const dbForQrCodes = StartFuncCommonFuncs();
-    dbForQrCodes.read();
-
-    let LocalQrCheck = dbForQrCodes.data.find(e => e.QrCodeId == inQrCodeId);
+    
+    let LocalQrCheck = dbForQrCodes.find(e => e.QrCodeId == inQrCodeId);
 
     if (LocalQrCheck !== undefined) {
         LocalReturnData.KReason = `Sent to washing QrCode :${LocalQrCodeId}`
