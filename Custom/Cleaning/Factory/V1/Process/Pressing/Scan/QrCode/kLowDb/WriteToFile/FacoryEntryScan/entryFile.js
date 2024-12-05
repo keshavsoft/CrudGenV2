@@ -26,14 +26,14 @@ let StartFunc = ({ inFactory, inDataInsert }) => {
         return LocalReturnData;
     };
 
-    let LocalCheckBrcnchReturnScan = WashingCancelScan({ inTable: LocalTable, inQrCodeId: LocalQrId });
+    let LocalCheckBrcnchReturnScan = WashingCancelScan({inQrCodeId: LocalQrId });
 
     if (LocalCheckBrcnchReturnScan.KTF === false) {
         LocalReturnData.KReason = LocalCheckBrcnchReturnScan.KReason
         return LocalReturnData;
     };
 
-    let LocalCheckPressingCancelScan = PressingCancelScan({ inTable: LocalTable, inQrCodeId: LocalQrId });
+    let LocalCheckPressingCancelScan = PressingCancelScan({ inQrCodeId: LocalQrId });
 
     if (LocalCheckPressingCancelScan.KTF === false) {
         LocalReturnData.KReason = LocalCheckPressingCancelScan.KReason

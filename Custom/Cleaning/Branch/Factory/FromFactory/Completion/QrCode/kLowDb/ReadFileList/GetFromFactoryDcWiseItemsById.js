@@ -12,7 +12,7 @@ let StartFunc = ({ inBranch, inId }) => {
 
     const EntryCancelScanData = EntryCancelScan();
 
-    let LocalFilterQr = QrData.filter(e => e.BookingData.OrderData.BranchName === LocalBranch);
+    let LocalFilterQr = QrData.filter(e => e.BranchName === LocalBranch);
 
     let LocalFilterEntryScan = EntryCancelScanData.filter(e => e.BranchName === LocalBranch);
     let LocalEntryCancelDcData = EntryCancelDcData.filter(e => e.pk == LocalId);

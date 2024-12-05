@@ -8,7 +8,7 @@ const StartFunc = ({ inBranch }) => {
     const EntryCancelScanData = EntryCancelScan();
     const FromFactoryCancelScanData = FromFactoryCancelScan();
 
-    const LocalFilterBranchDc = EntryCancelDcData.filter(e => e.Branch === LocalBranch);
+    const LocalFilterBranchDc = EntryCancelDcData.filter(e => e.BranchName === LocalBranch);
 
     const TransformedData = MergeFunc({
         BranchDc: LocalFilterBranchDc,
