@@ -18,7 +18,7 @@ let StartFunc = ({ inBranch, inId }) => {
 
     let LocalFilterBranchDC = BranchDcdb.filter(e => e.pk == LocalId);
 
-    let LocalFilterQr = Qrdb.filter(e => e.BookingData.OrderData.BranchName === LocalBranch);
+    let LocalFilterQr = Qrdb.filter(e => e.BranchName === LocalBranch);
 
     let LocalFilterBranchScan = BranchScandb.filter(e => e.BranchName === LocalBranch);
 
