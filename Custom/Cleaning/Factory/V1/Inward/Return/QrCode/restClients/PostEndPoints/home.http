@@ -4,19 +4,19 @@ POST http://localhost:7318/Custom/Cleaning/Factory/V1/Inward/Return/QrCode/Vizag
 Content-Type: application/json
 
 {
-    "QrCodeId": "15",
+    "QrCodeId": "10",
     "ItemName": "shirt",
-    "Rate": "100",
+    "Rate": "90",
     "FactorySelected": "Vizag",
     "VoucherRef": "1",
     "BranchName": "KKD",
     "VoucherNumber": "1",
     "DCFactory": "undefined",
-    "DCDate": "2024-12-04",
+    "DCDate": "2024-12-05",
     "DCDescription": "return",
     "OrderNumber": "1",
-    "OrderDate": "2024-12-04 10:26:41",
-    "DeliveryDate": "2024-12-11",
+    "OrderDate": "2024-12-05 11:29:50",
+    "DeliveryDate": "2024-12-12",
     "Description": "return",
     "FactoryName": "Vizag"
 }
