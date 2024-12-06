@@ -16,8 +16,10 @@ call npm run Factory-ToFactory
 call npm run FromFactory-Completion
 call npm run FromFactory-EntryReturn
 call npm run FromFactory-WashingReturn
+call npm run FromFactory-PressingReturn
 call npm run FromFactory-EntryReturnQrCodes
 call npm run FromFactory-WashingReturnQrCodes
+call npm run FromFactory-PressingReturnQrCodes
 call npm run FromFactory-CompletionQrCodes
 call npm run Dashboard-QrCodeAtStage-BranchFilter
 
