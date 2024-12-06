@@ -14,7 +14,7 @@ let StartFunc = ({ inFactory }) => {
 
     let LocalFilterBranchScan = BranchScandb.filter(e => e.DCFactory === LocalFactory);
     let LocalFilterQr = Qrdb.filter(e => e.location === LocalFactory);
-    let LocalFilterEntryScan = EntryScandb.filter(e => e.DCFactory === LocalFactory);
+    let LocalFilterEntryScan = EntryScandb.filter(e => e.FactoryName === LocalFactory);
     let LocalFilterBranchDc = BranchDcdb.filter(e => e.Factory === LocalFactory);
 
 
