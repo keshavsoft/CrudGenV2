@@ -7,9 +7,6 @@ const StartFunc = ({ inTable, inQrCodeId }) => {
     let LocalReturnData = { KTF: false };
     const dbForQrCodes = StartFuncCommonFuncs();
     
-    dbForQrCodes.JsonData = dbForQrCodes.data;
-    // dbForQrCodes.JsonData;
-
     let LocalQrCheck = dbForQrCodes.find(e => e.QrCodeId == LocalQrCodeId);
 
     if (LocalQrCheck === undefined) {

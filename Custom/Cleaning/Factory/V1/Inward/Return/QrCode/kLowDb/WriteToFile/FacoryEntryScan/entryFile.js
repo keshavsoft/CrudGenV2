@@ -3,10 +3,11 @@ import { StartFuncForBookings as StartFuncCheckQrCodes } from "./Check/CheckQrCo
 import { StartFunc as CheckBrcnchScan } from "./Check/CheckBrcnchScan.js";
 import { StartFunc as CheckWashingScan } from "./Check/WashingScan.js";
 
-let StartFunc = ({ inFactory, inDataInsert }) => {
+let StartFunc = ({ inFactory, inDataInsert, inVoucherRef, inQrCodeId }) => {
 
     let LocalTable = inFactory;
-    let LocalQrId = inDataInsert.QrCodeId;
+    let LocalQrId = inQrCodeId;
+    let LocalVoucherRef = inVoucherRef;
     let LocalDataInsert = inDataInsert;
     let LocalReturnData = { KTF: false };
 
