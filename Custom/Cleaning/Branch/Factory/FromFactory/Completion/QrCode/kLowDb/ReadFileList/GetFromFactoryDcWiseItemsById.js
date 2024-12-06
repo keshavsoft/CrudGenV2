@@ -12,8 +12,6 @@ let StartFunc = ({ inBranch, inId }) => {
 
     const EntryCancelScanData = EntryCancelScan();
 
-    let LocalFilterQr = QrData.filter(e => e.BranchName === LocalBranch);
-
     let LocalFilterEntryScan = EntryCancelScanData.filter(e => e.BranchName === LocalBranch);
     let LocalEntryCancelDcData = EntryCancelDcData.filter(e => e.pk == LocalId);
 
@@ -23,7 +21,7 @@ let StartFunc = ({ inBranch, inId }) => {
     });
 
     let jVarLocalTransformedData = jFLocalMergeFunc({
-        inQrData: LocalFilterQr,
+        inQrData: QrData,
         inEntryScan: LocalEntryScanAndDcMergeData
     });
 
@@ -45,7 +43,7 @@ let jFLocalMergeFunc = ({ inQrData, inEntryScan }) => {
 
             VoucherNumber: loopScan?.VoucherNumber,
             QrCodeId: loopScan.QrCodeId,
-            DCDate: new Date(loopScan?.Date).toLocaleDateString('en-GB'),
+            DCDate: new Date(loopScan?.DCDate).toLocaleDateString('en-GB'),
             BranchName: loopScan?.BranchName,
             TimeSpan: TimeSpan({ DateTime: loopScan.DateTime })
         };
