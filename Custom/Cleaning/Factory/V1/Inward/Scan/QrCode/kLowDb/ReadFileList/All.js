@@ -16,18 +16,12 @@ let StartFunc = ({ inFactory }) => {
 
     let LocalFilterBranchScan = BranchScandb.filter(e => e.DCFactory === LocalFactory);
 
-    let LocalFilterQr = Qrdb.filter(e => e.location === LocalFactory);
-
-    let LocalFilterEntryScan = EntryScandb.filter(e => e.DCFactory === LocalFactory);
-    let LocalFilterCancelScan = EntryCancelScandb.filter(e => e.FactoryName === LocalFactory);
-    let LocalFilterBranchDc = BranchDcdb.filter(e => e.Factory === LocalFactory);
-
     let jVarLocalTransformedData = jFLocalMergeFunc({
-        inQrData: LocalFilterQr,
+        inQrData: Qrdb,
         inScandata: LocalFilterBranchScan,
-        inEntryScan: LocalFilterEntryScan,
-        inEntryCancelScan: LocalFilterCancelScan,
-        inBranchDC: LocalFilterBranchDc
+        inEntryScan: EntryScandb,
+        inEntryCancelScan: EntryCancelScandb,
+        inBranchDC: BranchDcdb
     });
     let LocalArrayReverseData = jVarLocalTransformedData.slice().reverse();
 
