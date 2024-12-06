@@ -1,6 +1,6 @@
 import { StartFunc as QrCodes } from '../CommonFuncs/QrCodes.js';
-import { StartFunc as EntryScan } from '../CommonFuncs/EntryCancelScan.js';
-import { StartFunc as BranchDc } from '../CommonFuncs/EntryCancelDc.js';
+import { StartFunc as WashingCancelScan } from '../CommonFuncs/WashingCancelScan.js';
+import { StartFunc as WashingCancelDC } from '../CommonFuncs/WashingCancelDC.js';
 
 let StartFunc = ({ inFactory, inId }) => {
     // let LocalFindValue = new Date().toLocaleDateString('en-GB').replace(/\//g, '/');
@@ -8,9 +8,9 @@ let StartFunc = ({ inFactory, inId }) => {
     let LocalId = inId;
     const Qrdb = QrCodes();
 
-    const BranchDcdb = BranchDc();
+    const BranchDcdb = WashingCancelDC();
 
-    const EntryScandb = EntryScan();
+    const EntryScandb = WashingCancelScan();
 
 
     let LocalFilterBranchDC = BranchDcdb.filter(e => e.pk == LocalId);
