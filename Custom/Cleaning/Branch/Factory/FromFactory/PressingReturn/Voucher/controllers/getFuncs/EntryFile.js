@@ -17,7 +17,7 @@ let GetQrStatusFunc = async (req, res) => {
     let LocalBranch = LocalParams.inBranch;
     let LocalFromRepo = GetQrStatusFuncRepo({ inBranch: LocalBranch });
 
-    res.status(200).json(LocalFromRepo);
+    return res.status(200).json(LocalFromRepo);
 };
 
 let GetRowDataFunc = async (req, res) => {
