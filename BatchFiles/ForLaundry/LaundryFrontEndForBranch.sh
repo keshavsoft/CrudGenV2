@@ -22,6 +22,6 @@ npm run FromFactory-PressingReturnQrCodes
 npm run FromFactory-CompletionQrCodes
 npm run Dashboard-QrCodeAtStage-BranchFilter
 
-cp -r  ./publicDir ../CrudGenV2/public/Laundry/Branch /h /i /c /k /e /r /y
+cp -r  ./publicDir/* ../CrudGenV2/public/Laundry/Branch
 
 cd ../CrudGenV2
