@@ -11,7 +11,6 @@ call npm run TodayReports
 call npm run Dashboard-QrCodeWise-AsArray
 call npm run Branch-CommonConfig-Menu
 call npm run Dashboard-CommonConfig-AsArray
-call npm run FactoryMenu
 call npm run Factory-ToFactory
 call npm run FromFactory-Completion
 call npm run FromFactory-EntryReturn
