@@ -72,28 +72,21 @@ This project focuses on automating crudBD operations for JSON files, making it e
    PORT=7019
    DataPk=required from root:/KSCode/JsonSchema/{DataPk}/DataSchema
    ```
-6. Run the batch file (For Windows)
+6. Run the below command to get Backend generated
    ```
-   
-   fbd.bat
-   
+   node .\KCode\ForBatV6\Backend.js
    ```
-   This Above Command runs the following in Windows
-   ``
-   npm i and node KCode/EntryFile.js
-   ``
-   
-    For Mac or Linux:
-      ``
-        chmod +x boilerplate.sh and sh boilerplate.sh
-     ``
-   
+7. Run the below command to get Database created
+   ```
+   node .\KCode\ForBatV6\Database.js
+   ```
+8. Run the below command to get Frontend generated
+   ```
+   npm run home
+   ```   
  7. For Executing:
-   
    ```
-   
-      npm run start
-   
+   npm run start
    ```
 
  
