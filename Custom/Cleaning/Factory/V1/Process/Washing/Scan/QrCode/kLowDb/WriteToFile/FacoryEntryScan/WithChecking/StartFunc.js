@@ -17,12 +17,10 @@ let StartFunc = ({ inDataToInsert, inVoucherRef }) => {
     const LocalTableSchema = LocalStartFuncPullData.inTableSchema;
     const db = LocalStartFuncPullData.inDb;
 
-    let LocalCheckAndUpdate = CheckAndUpdate({ inDatedb: db, inDataToInsert });
+    let LocalCheckAndUpdate = CheckAndUpdate({ inDatedb: db, inDataToInsert, inVoucherRef });
 
     if (LocalCheckAndUpdate.KTF === true) {
-
-        LocalReturnData.KTF = true;
-        LocalReturnData.ScanNo = LocalCheckAndUpdate.QrCodeId
+        LocalReturnData = { ...LocalCheckAndUpdate }
         return LocalReturnData;
     };
 

@@ -7,7 +7,6 @@ let PostFunc = (req, res) => {
     let LocalQrCodeId = LocalBody.QrCodeId;
     let LocalVoucherRef = LocalBody.VoucherRef;
 
-
     let LocalFromRepo = PostFuncRepo({
         inFactory: LocalFactory,
         inDataInsert: LocalBody,

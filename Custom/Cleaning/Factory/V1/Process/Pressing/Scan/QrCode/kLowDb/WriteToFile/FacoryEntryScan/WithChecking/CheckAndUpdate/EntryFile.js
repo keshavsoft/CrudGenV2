@@ -15,8 +15,8 @@ const StartFunc = ({ inDatedb, inDataToInsert, inVoucherRef }) => {
     };
 
     localFindData.ReWash = false,
-        localFindData.VoucherRef = inDataToInsert.VoucherRef,
-        LocalReturnData.QrCodeId = localFindData.QrCodeId
+    localFindData.VoucherRef = inDataToInsert.VoucherRef,
+    LocalReturnData.QrCodeId = localFindData.QrCodeId
     inDatedb.write();
     let localFiterData = localDate.filter(el => el.VoucherRef == inVoucherRef).length;
     LocalReturnData.QrCount = localFiterData;

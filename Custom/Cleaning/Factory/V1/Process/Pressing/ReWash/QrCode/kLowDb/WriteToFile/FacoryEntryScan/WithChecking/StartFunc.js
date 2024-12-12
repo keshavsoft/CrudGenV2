@@ -3,6 +3,7 @@ import { StartFunc as StartFuncUniqueKeyCheck } from "./Checks/UniqueKeyCheck.js
 import { StartFunc as checkReferences } from "./Checks/checkReferences.js";
 import { StartFunc as LocalFuncGeneratePk } from "./Generate.js";
 import { StartFunc as PullDataWashingScan } from "./PullData/WashingScan.js";
+import { StartFunc as pressingScan } from "./PullData/pressingScan.js";
 
 let StartFunc = ({ inDataToInsert }) => {
     let LocalinDataToInsert = inDataToInsert;
@@ -58,10 +59,15 @@ let StartFunc = ({ inDataToInsert }) => {
 const LocalFunc = ({ inDataToInsert }) => {
 
     let LocalPullDataWashingScan = PullDataWashingScan();
+    let LocalpressingScan = pressingScan();
+    const Pressingdb = LocalpressingScan.inDb;
     const db = LocalPullDataWashingScan.inDb;
 
     let localFindData = db.data.find(loopQr => loopQr.QrCodeId == inDataToInsert.QrCodeId);
+    let localPressingFindData = Pressingdb.data.find(loopQr => loopQr.QrCodeId == inDataToInsert.QrCodeId);
     localFindData.ReWash = true;
+    localPressingFindData.ReWash = true;
+    Pressingdb.write()
     db.write();
 };
 
