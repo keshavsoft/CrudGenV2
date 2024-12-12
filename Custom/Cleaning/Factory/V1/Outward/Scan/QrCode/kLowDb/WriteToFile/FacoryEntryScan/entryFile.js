@@ -3,11 +3,11 @@ import { StartFuncForBookings as StartFuncCheckQrCodes } from "./Check/CheckQrCo
 import { StartFunc as CheckBrcnchScan } from "./Check/CheckBrcnchScan.js";
 import { StartFunc as CheckReturnScan } from "./Check/CheckPressingReturnScan.js";
 
-let StartFunc = ({ inFactory, inDataInsert }) => {
+let StartFunc = ({ inFactory, inDataInsert, inQrCodeId, inVoucherRef }) => {
 
     let LocalTable = inFactory;
-    let LocalQrId = inDataInsert.QrCodeId;
-    let LocalDc = inDataInsert.VoucherRef;
+    let LocalQrId = inQrCodeId;
+    let LocalDc = inVoucherRef;
     let LocalDataInsert = inDataInsert;
     let LocalReturnData = { KTF: false };
 
@@ -32,7 +32,18 @@ let StartFunc = ({ inFactory, inDataInsert }) => {
         return LocalReturnData;
     };
 
-    return StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert });
+    let localInsert = StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert, inVoucherRef: LocalDc });
+
+    if (localInsert.KTF === false) {
+        LocalReturnData.KReason = localInsert.KReason
+        return LocalReturnData;
+    };
+
+    LocalReturnData.QrCount = localInsert.QrCount;
+    LocalReturnData.ScanNo = LocalQrId;
+    LocalReturnData.QrData = LocalCheckQrCodes.JsonData;
+    LocalReturnData.KTF = true;
+    return LocalReturnData;
 
 };
 
