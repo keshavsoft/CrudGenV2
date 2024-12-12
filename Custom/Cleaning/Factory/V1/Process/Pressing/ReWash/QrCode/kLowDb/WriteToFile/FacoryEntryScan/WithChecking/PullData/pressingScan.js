@@ -1,5 +1,5 @@
 import { StartFunc as StartFuncReturnDbObjectWithSchema } from '../../../../CommonFuncs/ReturnDbObjectWithSchema.js';
-let LocalTableName = "WashingScan.json";
+let LocalTableName = "PressingScan.json";
 
 let StartFunc = () => {
     let LocalReturnData = { KTF: false, JSONFolderPath: "", CreatedLog: {} };

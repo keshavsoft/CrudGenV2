@@ -4,11 +4,11 @@ import { StartFunc as CheckBrcnchScan } from "./Check/CheckBrcnchScan.js";
 import { StartFunc as WashingCancelScan } from "./Check/WashingCancelScan.js";
 import { StartFunc as PressingCancelScan } from "./Check/PressingCancelScan.js";
 
-let StartFunc = ({ inFactory, inDataInsert }) => {
+let StartFunc = ({ inFactory, inDataInsert, inQrCodeId, inVoucherRef }) => {
 
     let LocalTable = inFactory;
-    let LocalQrId = inDataInsert.QrCodeId;
-    let LocalDc = inDataInsert.VoucherRef;
+    let LocalQrId = inQrCodeId;
+    let LocalDc = inVoucherRef;
     let LocalDataInsert = inDataInsert;
     let LocalReturnData = { KTF: false };
 
@@ -26,7 +26,7 @@ let StartFunc = ({ inFactory, inDataInsert }) => {
         return LocalReturnData;
     };
 
-    let LocalCheckBrcnchReturnScan = WashingCancelScan({inQrCodeId: LocalQrId });
+    let LocalCheckBrcnchReturnScan = WashingCancelScan({ inQrCodeId: LocalQrId });
 
     if (LocalCheckBrcnchReturnScan.KTF === false) {
         LocalReturnData.KReason = LocalCheckBrcnchReturnScan.KReason
@@ -39,7 +39,18 @@ let StartFunc = ({ inFactory, inDataInsert }) => {
         LocalReturnData.KReason = LocalCheckPressingCancelScan.KReason
         return LocalReturnData;
     };
-    return StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert });
+    let localInsert = StartFuncwriteFileFromModal({ inDataToInsert: LocalDataInsert, inVoucherRef: LocalDc });
+
+    if (localInsert.KTF === false) {
+        LocalReturnData.KReason = localInsert.KReason
+        return LocalReturnData;
+    };
+
+    LocalReturnData.QrCount = localInsert.QrCount;
+    LocalReturnData.ScanNo = localInsert.ScanNo;
+    LocalReturnData.QrData = LocalCheckQrCodes.JsonData;
+    LocalReturnData.KTF = true;
+    return LocalReturnData;
 
 };
 
