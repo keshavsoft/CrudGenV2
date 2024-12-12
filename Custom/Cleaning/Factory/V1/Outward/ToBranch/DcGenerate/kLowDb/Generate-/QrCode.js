@@ -4,13 +4,13 @@ import { StartFunc as FactoryOut_QrCodeScan } from "./FactoryOut_QrCodeScan.js";
 
 let StartFunc = ({ inId, inFactory }) => {
     let LocalVouherPk = inId;
-    let LocalFactoryName = inFactory;
+
     let LocalQrCodeData = StartFuncReadBranchFile({ inVouherPk: LocalVouherPk });
 
     const result = groupBy(LocalQrCodeData, "BranchName");
 
     for (const [key, value] of Object.entries(result)) {
-        const LoopinsieinsertPk = createDC({ inBranchName: key, inFactory: LocalFactoryName, inId: LocalVouherPk });
+        const LoopinsieinsertPk = createDC({ inBranchName: key });
         value.VoucherRef = LoopinsieinsertPk;
         FactoryOut_QrCodeScan({ inBulkData: value })
     };
