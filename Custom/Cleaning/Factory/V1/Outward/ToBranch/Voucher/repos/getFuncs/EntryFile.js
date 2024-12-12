@@ -1,7 +1,14 @@
-import { GetIdFunc as GetIdFuncDal } from '../../dals/getFuncs/EntryFile.js';
+import {
+    GetIdFunc as GetIdFuncDal,
+    GetPrintFunc as GetPrintFuncDal
+} from '../../dals/getFuncs/EntryFile.js';
 
 let GetIdFunc = ({ inId, inFactory }) => {
     return GetIdFuncDal({ inId, inFactory });
 };
 
-export { GetIdFunc };
+let GetPrintFunc = ({ inId, inFactory, inBranch }) => {
+    return GetPrintFuncDal({ inId, inFactory, inBranch });
+};
+
+export { GetIdFunc, GetPrintFunc };
