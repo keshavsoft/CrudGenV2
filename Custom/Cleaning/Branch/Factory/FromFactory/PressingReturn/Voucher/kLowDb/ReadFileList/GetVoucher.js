@@ -1,4 +1,4 @@
-import { StartFunc as EntryCancelDc } from '../CommonFuncs/FromApi/PressingCancelDc.js';
+import { StartFunc as EntryCancelDc } from '../CommonFuncs/FromApi/pressingCancelDc.js';
 import { StartFunc as EntryCancelScan } from '../CommonFuncs/FromApi/PressingCancelScan.js';
 
 let StartFunc = ({ inBranch }) => {
