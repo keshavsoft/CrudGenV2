@@ -1,5 +1,5 @@
-import { StartFunc as FactoryToBranchDC } from '../CommonFuncs/FromApi/FactoryToBranchDC.js';
-import { StartFunc as FactoryToBranchScan } from '../CommonFuncs/FromApi/FactoryToBranchScan.js';
+import { StartFunc as FactoryToBranchDC } from '../CommonFuncs/FromApi/CompletionDC.js';
+import { StartFunc as FactoryToBranchScan } from '../CommonFuncs/FromApi/CompletionScan.js';
 
 let StartFunc = ({ inId }) => {
     let localId = inId;
