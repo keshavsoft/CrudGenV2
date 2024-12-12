@@ -6,4 +6,10 @@ let GetIdFunc = ({ inId, inFactory }) => {
     return LocalFromLowDb;
 };
 
-export { GetIdFunc };
+let GetPrintFunc = ({ inId, inFactory }) => {
+    let LocalFromLowDb = GeneretedDC({ inId, inFactory, inBranch });
+
+    return LocalFromLowDb;
+};
+
+export { GetIdFunc, GetPrintFunc };
