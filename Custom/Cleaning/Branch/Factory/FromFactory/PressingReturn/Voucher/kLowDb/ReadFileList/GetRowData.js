@@ -1,4 +1,4 @@
-import { StartFunc as BranchDc } from '../CommonFuncs/FromApi/PressingCancelDc.js';
+import { StartFunc as BranchDc } from '../CommonFuncs/FromApi/pressingCancelDc.js';
 import { StartFunc as EntryScan } from '../CommonFuncs/FromApi/FromFactoryCancelScan.js';
 
 const StartFunc = ({ inId }) => {
