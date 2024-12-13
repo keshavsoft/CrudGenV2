@@ -3,6 +3,7 @@ import { StartFunc as applyFilter } from "./applyFilter.js";
 
 let StartFunc = ({ inBranchName }) => {
     const LocalQrCodeData = buildData();
+    
     const LocalFilteredArray = applyFilter({
         inQrcodeArray: LocalQrCodeData,
         inBranchName
