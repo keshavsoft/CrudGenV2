@@ -1,6 +1,6 @@
 import { GetIdFunc as GetIdFuncDal } from '../../dals/getFuncs/EntryFile.js';
 
-let GetIdFunc = async ({ inId, inFactory }) => {
+let GetIdFunc = ({ inId, inFactory }) => {
     return GetIdFuncDal({ inId, inFactory });
 };
 

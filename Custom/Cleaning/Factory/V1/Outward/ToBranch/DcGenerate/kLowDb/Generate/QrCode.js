@@ -1,11 +1,20 @@
 import { StartFunc as StartFuncReadBranchFile } from '../CommonFuncs/readBranchFile.js';
 import { StartFunc as createDC } from "./createDC.js";
 import { StartFunc as FactoryOut_QrCodeScan } from "./FactoryOut_QrCodeScan.js";
+import { StartFunc as FactoryOutCheck } from "./Check/FactoryOut_DC.js";
 
 let StartFunc = ({ inId, inFactory }) => {
     let LocalVouherPk = inId;
     let LocalFactoryName = inFactory;
+    let LocalReturnData = { KTF: false };
+
     let LocalQrCodeData = StartFuncReadBranchFile({ inVouherPk: LocalVouherPk });
+    let LocalFactoryOut_DCCheck = FactoryOutCheck({ inId });
+
+    if (LocalFactoryOut_DCCheck.KTF === false) {
+        LocalReturnData.KReason = LocalFactoryOut_DCCheck.KReason;
+        return LocalReturnData;
+    };
 
     const result = groupBy(LocalQrCodeData, "BranchName");
 
@@ -15,7 +24,8 @@ let StartFunc = ({ inId, inFactory }) => {
         FactoryOut_QrCodeScan({ inBulkData: value })
     };
 
-    return result;
+    LocalReturnData.KTF = true;
+    return LocalReturnData;
 };
 
 function groupBy(array, key) {
