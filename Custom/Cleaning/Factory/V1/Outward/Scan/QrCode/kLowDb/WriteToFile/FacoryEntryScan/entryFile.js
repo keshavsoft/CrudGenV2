@@ -17,7 +17,7 @@ let StartFunc = ({ inFactory, inDataInsert, inQrCodeId, inVoucherRef }) => {
         LocalReturnData.KReason = LocalCheckQrCodes.KReason
         return LocalReturnData;
     };
-
+    LocalDataInsert.BranchName = LocalCheckQrCodes.JsonData.BookingData.OrderData.BranchName
     let LocalCheckBrcnchScan = CheckBrcnchScan({ inTable: LocalTable, inQrCodeId: LocalQrId });
 
     if (LocalCheckBrcnchScan.KTF === false) {
