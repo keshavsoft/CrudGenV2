@@ -14,8 +14,10 @@ let StartFunc = ({ inDataAsArray }) => {
         LocalReturnArray.push({
             BranchName: key,
             QrCount: value.length
-        })
-    };
+        });
+    }
+
+    LocalReturnArray.sort((b,a) => b.QrCount - a.QrCount);
 
     return LocalReturnArray;
 };
