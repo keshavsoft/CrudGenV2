@@ -1,27 +1,31 @@
 import {
     GetFunc as GetFuncRepo,
-    GetQrStatusFunc as GetQrStatusFuncRepo,
+    GetOrderWithQrFunc as GetOrderWithQrFuncRepo,
     GetRowDataFunc as GetRowDataFuncRepo
 } from '../../repos/getFuncs/EntryFile.js';
 
-let GetFunc = async (req, res) => {
+let GetFunc = (req, res) => {
     let LocalParams = req.params;
     let LocalBranch = LocalParams.inBranch;
     let LocalOrderId = LocalParams.OrderId;
     let LocalFromRepo = GetFuncRepo({ inBranch: LocalBranch, inOrderId: LocalOrderId });
-   
+
     if (LocalFromRepo === false) {
         return res.status(500).json(LocalFromRepo);
     }
     return res.status(200).json(LocalFromRepo);
 };
 
-let GetQrStatusFunc = async (req, res) => {
+let GetOrderWithQrFunc = (req, res) => {
     let LocalParams = req.params;
     let LocalBranch = LocalParams.inBranch;
-    let LocalFromRepo = GetQrStatusFuncRepo({ inBranch: LocalBranch });
+    let LocalOrderId = LocalParams.OrderId;
+    let LocalFromRepo = GetOrderWithQrFuncRepo({ inBranch: LocalBranch, inOrderId: LocalOrderId });
 
-    res.status(200).json(LocalFromRepo);
+    if (LocalFromRepo === false) {
+        return res.status(500).json(LocalFromRepo);
+    };
+    return res.status(200).json(LocalFromRepo);
 };
 
 let GetRowDataFunc = async (req, res) => {
@@ -33,5 +37,5 @@ let GetRowDataFunc = async (req, res) => {
 };
 
 export {
-    GetFunc, GetQrStatusFunc, GetRowDataFunc
+    GetFunc, GetOrderWithQrFunc, GetRowDataFunc
 };

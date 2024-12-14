@@ -20,9 +20,8 @@ const StartFunc = ({ inTable, inQrCodeId, inVoucher }) => {
         return LocalReturnData;
     };
 
-
     if (LocalQrCheck.VoucherRef !== LocalinVoucher) {
-        LocalReturnData.KReason = `Not this Voucher :${LocalBranchName}`
+        LocalReturnData.KReason = `Not this Voucher :${LocalinVoucher}`
         return LocalReturnData;
     };
 

@@ -3,12 +3,12 @@ import express from 'express';
 var router = express.Router();
 
 import {
-    GetFunc, GetQrStatusFunc, GetRowDataFunc
+    GetFunc, GetOrderWithQrFunc, GetRowDataFunc
 }
     from '../../controllers/getFuncs/EntryFile.js';
 
 router.get('/:OrderId/:inBranch', GetFunc);
-// router.get('/QrStatus/:inBranch', GetQrStatusFunc);
+router.get('/OrderAsIsWithQrs/:OrderId/:inBranch', GetOrderWithQrFunc);
 // router.get('/RowData/:id', GetRowDataFunc);
 
 export { router };
