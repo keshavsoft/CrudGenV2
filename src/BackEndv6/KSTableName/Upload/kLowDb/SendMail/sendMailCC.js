@@ -9,8 +9,6 @@ let tableName = path.parse(tableNameJson.tableName).name;
 dotenv.config();
 
 let StartFunc = async ({ inDataInserted, inDomainName, CCEmail, inpk }) => {
-    console.log("CCEmail", CCEmail);
-
     if ("KS_MAIL_ID" in process.env === false) {
         console.log("KS_MAIL_ID not found in .env file");
         return await false;
