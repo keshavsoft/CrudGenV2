@@ -5,7 +5,7 @@ let StartFunc = ({ inId, inBranchName }) => {
 
     let LocalId = inId;
     let LocalBranchName = inBranchName;
-    let LocalFactoryOut_Qr = LocalReturnData = FactoryOut_QrCodeScan();
+    let LocalFactoryOut_Qr = FactoryOut_QrCodeScan();
    let LocalQrCodesData = QrCodes();
 
     let LocalFilterData = LocalFactoryOut_Qr.filter(element => element.VoucherRef == LocalId && element.BranchName == LocalBranchName);
