@@ -23,9 +23,12 @@ const LocalMergeFunc = ({ inFactoryOut_Qr, inQr }) => {
             FactoryName: element.FactoryName,
             VoucherRef: element.VoucherRef,
             VoucherNumber: element.VoucherNumber,
-
+            Rate: LocalFilterData?.Rate,
+            DeliveryDate:LocalFilterData?.DeliveryDateTime,
             ItemName: LocalFilterData?.ItemName,
-
+            OrderNumber:LocalFilterData?.OrderNumber,
+            OrderDate:LocalFilterData?.BookingData.OrderData.Currentdateandtime,
+            QrCodeId:LocalFilterData?.pk
         };
 
     });
