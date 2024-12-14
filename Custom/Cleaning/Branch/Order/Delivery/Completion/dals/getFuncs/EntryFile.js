@@ -1,11 +1,12 @@
 import { StartFunc as GetOrderWithQr } from '../../kLowDb/ReadFileList/GetOrderWithQr.js';
+import { StartFunc as GetOrderSettlementWithQr } from '../../kLowDb/ReadFileList/GetOrderSettlementWithQr.js';
 
 let GetFunc = ({ inOrderId, inBranch }) => {
     return GetOrderWithQr({ inOrderId, inBranch });
 };
 
-let GetQrStatusFunc = ({ inBranch }) => {
-    return GetOrderWithQr({ inBranch });
+let GetOrderWithQrFunc = ({ inOrderId, inBranch  }) => {
+    return GetOrderSettlementWithQr({ inOrderId, inBranch  });
 };
 
 let GetRowDataFunc = ({ inId }) => {
@@ -13,5 +14,5 @@ let GetRowDataFunc = ({ inId }) => {
 };
 
 export {
-    GetFunc, GetQrStatusFunc, GetRowDataFunc
+    GetFunc, GetOrderWithQrFunc, GetRowDataFunc
 };

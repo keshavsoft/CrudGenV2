@@ -7,7 +7,7 @@ let StartFunc = ({ inFactory, inDataInsert, inQrCodeId, inVoucher }) => {
     let LocalTable = inFactory;
     let LocalQrId = inQrCodeId;
     let LocalDataInsert = inDataInsert;
-    let LocalVoucher = inVoucher;
+    let LocalVoucher = parseInt(inVoucher);
     let LocalReturnData = { KTF: false };
 
     let LocalCheckQrCodes = StartFuncCheckQrCodes({ inTable: LocalTable, inQrId: LocalQrId });
