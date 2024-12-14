@@ -14,6 +14,7 @@ let PostFuncGenUuId = (inPostBody) => {
 let PostWithCheckAndGenPkFunc = (inPostBody) => {
     return StartFuncWriteTofile({ inDataToInsert: inPostBody });
 };
+
 let PostSendMailGenUuIdFunc = (inPostBody) => {
     return StartFuncWriteTofile({ inDataToInsert: inPostBody });
 };
@@ -28,6 +29,7 @@ let PostForTemplateFunc = async ({ inPostBody, inDomainName }) => {
 let PostWithReferenceCheckFunc = async ({ inPostBody, inDomainName }) => {
     return await Send({ inDataToInsert: inPostBody, inDomainName });
 };
+
 let PostAsIsFunc = async ({ inPostBody, inDomainName }) => {
     return await asIs({ inDataToInsert: inPostBody, inDomainName });
 };
