@@ -48,7 +48,7 @@ let jFLocalMergeFunc = ({ inQrData, inScandata, inEntryScan, inEntryCancelScan }
             Rate: matchedRecord?.Rate,
 
             QrCodeId: loopScan.QrCodeId,
-            BranchName: loopScan?.BranchName,
+            BranchName: matchedRecord?.BookingData.OrderData.BranchName,
             Status: match,
             EntryReturnStarus: CheckEntryReturn,
             TimeSpan: TimeSpan({ DateTime: loopScan.DateTime })
