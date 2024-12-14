@@ -1,14 +1,13 @@
 import nodemailer from "nodemailer";
 import dotenv from 'dotenv';
 import fs from "fs";
-import path from "path";
-import tableNameJson from '../../../tableName.json' assert {type: "json"};
 
 const CommonHtmlPath = "./mail/Templates/Html/welcome.html";
-let tableName = path.parse(tableNameJson.tableName).name;
 dotenv.config();
 
-let StartFunc = async ({ inDataInserted, inDomainName, CCEmail, inpk }) => {
+let StartFunc = async ({ inDataInserted, inDomainName, CCEmail, inpk, inTableName }) => {
+    let LocaltableName = inTableName;
+
     if ("KS_MAIL_ID" in process.env === false) {
         console.log("KS_MAIL_ID not found in .env file");
         return await false;
@@ -26,11 +25,7 @@ let StartFunc = async ({ inDataInserted, inDomainName, CCEmail, inpk }) => {
 
     const data = fs.readFileSync(CommonHtmlPath, { encoding: 'utf8' });
 
-    //let LocalRedirectUrl = `http://${inDomainName}/Login/bin/Users/ValidateEmail/${inDataPk}`;
-    // let LocalRedirectUrl = `http://localhost:7318/binV2/${tableName}/Alter/${inpk}/isMailValidated/true`;
-    // let LocalRedirectUrl = `${inDomainName}/binV3/${tableName}/Alter/${inpk}/isMailValidated/true`;
-
-    let LocalRedirectUrl = `${inDomainName}/binV4/${tableName}/Alter/${inpk}/isMailValidated/true`;
+    let LocalRedirectUrl = `${inDomainName}/binV4/${LocaltableName}/isMailValidated/true`;
 
     console.log("inDomainName : ", inDomainName);
 

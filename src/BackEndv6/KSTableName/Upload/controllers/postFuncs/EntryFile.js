@@ -57,31 +57,6 @@ let PostImageAndMailFunc = async (req, res) => {
     res.status(200).send(`${req.KeshavSoft.insertedPk}`);
 };
 
-let PostImageAndMailFunc1 = async (req, res) => {
-    if ("insertedPk" in req.KeshavSoft === false) {
-        if ("ErrorInfo" in req.KeshavSoft) {
-            res.status(500).json(req.KeshavSoft.ErrorInfo);
-            return;
-        };
-
-        res.status(500).send("Error from multer");
-        return;
-    };
-
-    let LocalBody = req.body;
-    var host = req.get('host');
-    let protocol = req.protocol;
-    let LocalDomainName = `${protocol}://${host}`;
-
-    PostImageAndMailFuncRepo({
-        inDomainName: LocalDomainName,
-        inDataToInsert: LocalBody,
-        inpk: req.KeshavSoft.insertedPk
-    });
-
-    res.status(200).send(`${req.KeshavSoft.insertedPk}`);
-};
-
 export {
     PostFunc, PostImageUsingMulterFunc,
     PostImageAndMailFunc, PostImageAsBase64Func

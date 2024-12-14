@@ -1,4 +1,4 @@
-import { StartFunc as sendMailCC } from "../../../../../../mail/sendMailCC.js";
+import { StartFunc as sendMailCC } from "./sendMailCC.js";
 
 let StartFunc = async ({ inDomainName, inDataToInsert, inpk }) => {
     if ("Email" in inDataToInsert) {
