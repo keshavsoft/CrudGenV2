@@ -5,11 +5,10 @@ let StartFunc = ({ inId, inBranchName }) => {
 
     let LocalId = inId;
     let LocalBranchName = inBranchName;
-    let LocalReturnData = {};
-    LocalReturnData = FactoryOut_QrCodeScan();
-    LocalQrCodesData = QrCodes();
+    let LocalFactoryOut_Qr = LocalReturnData = FactoryOut_QrCodeScan();
+   let LocalQrCodesData = QrCodes();
 
-    let LocalFilterData = LocalReturnData.filter(element => element.VoucherRef == LocalId && element.BranchName == LocalBranchName);
+    let LocalFilterData = LocalFactoryOut_Qr.filter(element => element.VoucherRef == LocalId && element.BranchName == LocalBranchName);
     return LocalMergeFunc({ inFactoryOut_Qr: LocalFilterData, inQr: LocalQrCodesData })
 };
 
